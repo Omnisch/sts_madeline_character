@@ -10,7 +10,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.blue.Defend_Blue;
 import com.megacrit.cardcrawl.cards.green.Neutralize;
 import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,6 +21,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import omnisonion.cards.Defend;
+import omnisonion.cards.Strike;
 
 import java.util.ArrayList;
 
@@ -139,10 +140,14 @@ public class OnionCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike_Red.ID);
-        retVal.add(Strike_Red.ID);
-        retVal.add(Defend_Blue.ID);
-        retVal.add(Defend_Blue.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
+        retVal.add(Defend.ID);
         retVal.add(Neutralize.ID);
 
         return retVal;
@@ -181,9 +186,9 @@ public class OnionCharacter extends CustomPlayer {
         };
     }
 
-    private final Color cardRenderColor = Color.valueOf("0xEDC8FF").cpy(); //Used for some vfx on moving cards (sometimes) (maybe)
-    private final Color cardTrailColor = Color.valueOf("0xEDC8FF").cpy(); //Used for card trail vfx during gameplay.
-    private final Color slashAttackColor = Color.valueOf("0xEDC8FF").cpy(); //Used for a screen tint effect when you attack the heart.
+    private final Color cardRenderColor = Color.valueOf("#EDC8FF").cpy(); //Used for some vfx on moving cards (sometimes) (maybe)
+    private final Color cardTrailColor = Color.valueOf("#EDC8FF").cpy(); //Used for card trail vfx during gameplay.
+    private final Color slashAttackColor = Color.valueOf("#EDC8FF").cpy(); //Used for a screen tint effect when you attack the heart.
     @Override
     public Color getCardRenderColor() {
         return cardRenderColor;
