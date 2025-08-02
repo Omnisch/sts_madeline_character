@@ -1,10 +1,8 @@
 package omnisonion;
 
 import basemod.BaseMod;
-import basemod.interfaces.AddAudioSubscriber;
-import basemod.interfaces.EditKeywordsSubscriber;
-import basemod.interfaces.EditStringsSubscriber;
-import basemod.interfaces.PostInitializeSubscriber;
+import basemod.interfaces.*;
+import omnisonion.character.OnionCharacter;
 import omnisonion.util.GeneralUtils;
 import omnisonion.util.KeywordInfo;
 import omnisonion.util.Sounds;
@@ -33,6 +31,7 @@ import java.util.*;
 
 @SpireInitializer
 public class OnionMod implements
+        EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         AddAudioSubscriber,
@@ -52,6 +51,8 @@ public class OnionMod implements
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
         new OnionMod();
+
+        OnionCharacter.Meta.registerColor();
     }
 
     public OnionMod() {
@@ -270,5 +271,10 @@ public class OnionMod implements
         else {
             throw new RuntimeException("Failed to determine mod info/ID based on initializer.");
         }
+    }
+
+    @Override
+    public void receiveEditCharacters() {
+        OnionCharacter.Meta.registerCharacter();
     }
 }

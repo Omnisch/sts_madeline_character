@@ -28,7 +28,7 @@ import java.util.ArrayList;
 import static omnisonion.OnionMod.characterPath;
 import static omnisonion.OnionMod.makeID;
 
-public class Onion extends CustomPlayer {
+public class OnionCharacter extends CustomPlayer {
     //Stats
     public static final int ENERGY_PER_TURN = 3;
     public static final int MAX_HP = 70;
@@ -47,9 +47,9 @@ public class Onion extends CustomPlayer {
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
         public static PlayerClass OMNISONION;
-        @SpireEnum(name = "OMNISONION_LILAC_COLOR") // These two MUST match. Change it to something unique for your character.
+        @SpireEnum(name = "ONION_LILAC") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
-        @SpireEnum(name = "OMNISONION_LILAC_COLOR") @SuppressWarnings("unused")
+        @SpireEnum(name = "ONION_LILAC") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
 
         //Character select images
@@ -79,7 +79,7 @@ public class Onion extends CustomPlayer {
         }
 
         public static void registerCharacter() {
-            BaseMod.addCharacter(new Onion(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
+            BaseMod.addCharacter(new OnionCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
         }
     }
 
@@ -116,7 +116,7 @@ public class Onion extends CustomPlayer {
 
     //Actual character class code below this point
 
-    public Onion() {
+    public OnionCharacter() {
         super(getNames()[0], Meta.OMNISONION,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
                 new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
@@ -256,6 +256,6 @@ public class Onion extends CustomPlayer {
     @Override
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
-        return new Onion();
+        return new OnionCharacter();
     }
 }
