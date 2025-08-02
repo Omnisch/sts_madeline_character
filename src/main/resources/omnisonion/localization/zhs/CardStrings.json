@@ -1,12 +1,16 @@
 {
   "${modID}:ExampleCard": {
-    "NAME": "Name",
-    "DESCRIPTION": "Description. NL Second line.",
-    "UPGRADE_DESCRIPTION": "This will automatically be used if the card is upgraded. Remove it if unneeded.",
+    "NAME": "名称",
+    "DESCRIPTION": "描述。 NL 第二行。",
+    "UPGRADE_DESCRIPTION": "自动显示在升级后的卡片。若不需要可删除此行。",
     "EXTENDED_DESCRIPTION": [
-      "You can put more text in here.",
-      "If you need to use it for stuff.",
-      "Blizzard is a good example for this."
+      "在此处添加更多描述。",
+      "若需要描述更多事物。",
+      "示例可见“暴雪”。"
     ]
+  },
+  "${modID}:Strike": {
+    "NAME": "打击",
+    "DESCRIPTION": "造成!D!点伤害。"
   }
 }

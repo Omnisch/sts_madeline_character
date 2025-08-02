@@ -1,7 +1,9 @@
 package omnisonion;
 
+import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
+import omnisonion.cards.BaseCard;
 import omnisonion.character.OnionCharacter;
 import omnisonion.util.GeneralUtils;
 import omnisonion.util.KeywordInfo;
@@ -31,6 +33,7 @@ import java.util.*;
 
 @SpireInitializer
 public class OnionMod implements
+        EditCardsSubscriber,
         EditCharactersSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
@@ -274,7 +277,16 @@ public class OnionMod implements
     }
 
     @Override
+    public void receiveEditCards() {
+        new AutoAdd(modID) //Loads files from this mod
+                .packageFilter(BaseCard.class) //In the same package as this class
+                .setDefaultSeen(true) //And marks them as seen in the compendium
+                .cards(); //Adds the cards
+    }
+
+    @Override
     public void receiveEditCharacters() {
+        logger.info("[Onion] receiveEditCharacters called!");
         OnionCharacter.Meta.registerCharacter();
     }
 }
