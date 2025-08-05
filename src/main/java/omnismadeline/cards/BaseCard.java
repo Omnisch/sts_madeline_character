@@ -1,11 +1,11 @@
-package omnisonion.cards;
+package omnismadeline.cards;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import omnisonion.MadelineMod;
-import omnisonion.util.CardStats;
-import omnisonion.util.TriFunction;
+import omnismadeline.MadelineMod;
+import omnismadeline.util.CardStats;
+import omnismadeline.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import static omnisonion.util.GeneralUtils.removePrefix;
-import static omnisonion.util.TextureLoader.getCardTextureString;
+import static omnismadeline.util.GeneralUtils.removePrefix;
+import static omnismadeline.util.TextureLoader.getCardTextureString;
 
 
 public abstract class BaseCard extends CustomCard {

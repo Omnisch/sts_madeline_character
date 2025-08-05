@@ -1,4 +1,4 @@
-package omnisonion.util;
+package omnismadeline.util;
 
 @FunctionalInterface
 public interface TriFunction<T, U, V, R> {

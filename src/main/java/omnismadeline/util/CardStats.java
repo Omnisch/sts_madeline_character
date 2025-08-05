@@ -1,4 +1,4 @@
-package omnisonion.util;
+package omnismadeline.util;
 
 import com.megacrit.cardcrawl.cards.AbstractCard;
 

@@ -1,14 +1,14 @@
-package omnisonion;
+package omnismadeline;
 
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
-import omnisonion.cards.BaseCard;
-import omnisonion.character.MadelineCharacter;
-import omnisonion.util.GeneralUtils;
-import omnisonion.util.KeywordInfo;
-import omnisonion.util.Sounds;
-import omnisonion.util.TextureLoader;
+import omnismadeline.cards.BaseCard;
+import omnismadeline.character.MadelineCharacter;
+import omnismadeline.util.GeneralUtils;
+import omnismadeline.util.KeywordInfo;
+import omnismadeline.util.Sounds;
+import omnismadeline.util.TextureLoader;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;

@@ -1,4 +1,4 @@
-package omnisonion.character;
+package omnismadeline.character;
 
 import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
@@ -21,13 +21,13 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import omnisonion.cards.Defend;
-import omnisonion.cards.Strike;
+import omnismadeline.cards.Defend;
+import omnismadeline.cards.Strike;
 
 import java.util.ArrayList;
 
-import static omnisonion.MadelineMod.characterPath;
-import static omnisonion.MadelineMod.makeID;
+import static omnismadeline.MadelineMod.characterPath;
+import static omnismadeline.MadelineMod.makeID;
 
 public class MadelineCharacter extends CustomPlayer {
     //Stats

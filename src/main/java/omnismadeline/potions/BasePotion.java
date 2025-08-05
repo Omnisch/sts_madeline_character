@@ -1,4 +1,4 @@
-package omnisonion.potions;
+package omnismadeline.potions;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;

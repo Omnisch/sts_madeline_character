@@ -1,15 +1,15 @@
-package omnisonion.relics;
+package omnismadeline.relics;
 
 import basemod.abstracts.CustomRelic;
 import basemod.helpers.RelicType;
-import omnisonion.util.GeneralUtils;
-import omnisonion.util.TextureLoader;
+import omnismadeline.util.GeneralUtils;
+import omnismadeline.util.TextureLoader;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.RelicStrings;
 
-import static omnisonion.MadelineMod.relicPath;
+import static omnismadeline.MadelineMod.relicPath;
 
 public abstract class BaseRelic extends CustomRelic {
     public AbstractCard.CardColor pool = null;

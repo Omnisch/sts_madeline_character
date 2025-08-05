@@ -1,7 +1,7 @@
-package omnisonion.powers;
+package omnismadeline.powers;
 
-import omnisonion.util.GeneralUtils;
-import omnisonion.util.TextureLoader;
+import omnismadeline.util.GeneralUtils;
+import omnismadeline.util.TextureLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;

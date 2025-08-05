@@ -1,6 +1,6 @@
-package omnisonion.util;
+package omnismadeline.util;
 
-import omnisonion.MadelineMod;
+import omnismadeline.MadelineMod;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;

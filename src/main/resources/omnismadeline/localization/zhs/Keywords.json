@@ -19,5 +19,33 @@
       "multiword_keywords"
     ],
     "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
+  },
+  {
+    "PROPER_NAME": "跳跃",
+    "NAMES": [
+      "跳跃"
+    ],
+    "DESCRIPTION": "只能在有其他手牌时打出，丢弃等同于数值的手牌。"
+  },
+  {
+    "PROPER_NAME": "落地",
+    "NAMES": [
+      "落地"
+    ],
+    "DESCRIPTION": "若你没有 冲刺机会 ，获得1点 冲刺机会 。"
+  },
+  {
+    "PROPER_NAME": "冲刺机会",
+    "NAMES": [
+      "冲刺机会"
+    ],
+    "DESCRIPTION": "你需要冲刺机会来打出 冲刺 牌。"
+  },
+  {
+    "PROPER_NAME": "冲刺",
+    "NAMES": [
+      "冲刺"
+    ],
+    "DESCRIPTION": "只能在有 冲刺机会 时打出，打出后失去1点 冲刺机会 。"
   }
 ]
