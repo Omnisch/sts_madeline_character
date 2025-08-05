@@ -16,5 +16,9 @@
   "${modID}:Defend": {
     "NAME": "防御",
     "DESCRIPTION": "获得!B!点 格挡 。"
+  },
+  "${modID}:JumpInPlace": {
+    "NAME": "原地跳",
+    "DESCRIPTION": "${modID}:跳跃 1。 NL 获得!M!点临时敏捷。 NL 将这张牌放回你的手牌。"
   }
 }
