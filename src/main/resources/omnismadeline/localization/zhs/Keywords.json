@@ -32,20 +32,20 @@
     "NAMES": [
       "落地"
     ],
-    "DESCRIPTION": "若你没有 #y冲刺机会 ，获得 #b1 点 #y冲刺机会 。"
+    "DESCRIPTION": "若你的 #y冲刺机会 小于 #b1 ，将 #y冲刺机会 变为 #b1 。"
   },
   {
     "PROPER_NAME": "冲刺机会",
     "NAMES": [
       "冲刺机会"
     ],
-    "DESCRIPTION": "你需要冲刺机会来打出 冲刺 牌。"
+    "DESCRIPTION": "你需要冲刺机会来打出 #y冲刺 牌。"
   },
   {
     "PROPER_NAME": "冲刺",
     "NAMES": [
       "冲刺"
     ],
-    "DESCRIPTION": "只能在有 冲刺机会 时打出，打出后失去1点 冲刺机会 。"
+    "DESCRIPTION": "只能在有 #y冲刺机会 时打出，打出后失去 #b1 点 #y冲刺机会 。"
   }
 ]

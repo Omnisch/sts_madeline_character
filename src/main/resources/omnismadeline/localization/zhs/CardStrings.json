@@ -20,5 +20,9 @@
   "${modID}:JumpInPlace": {
     "NAME": "原地跳",
     "DESCRIPTION": "${modID}:跳跃 1， ${modID}:落地 。 NL 获得!M!点临时 敏捷 。 NL 将这张牌放回你的手牌。"
+  },
+  "${modID}:DashForward": {
+    "NAME": "横冲",
+    "DESCRIPTION": "${modID}:冲刺 。 NL 给予1层 虚弱 和 易伤 。"
   }
 }

@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
+import omnismadeline.cards.DashForward;
 import omnismadeline.cards.Defend;
 import omnismadeline.cards.JumpInPlace;
 import omnismadeline.cards.Strike;
@@ -144,12 +145,12 @@ public class MadelineCharacter extends CustomPlayer {
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
         retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(JumpInPlace.ID);
+        retVal.add(DashForward.ID);
 
         return retVal;
     }

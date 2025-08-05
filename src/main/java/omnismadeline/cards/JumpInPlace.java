@@ -2,9 +2,11 @@ package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DiscardAction;
+import com.megacrit.cardcrawl.actions.utility.ReApplyPowersAction;
 import com.megacrit.cardcrawl.actions.watcher.FlickerReturnToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
@@ -39,11 +41,16 @@ public class JumpInPlace extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscardAction(p, p, 1, false));
-        if (
-                (!p.hasPower(DashChancePower.POWER_ID)) ||
-                (p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount < 0)
-        )
+
+        if (!p.hasPower(DashChancePower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 1), 1));
+        } else {
+            int debt = p.getPower(DashChancePower.POWER_ID).amount;
+            if (debt <= 0) {
+                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -debt + 1), -debt + 1));
+            }
+        }
+
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
     }
