@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import omnismadeline.character.MadelineCharacter;
+import omnismadeline.powers.DashChancePower;
 import omnismadeline.util.CardStats;
 
 public class JumpInPlace extends BaseCard {
@@ -38,6 +39,11 @@ public class JumpInPlace extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DiscardAction(p, p, 1, false));
+        if (
+                (!p.hasPower(DashChancePower.POWER_ID)) ||
+                (p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount < 0)
+        )
+            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 1), 1));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
     }

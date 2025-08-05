@@ -4,5 +4,12 @@
     "DESCRIPTIONS": [
       "You are Very Cool and Strong."
     ]
+  },
+  "${modID}:DashChance": {
+    "NAME": "冲刺机会",
+    "DESCRIPTIONS": [
+      "你还可以使用 #b",
+      " 次 #y冲刺 。"
+    ]
   }
 }

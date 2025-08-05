@@ -32,7 +32,7 @@
     "NAMES": [
       "落地"
     ],
-    "DESCRIPTION": "若你没有 冲刺机会 ，获得1点 冲刺机会 。"
+    "DESCRIPTION": "若你没有 #y冲刺机会 ，获得 #b1 点 #y冲刺机会 。"
   },
   {
     "PROPER_NAME": "冲刺机会",
