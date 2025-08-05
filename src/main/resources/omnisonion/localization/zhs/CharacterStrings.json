@@ -1,8 +1,8 @@
 {
-  "${modID}:OmnisOnion": {
+  "${modID}:OmnisMadeline": {
     "NAMES": [
-      "洋葱",
-      "洋葱"
+      "玛德琳",
+      "玛德琳"
     ],
     "TEXT": [
       "这是第一行描述。 NL 这是第二行描述。",

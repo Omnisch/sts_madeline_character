@@ -3,7 +3,7 @@ package omnisonion.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
-import omnisonion.OnionMod;
+import omnisonion.MadelineMod;
 import omnisonion.util.CardStats;
 import omnisonion.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
@@ -25,7 +25,7 @@ import static omnisonion.util.TextureLoader.getCardTextureString;
 public abstract class BaseCard extends CustomCard {
     final private static Map<String, DynamicVariable> customVars = new HashMap<>();
 
-    protected static String makeID(String name) { return OnionMod.makeID(name); }
+    protected static String makeID(String name) { return MadelineMod.makeID(name); }
     protected CardStrings cardStrings;
 
     protected boolean upgradesDescription;
@@ -457,7 +457,7 @@ public abstract class BaseCard extends CustomCard {
             {
                 if (cardStrings.UPGRADE_DESCRIPTION == null)
                 {
-                    OnionMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
+                    MadelineMod.logger.error("Card " + cardID + " upgrades description and has null upgrade description.");
                 }
                 else
                 {

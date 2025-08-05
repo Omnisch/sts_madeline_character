@@ -1,6 +1,6 @@
 package omnisonion.util;
 
-import static omnisonion.OnionMod.audioPath;
+import static omnisonion.MadelineMod.audioPath;
 
 public class Sounds {
     public static String TEST_SOUND = audioPath("test.wav"); //Load audio using a given path

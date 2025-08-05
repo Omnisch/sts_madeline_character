@@ -6,13 +6,13 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnisonion.character.OnionCharacter;
+import omnisonion.character.MadelineCharacter;
 import omnisonion.util.CardStats;
 
 public class Strike extends BaseCard {
     public static final String ID = makeID(Strike.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            OnionCharacter.Meta.CARD_COLOR, // The card color.
+            MadelineCharacter.Meta.CARD_COLOR, // The card color.
             CardType.ATTACK,    // The type. ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.BASIC,   // Rarity. BASIC is for starting cards, then there's COMMON / UNCOMMON / RARE,
             // and then SPECIAL is for cards you only get from events.

@@ -4,7 +4,7 @@ import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.interfaces.*;
 import omnisonion.cards.BaseCard;
-import omnisonion.character.OnionCharacter;
+import omnisonion.character.MadelineCharacter;
 import omnisonion.util.GeneralUtils;
 import omnisonion.util.KeywordInfo;
 import omnisonion.util.Sounds;
@@ -32,7 +32,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 @SpireInitializer
-public class OnionMod implements
+public class MadelineMod implements
         EditCardsSubscriber,
         EditCharactersSubscriber,
         EditStringsSubscriber,
@@ -53,12 +53,12 @@ public class OnionMod implements
 
     //This will be called by ModTheSpire because of the @SpireInitializer annotation at the top of the class.
     public static void initialize() {
-        new OnionMod();
+        new MadelineMod();
 
-        OnionCharacter.Meta.registerColor();
+        MadelineCharacter.Meta.registerColor();
     }
 
-    public OnionMod() {
+    public MadelineMod() {
         BaseMod.subscribe(this); //This will make BaseMod trigger all the subscribers at their appropriate times.
         logger.info(modID + " subscribed to BaseMod.");
     }
@@ -231,7 +231,7 @@ public class OnionMod implements
      * Checks the expected resources path based on the package name.
      */
     private static String checkResourcesPath() {
-        String name = OnionMod.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
+        String name = MadelineMod.class.getName(); //getPackage can be iffy with patching, so class name is used instead.
         int separator = name.indexOf('.');
         if (separator > 0)
             name = name.substring(0, separator);
@@ -242,7 +242,7 @@ public class OnionMod implements
             throw new RuntimeException("\n\tFailed to find resources folder; expected it to be at  \"resources/" + name + "\"." +
                     " Either make sure the folder under resources has the same name as your mod's package, or change the line\n" +
                     "\t\"private static final String resourcesFolder = checkResourcesPath();\"\n" +
-                    "\tat the top of the " + OnionMod.class.getSimpleName() + " java file.");
+                    "\tat the top of the " + MadelineMod.class.getSimpleName() + " java file.");
         }
         if (!resources.child("images").exists()) {
             throw new RuntimeException("\n\tFailed to find the 'images' folder in the mod's 'resources/" + name + "' folder; Make sure the " +
@@ -265,7 +265,7 @@ public class OnionMod implements
             if (annotationDB == null)
                 return false;
             Set<String> initializers = annotationDB.getAnnotationIndex().getOrDefault(SpireInitializer.class.getName(), Collections.emptySet());
-            return initializers.contains(OnionMod.class.getName());
+            return initializers.contains(MadelineMod.class.getName());
         }).findFirst();
         if (infos.isPresent()) {
             info = infos.get();
@@ -287,6 +287,6 @@ public class OnionMod implements
     @Override
     public void receiveEditCharacters() {
         logger.info("[Onion] receiveEditCharacters called!");
-        OnionCharacter.Meta.registerCharacter();
+        MadelineCharacter.Meta.registerCharacter();
     }
 }

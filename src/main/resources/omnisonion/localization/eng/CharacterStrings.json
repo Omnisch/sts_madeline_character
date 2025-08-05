@@ -1,8 +1,8 @@
 {
-  "${modID}:OmnisOnion": {
+  "${modID}:OmnisMadeline": {
     "NAMES": [
-      "Onion",
-      "onion"
+      "Madeline",
+      "madeline"
     ],
     "TEXT": [
       "Line #1 of character select description. NL Line 2 of character select description.",

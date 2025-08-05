@@ -1,6 +1,6 @@
 package omnisonion.util;
 
-import omnisonion.OnionMod;
+import omnisonion.MadelineMod;
 import com.badlogic.gdx.Files;
 import com.badlogic.gdx.backends.lwjgl.LwjglFileHandle;
 import com.badlogic.gdx.files.FileHandle;
@@ -20,7 +20,7 @@ public class IssueChecks {
     private static void characterAssetsCheck() {
         boolean validCharAssets = false;
 
-        FileHandle charResources = new LwjglFileHandle(OnionMod.characterPath(""), Files.FileType.Internal);
+        FileHandle charResources = new LwjglFileHandle(MadelineMod.characterPath(""), Files.FileType.Internal);
         if (charResources.exists() && charResources.isDirectory()) {
             validCharAssets = true;
         }

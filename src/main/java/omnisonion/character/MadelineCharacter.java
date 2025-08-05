@@ -26,10 +26,10 @@ import omnisonion.cards.Strike;
 
 import java.util.ArrayList;
 
-import static omnisonion.OnionMod.characterPath;
-import static omnisonion.OnionMod.makeID;
+import static omnisonion.MadelineMod.characterPath;
+import static omnisonion.MadelineMod.makeID;
 
-public class OnionCharacter extends CustomPlayer {
+public class MadelineCharacter extends CustomPlayer {
     //Stats
     public static final int ENERGY_PER_TURN = 3;
     public static final int MAX_HP = 70;
@@ -38,7 +38,7 @@ public class OnionCharacter extends CustomPlayer {
     public static final int ORB_SLOTS = 0;
 
     //Strings
-    private static final String ID = makeID("OmnisOnion"); //This should match whatever you have in the CharacterStrings.json file
+    private static final String ID = makeID("OmnisMadeline"); //This should match whatever you have in the CharacterStrings.json file
     private static String[] getNames() { return CardCrawlGame.languagePack.getCharacterString(ID).NAMES; }
     private static String[] getText() { return CardCrawlGame.languagePack.getCharacterString(ID).TEXT; }
 
@@ -47,10 +47,10 @@ public class OnionCharacter extends CustomPlayer {
         //These are used to identify your character, as well as your character's card color.
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
-        public static PlayerClass OMNISONION;
-        @SpireEnum(name = "ONION_LILAC") // These two MUST match. Change it to something unique for your character.
+        public static PlayerClass OMNISMADELINE;
+        @SpireEnum(name = "LILAC") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
-        @SpireEnum(name = "ONION_LILAC") @SuppressWarnings("unused")
+        @SpireEnum(name = "LILAC") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
 
         //Character select images
@@ -80,7 +80,7 @@ public class OnionCharacter extends CustomPlayer {
         }
 
         public static void registerCharacter() {
-            BaseMod.addCharacter(new OnionCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
+            BaseMod.addCharacter(new MadelineCharacter(), CHAR_SELECT_BUTTON, CHAR_SELECT_PORTRAIT);
         }
     }
 
@@ -117,8 +117,8 @@ public class OnionCharacter extends CustomPlayer {
 
     //Actual character class code below this point
 
-    public OnionCharacter() {
-        super(getNames()[0], Meta.OMNISONION,
+    public MadelineCharacter() {
+        super(getNames()[0], Meta.OMNISMADELINE,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
                 new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
 
@@ -261,6 +261,6 @@ public class OnionCharacter extends CustomPlayer {
     @Override
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
-        return new OnionCharacter();
+        return new MadelineCharacter();
     }
 }
