@@ -19,10 +19,16 @@
   },
   "${modID}:JumpInPlace": {
     "NAME": "原地跳",
-    "DESCRIPTION": "${modID}:跳跃 1， ${modID}:落地 。 NL 获得!M!点临时 敏捷 。 NL 将这张牌放回你的手牌。"
+    "DESCRIPTION": "${modID}:跳跃 1， ${modID}:落地 。 NL 获得!M!点临时 敏捷 。 NL 将这张牌放回你的手牌。",
+    "EXTENDED_DESCRIPTION": [
+      "我没有手牌 NL 可以丢弃！"
+    ]
   },
   "${modID}:DashForward": {
     "NAME": "横冲",
-    "DESCRIPTION": "${modID}:冲刺 。 NL 给予1层 虚弱 和 易伤 。"
+    "DESCRIPTION": "${modID}:冲刺 。 NL 给予1层 虚弱 和 易伤 。",
+    "EXTENDED_DESCRIPTION": [
+      "没有足够的 NL 冲刺机会！"
+    ]
   }
 }

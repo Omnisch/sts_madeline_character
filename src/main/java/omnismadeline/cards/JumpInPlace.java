@@ -14,6 +14,8 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.powers.DashChancePower;
 import omnismadeline.util.CardStats;
 
+import static omnismadeline.util.MadelineUtils.canJump;
+
 public class JumpInPlace extends BaseCard {
     public static final String ID = makeID(JumpInPlace.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -56,7 +58,25 @@ public class JumpInPlace extends BaseCard {
     }
 
     @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        } else if (canJump(p, 1)) {
+            return true;
+        } else {
+            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            return false;
+        }
+    }
+
+    @Override
     public AbstractCard makeCopy() {
         return new JumpInPlace();
+    }
+
+    @Override
+    public void triggerOnManualDiscard() {
+        super.triggerOnManualDiscard();
     }
 }

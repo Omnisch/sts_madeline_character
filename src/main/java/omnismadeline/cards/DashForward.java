@@ -11,6 +11,8 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.powers.DashChancePower;
 import omnismadeline.util.CardStats;
 
+import static omnismadeline.util.MadelineUtils.canDash;
+
 public class DashForward extends BaseCard {
     public static final String ID = makeID(DashForward.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -39,7 +41,7 @@ public class DashForward extends BaseCard {
     @Override
     public void triggerOnGlowCheck() {
         super.triggerOnGlowCheck();
-        if (this.canDash()) {
+        if (canDash(AbstractDungeon.player)) {
             this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
         }
     }
@@ -49,21 +51,16 @@ public class DashForward extends BaseCard {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
-        } else if (!this.canDash()) {
-            this.cantUseMessage = cardStrings.UPGRADE_DESCRIPTION;
-            return false;
-        } else {
+        } else if (canDash(p)) {
             return true;
+        } else {
+            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            return false;
         }
     }
 
     @Override
     public AbstractCard makeCopy() {
         return new DashForward();
-    }
-
-    private boolean canDash() {
-        AbstractPlayer p = AbstractDungeon.player;
-        return p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount > 0;
     }
 }
