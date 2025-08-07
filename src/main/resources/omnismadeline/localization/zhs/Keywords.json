@@ -21,18 +21,25 @@
     "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
   },
   {
-    "PROPER_NAME": "跳跃",
+    "PROPER_NAME": "着陆",
     "NAMES": [
-      "跳跃"
+      "着陆"
     ],
-    "DESCRIPTION": "只能在有其他手牌时打出，丢弃等同于数值的手牌。"
+    "DESCRIPTION": "保持你的 #y冲刺机会 不小于 #b1 点。"
   },
   {
-    "PROPER_NAME": "落地",
+    "PROPER_NAME": "落脚",
     "NAMES": [
-      "落地"
+      "落脚"
     ],
-    "DESCRIPTION": "若你的 #y冲刺机会 小于 #b1 ，将 #y冲刺机会 变为 #b1 。"
+    "DESCRIPTION": "进入这一 #y姿态 时，若你没有 #y冲刺机会 ，获得 #b1 点 #y冲刺机会 。"
+  },
+  {
+    "PROPER_NAME": "凌空",
+    "NAMES": [
+      "凌空"
+    ],
+    "DESCRIPTION": "你不能打出 #y跳跃 。"
   },
   {
     "PROPER_NAME": "冲刺机会",
@@ -42,10 +49,31 @@
     "DESCRIPTION": "你需要冲刺机会来打出 #y冲刺 牌。"
   },
   {
+    "PROPER_NAME": "移动",
+    "NAMES": [
+      "移动"
+    ],
+    "DESCRIPTION": "选择等同于数值的手牌，打出其中的 #y环境 ，丢弃其他牌。只能在手牌足够时打出。"
+  },
+  {
+    "PROPER_NAME": "环境",
+    "NAMES": [
+      "环境"
+    ],
+    "DESCRIPTION": "可以在 #y移动 时打出而非丢弃。"
+  },
+  {
+    "PROPER_NAME": "跳跃",
+    "NAMES": [
+      "跳跃"
+    ],
+    "DESCRIPTION": "进入 #y凌空 。"
+  },
+  {
     "PROPER_NAME": "冲刺",
     "NAMES": [
       "冲刺"
     ],
-    "DESCRIPTION": "只能在有 #y冲刺机会 时打出，打出后失去 #b1 点 #y冲刺机会 。"
+    "DESCRIPTION": "只能在有 #y冲刺机会 时打出，失去 #b1 点 #y冲刺机会 。"
   }
 ]

@@ -1,23 +1,21 @@
 package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.common.DiscardAction;
-import com.megacrit.cardcrawl.actions.utility.ReApplyPowersAction;
-import com.megacrit.cardcrawl.actions.watcher.FlickerReturnToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
+import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
+import omnismadeline.enums.CustomTags;
 import omnismadeline.powers.DashChancePower;
 import omnismadeline.util.CardStats;
 
 import static omnismadeline.util.MadelineUtils.canJump;
 
-public class JumpInPlace extends BaseCard {
-    public static final String ID = makeID(JumpInPlace.class.getSimpleName());
+public class StandingJump extends BaseCard {
+    public static final String ID = makeID(StandingJump.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR, // The card color.
             CardType.SKILL,     // The type. ATTACK / SKILL / POWER / CURSE / STATUS
@@ -34,24 +32,26 @@ public class JumpInPlace extends BaseCard {
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 
-    public JumpInPlace() {
+    public StandingJump() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
         setMagic(MAGIC, UPG_MAGIC); // Sets the card's damage and how much it changes when upgraded.
         this.returnToHand = true;
+
+        tags.add(CustomTags.JUMP);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DiscardAction(p, p, 1, false));
+        this.addToBot(new MadelineMoveAction(p, p, 1));
 
-        if (!p.hasPower(DashChancePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 1), 1));
-        } else {
-            int debt = p.getPower(DashChancePower.POWER_ID).amount;
-            if (debt <= 0) {
-                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -debt + 1), -debt + 1));
-            }
-        }
+//        if (!p.hasPower(DashChancePower.POWER_ID)) {
+//            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 1), 1));
+//        } else {
+//            int debt = p.getPower(DashChancePower.POWER_ID).amount;
+//            if (debt <= 0) {
+//                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -debt + 1), -debt + 1));
+//            }
+//        }
 
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
@@ -72,7 +72,7 @@ public class JumpInPlace extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new JumpInPlace();
+        return new StandingJump();
     }
 
     @Override

@@ -10,9 +10,6 @@ public class MadelineUtils {
     }
 
     public static boolean canJump(AbstractPlayer p, int gap) {
-        if (p.hand.group.size() > gap)
-            return true;
-
-        return false;
+        return p.hand.group.size() > gap;
     }
 }

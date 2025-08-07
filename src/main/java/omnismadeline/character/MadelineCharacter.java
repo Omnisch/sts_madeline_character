@@ -22,7 +22,7 @@ import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.DashForward;
 import omnismadeline.cards.Defend;
-import omnismadeline.cards.JumpInPlace;
+import omnismadeline.cards.StandingJump;
 import omnismadeline.cards.Strike;
 
 import java.util.ArrayList;
@@ -149,7 +149,7 @@ public class MadelineCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(JumpInPlace.ID);
+        retVal.add(StandingJump.ID);
         retVal.add(DashForward.ID);
 
         return retVal;
