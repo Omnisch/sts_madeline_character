@@ -41,7 +41,6 @@ public class DashForward extends BaseCard {
         super(ID, info); // Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
-        setCostUpgrade(0);
 
         tags.add(CustomTags.DASH);
     }

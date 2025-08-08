@@ -25,14 +25,7 @@
     "NAMES": [
       "着陆"
     ],
-    "DESCRIPTION": "保持你的 #y冲刺机会 不小于 #b1 点。"
-  },
-  {
-    "PROPER_NAME": "落脚",
-    "NAMES": [
-      "落脚"
-    ],
-    "DESCRIPTION": "进入这一 #y姿态 时，若你没有 #y冲刺机会 ，获得 #b1 点 #y冲刺机会 。"
+    "DESCRIPTION": "每回合一次，若你没有 #y冲刺机会 ，获得 #b1 点 #y冲刺机会 。"
   },
   {
     "PROPER_NAME": "凌空",
@@ -46,7 +39,7 @@
     "NAMES": [
       "冲刺机会"
     ],
-    "DESCRIPTION": "你需要冲刺机会来打出 #y冲刺 牌。"
+    "DESCRIPTION": "你需要冲刺机会来打出 #y冲刺 。"
   },
   {
     "PROPER_NAME": "移动",
@@ -67,7 +60,7 @@
     "NAMES": [
       "跳跃"
     ],
-    "DESCRIPTION": "进入 #y凌空 。"
+    "DESCRIPTION": "在下一次 #y着陆 前，你只能打出一次 #y跳跃 。"
   },
   {
     "PROPER_NAME": "冲刺",

@@ -8,12 +8,9 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
-import static omnismadeline.util.MadelineUtils.canJump;
-
-public class StandingJump extends BaseCard {
+public class StandingJump extends BaseJumpCard {
     public static final String ID = makeID(StandingJump.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR, // The card color.
@@ -34,13 +31,14 @@ public class StandingJump extends BaseCard {
     public StandingJump() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
         setMagic(MAGIC, UPG_MAGIC); // Sets the card's damage and how much it changes when upgraded.
-        this.returnToHand = true;
 
-        tags.add(CustomTags.JUMP);
+        this.returnToHand = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        super.use(p, m);
+
         this.addToBot(new MadelineMoveAction(p, p, 1));
 
 //        if (!p.hasPower(DashChancePower.POWER_ID)) {
@@ -54,19 +52,6 @@ public class StandingJump extends BaseCard {
 
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
-    }
-
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
-        } else if (canJump(p, 1)) {
-            return true;
-        } else {
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            return false;
-        }
     }
 
     @Override

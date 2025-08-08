@@ -122,6 +122,8 @@ public class MadelineMod implements
                 localizationPath(lang, "PowerStrings.json"));
         BaseMod.loadCustomStringsFile(RelicStrings.class,
                 localizationPath(lang, "RelicStrings.json"));
+        BaseMod.loadCustomStringsFile(StanceStrings.class,
+                localizationPath(lang, "StanceStrings.json"));
         BaseMod.loadCustomStringsFile(UIStrings.class,
                 localizationPath(lang, "UIStrings.json"));
     }

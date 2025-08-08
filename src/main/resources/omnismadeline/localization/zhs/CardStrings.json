@@ -21,19 +21,21 @@
     "NAME": "立定跳",
     "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 1。 NL 获得!M!点临时 敏捷 。 NL 将这张牌放回你的手牌。",
     "EXTENDED_DESCRIPTION": [
-      "我没有足够 NL 移动的手牌！"
+      "我没有足够 NL 移动的手牌！",
+      "凌空姿态不能 NL 打出跳跃！"
     ]
   },
   "${modID}:DashForward": {
     "NAME": "横冲",
     "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 1。 NL 造成!D!点伤害， NL 给予!M!层 易伤 。",
     "EXTENDED_DESCRIPTION": [
+      "我没有足够 NL 移动的手牌！",
       "我没有足够的 NL 冲刺机会！"
     ]
   },
   "${modID}:CrumbleBlock": {
     "NAME": "碎石平台",
-    "DESCRIPTION": "${modID}:环境 ， ${modID}:落脚 。 NL 将这张牌放入你的抽牌堆。",
-    "UPGRADE_DESCRIPTION": "保留 。 NL ${modID}:环境 ， ${modID}:落脚 。 NL 将这张牌放入你的抽牌堆。"
+    "DESCRIPTION": "${modID}:环境 ， ${modID}:着陆 。 NL 将这张牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL ${modID}:环境 ， ${modID}:着陆 。 NL 将这张牌放入你的抽牌堆。"
   }
 }

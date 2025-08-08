@@ -20,6 +20,11 @@ public abstract class BaseEnvironmentCard extends BaseCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return isAboutToMove;
+        boolean canUse = super.canUse(p, m);
+        if (!canUse) {
+            return false;
+        } else {
+            return isAboutToMove;
+        }
     }
 }
