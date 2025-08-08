@@ -1,5 +1,6 @@
 package omnismadeline.cards;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -22,18 +23,22 @@ public class CrumbleBlock extends BaseEnvironmentCard {
             -2                  // The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
     );
 
+    // These will be used in the constructor. Technically you can just use the values directly,
+    // but constants at the top of the file are easy to adjust.
+    private static final int BLOCK = 6;
+    private static final int UPG_BLOCK = 9;
+
     public CrumbleBlock() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
-        setSelfRetain(false, true);
-
-        this.shuffleBackIntoDrawPile = true;
+        setBlock(BLOCK, UPG_BLOCK);
+        setSelfRetain(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
-
         this.addToBot(new ChangeStanceAction(new LandStance()));
+        this.addToBot(new GainBlockAction(p, p, block));
     }
 
     @Override
