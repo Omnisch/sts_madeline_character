@@ -9,8 +9,11 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
+import omnismadeline.cards.BaseEnvironmentCard;
 import omnismadeline.enums.CustomActions;
 import omnismadeline.enums.CustomTags;
+
+import static omnismadeline.MadelineMod.modID;
 
 public class MadelineMoveAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
@@ -72,6 +75,7 @@ public class MadelineMoveAction extends AbstractGameAction {
                     this.madelineMove(c);
                 }
 
+                this.tickDuration();
                 return;
             }
 
@@ -100,10 +104,11 @@ public class MadelineMoveAction extends AbstractGameAction {
 
     private void madelineMove(AbstractCard c) {
         if (c.tags.contains(CustomTags.ENVIRONMENT)) {
+            ((BaseEnvironmentCard)c).isAboutToMove = true;
             if (target != p) {
-                this.addToBot(new NewQueueCardAction(c, target, false, true));
+                this.addToTop(new NewQueueCardAction(c, target, false, true));
             } else {
-                this.addToBot(new NewQueueCardAction(c, true, false, true));
+                this.addToTop(new NewQueueCardAction(c, true, false, true));
             }
         } else {
             this.p.hand.moveToDiscardPile(c);
@@ -111,7 +116,7 @@ public class MadelineMoveAction extends AbstractGameAction {
     }
 
     static {
-        uiStrings = CardCrawlGame.languagePack.getUIString("omnismadeline:MadelineMoveAction");
+        uiStrings = CardCrawlGame.languagePack.getUIString(modID + ":" + MadelineMoveAction.class.getSimpleName());
         TEXT = uiStrings.TEXT;
     }
 }

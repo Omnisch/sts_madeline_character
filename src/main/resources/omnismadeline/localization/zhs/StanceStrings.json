@@ -1,17 +1,17 @@
 {
-  "Landed": {
+  "${modID}:Land": {
     "NAME": "着陆",
     "DESCRIPTION": [
       "保持你的 #y冲刺机会 不小于 #b1 点。"
     ]
   },
-  "Stay": {
+  "${modID}:Stay": {
     "NAME": "落脚",
     "DESCRIPTION": [
       "进入这一 #y姿态 时，若你没有 #y冲刺机会 ，获得 #b1 点 #y冲刺机会 。"
     ]
   },
-  "Soar": {
+  "${modID}:Soar": {
     "NAME": "凌空",
     "DESCRIPTION": [
       "你不能打出 #y跳跃 。"

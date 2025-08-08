@@ -9,7 +9,6 @@ import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
-import omnismadeline.powers.DashChancePower;
 import omnismadeline.util.CardStats;
 
 import static omnismadeline.util.MadelineUtils.canJump;
@@ -73,10 +72,5 @@ public class StandingJump extends BaseCard {
     @Override
     public AbstractCard makeCopy() {
         return new StandingJump();
-    }
-
-    @Override
-    public void triggerOnManualDiscard() {
-        super.triggerOnManualDiscard();
     }
 }

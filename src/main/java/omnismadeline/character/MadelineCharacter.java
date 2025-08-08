@@ -20,10 +20,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
-import omnismadeline.cards.DashForward;
-import omnismadeline.cards.Defend;
-import omnismadeline.cards.StandingJump;
-import omnismadeline.cards.Strike;
+import omnismadeline.cards.*;
 
 import java.util.ArrayList;
 
@@ -148,9 +145,9 @@ public class MadelineCharacter extends CustomPlayer {
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
         retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
         retVal.add(StandingJump.ID);
         retVal.add(DashForward.ID);
+        retVal.add(CrumbleBlock.ID);
 
         return retVal;
     }

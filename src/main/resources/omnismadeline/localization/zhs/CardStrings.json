@@ -30,5 +30,10 @@
     "EXTENDED_DESCRIPTION": [
       "我没有足够的 NL 冲刺机会！"
     ]
+  },
+  "${modID}:CrumbleBlock": {
+    "NAME": "碎石平台",
+    "DESCRIPTION": "${modID}:环境 ， ${modID}:落脚 。 NL 将这张牌放入你的抽牌堆。",
+    "UPGRADE_DESCRIPTION": "保留 。 NL ${modID}:环境 ， ${modID}:落脚 。 NL 将这张牌放入你的抽牌堆。"
   }
 }
