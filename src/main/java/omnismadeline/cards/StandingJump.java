@@ -1,6 +1,7 @@
 package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.powers.DexterityPower;
 import com.megacrit.cardcrawl.powers.LoseDexterityPower;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
+import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
 public class StandingJump extends BaseJumpCard {
@@ -25,24 +27,28 @@ public class StandingJump extends BaseJumpCard {
 
     // These will be used in the constructor. Technically you can just use the values directly,
     // but constants at the top of the file are easy to adjust.
+    private static final int GAP = 1;
     private static final int MAGIC = 2;
     private static final int UPG_MAGIC = 1;
 
     public StandingJump() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
         setMagic(MAGIC, UPG_MAGIC); // Sets the card's damage and how much it changes when upgraded.
-        setCustomVar("gap", 1);
 
         this.returnToHand = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        super.use(p, m);
-
-        this.addToBot(new MadelineMoveAction(p, p, customVar("gap")));
+        this.addToBot(new ChangeStanceAction(new SoarStance()));
+        this.addToBot(new MadelineMoveAction(p, p, GAP));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return canUseJump(p, m, GAP);
     }
 
     @Override

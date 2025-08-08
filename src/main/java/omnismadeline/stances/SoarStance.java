@@ -4,31 +4,26 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
-import static omnismadeline.MadelineMod.modID;
+import static omnismadeline.MadelineMod.makeID;
 
 public class SoarStance extends AbstractStance {
-    public static final String STANCE_ID = modID + ":" + "Soar";
-    private static final StanceStrings stanceStrings;
+    public static final String STANCE_ID = makeID("Soar");
+    private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
     //private static long sfxId;
 
     public SoarStance() {
         this.ID = STANCE_ID;
-        this.name = stanceStrings.NAME;
+        this.name = stanceString.NAME;
         this.updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description = stanceStrings.DESCRIPTION[0];
+        this.description = stanceString.DESCRIPTION[0];
     }
 
     @Override
     public void updateAnimation() {
         super.updateAnimation();
-    }
-
-    static {
-        stanceStrings = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
-        //sfxId = -1L;
     }
 }

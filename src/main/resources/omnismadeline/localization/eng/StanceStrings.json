@@ -1,3 +1,14 @@
 {
-
+  "${modID}:Land": {
+    "NAME": "Land",
+    "DESCRIPTION": [
+      "default"
+    ]
+  },
+  "${modID}:Soar": {
+    "NAME": "Soar",
+    "DESCRIPTION": [
+      "default"
+    ]
+  }
 }

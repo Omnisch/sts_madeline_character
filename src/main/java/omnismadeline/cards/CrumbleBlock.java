@@ -26,7 +26,7 @@ public class CrumbleBlock extends BaseEnvironmentCard {
     // These will be used in the constructor. Technically you can just use the values directly,
     // but constants at the top of the file are easy to adjust.
     private static final int BLOCK = 6;
-    private static final int UPG_BLOCK = 9;
+    private static final int UPG_BLOCK = 3;
 
     public CrumbleBlock() {
         super(ID, info); // Pass the required information to the BaseCard constructor.

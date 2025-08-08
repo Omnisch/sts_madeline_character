@@ -10,7 +10,6 @@ import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.Strike_Red;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
@@ -18,9 +17,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.relics.BurningBlood;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.*;
+import omnismadeline.relics.ClimbingBackpackRelic;
 
 import java.util.ArrayList;
 
@@ -46,9 +45,9 @@ public class MadelineCharacter extends CustomPlayer {
         //Library color is basically the same as card color, but you need both because that's how the game was made.
         @SpireEnum
         public static PlayerClass OMNISMADELINE;
-        @SpireEnum(name = "LILAC") // These two MUST match. Change it to something unique for your character.
+        @SpireEnum(name = "OMNIS_LILAC") // These two MUST match. Change it to something unique for your character.
         public static AbstractCard.CardColor CARD_COLOR;
-        @SpireEnum(name = "LILAC") @SuppressWarnings("unused")
+        @SpireEnum(name = "OMNIS_LILAC") @SuppressWarnings("unused")
         public static CardLibrary.LibraryType LIBRARY_COLOR;
 
         //Character select images
@@ -67,7 +66,7 @@ public class MadelineCharacter extends CustomPlayer {
         private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
 
         //This is used to color *some* images, but NOT the actual cards. For that, edit the images in the cardback folder!
-        private static final Color cardColor = new Color(128f/255f, 128f/255f, 128f/255f, 1f);
+        private static final Color cardColor = new Color(1f, 180f/255f, 205f/255f, 1f);
 
         //Methods that will be used in the main mod file
         public static void registerColor() {
@@ -156,7 +155,7 @@ public class MadelineCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BurningBlood.ID);
+        retVal.add(ClimbingBackpackRelic.ID);
 
         return retVal;
     }
@@ -165,7 +164,7 @@ public class MadelineCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new Strike_Red();
+        return new DashForward();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

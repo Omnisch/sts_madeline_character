@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "Gain [E] at the start of your turn. [E] is an energy icon."
     ]
+  },
+  "${modID}:ClimbingBackpack": {
+    "NAME": "登山背包",
+    "FLAVOR": "玛德琳的登山背包，里面装了什么呢？",
+    "DESCRIPTIONS": [
+      "在每场战斗开始时，你处于 #y着陆 姿态。"
+    ]
   }
 }

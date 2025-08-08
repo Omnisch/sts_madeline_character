@@ -8,15 +8,13 @@ public abstract class BaseMoveCard extends BaseCard {
 
     public BaseMoveCard(String ID, CardStats info) {
         super(ID, info);
-        setCustomVar("gap", 0);
     }
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+    protected boolean canUseMove(AbstractPlayer p, AbstractMonster m, int gap) {
         boolean canUse = super.canUse(p, m);
         if (!canUse) {
             return false;
-        } else if (p.hand.group.size() > customVar("gap")) {
+        } else if (p.hand.group.size() > gap) {
             return true;
         } else {
             this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];

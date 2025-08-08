@@ -6,25 +6,26 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 
-import static omnismadeline.MadelineMod.modID;
+import static omnismadeline.MadelineMod.makeID;
 import static omnismadeline.util.MadelineUtils.*;
 
 public class LandStance extends AbstractStance {
-    public static final String STANCE_ID = modID + ":" + "Land";
-    private static final StanceStrings stanceStrings;
+    public static final String STANCE_ID = makeID("Land");
+    private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
     //private static long sfxId;
     private final AbstractPlayer p;
 
     public LandStance() {
         this.ID = STANCE_ID;
-        this.name = stanceStrings.NAME;
+        this.name = stanceString.NAME;
         this.p = AbstractDungeon.player;
         this.updateDescription();
     }
 
     @Override
     public void updateDescription() {
-        this.description = stanceStrings.DESCRIPTION[0];
+        this.description = stanceString.DESCRIPTION[0];
+        System.out.println("[DEBUG] stance name = " + this.name);
     }
 
     @Override
@@ -44,10 +45,5 @@ public class LandStance extends AbstractStance {
         if (!canDash(p)) {
             refillDashes(p);
         }
-    }
-
-    static {
-        stanceStrings = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
-        //sfxId = -1L;
     }
 }

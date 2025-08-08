@@ -18,13 +18,12 @@ public abstract class BaseJumpCard extends BaseMoveCard {
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        this.addToBot(new ChangeStanceAction(new SoarStance()));
+    public void use(AbstractPlayer p, AbstractMonster m) {
+
     }
 
-    @Override
-    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
+    protected boolean canUseJump(AbstractPlayer p, AbstractMonster m, int gap) {
+        boolean canUse = super.canUse(p, m) && canUseMove(p, m, gap);
         if (!canUse) {
             return false;
         } else if (!Objects.equals(p.stance.ID, SoarStance.STANCE_ID)) {
