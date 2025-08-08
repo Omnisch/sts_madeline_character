@@ -8,7 +8,7 @@ public abstract class BaseMoveCard extends BaseCard {
 
     public BaseMoveCard(String ID, CardStats info) {
         super(ID, info);
-        setCustomVar("gap", 1);
+        setCustomVar("gap", 0);
     }
 
     @Override

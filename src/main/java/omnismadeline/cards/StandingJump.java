@@ -31,6 +31,7 @@ public class StandingJump extends BaseJumpCard {
     public StandingJump() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
         setMagic(MAGIC, UPG_MAGIC); // Sets the card's damage and how much it changes when upgraded.
+        setCustomVar("gap", 1);
 
         this.returnToHand = true;
     }
@@ -39,17 +40,7 @@ public class StandingJump extends BaseJumpCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         super.use(p, m);
 
-        this.addToBot(new MadelineMoveAction(p, p, 1));
-
-//        if (!p.hasPower(DashChancePower.POWER_ID)) {
-//            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 1), 1));
-//        } else {
-//            int debt = p.getPower(DashChancePower.POWER_ID).amount;
-//            if (debt <= 0) {
-//                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -debt + 1), -debt + 1));
-//            }
-//        }
-
+        this.addToBot(new MadelineMoveAction(p, p, customVar("gap")));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
     }
