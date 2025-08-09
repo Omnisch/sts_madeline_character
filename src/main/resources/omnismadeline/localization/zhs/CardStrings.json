@@ -22,7 +22,7 @@
     "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 1。 NL 获得!M!点临时 敏捷 。 NL 将这张牌放回你的手牌。",
     "EXTENDED_DESCRIPTION": [
       "我没有足够 NL 移动的手牌！",
-      "凌空姿态不能 NL 打出跳跃！"
+      "我需要先着陆！"
     ]
   },
   "${modID}:DashForward": {

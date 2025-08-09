@@ -33,14 +33,15 @@ public class StandingJump extends BaseJumpCard {
 
     public StandingJump() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
-        setMagic(MAGIC, UPG_MAGIC); // Sets the card's damage and how much it changes when upgraded.
+        this.setMagic(MAGIC, UPG_MAGIC); // Sets the card's damage and how much it changes when upgraded.
 
         this.returnToHand = true;
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChangeStanceAction(new SoarStance()));
+        super.use(p, m);
+
         this.addToBot(new MadelineMoveAction(p, p, GAP));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
         this.addToBot(new ApplyPowerAction(p, p, new LoseDexterityPower(p, this.magicNumber), this.magicNumber));
@@ -48,7 +49,7 @@ public class StandingJump extends BaseJumpCard {
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        return canUseJump(p, m, GAP);
+        return this.canUseJump(p, m, GAP);
     }
 
     @Override

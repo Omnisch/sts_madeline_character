@@ -14,22 +14,22 @@ public abstract class BaseJumpCard extends BaseMoveCard {
     public BaseJumpCard(String ID, CardStats info) {
         super(ID, info);
 
-        tags.add(CustomTags.JUMP);
+        this.tags.add(CustomTags.JUMP);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-
+        this.addToBot(new ChangeStanceAction(new SoarStance()));
     }
 
     protected boolean canUseJump(AbstractPlayer p, AbstractMonster m, int gap) {
-        boolean canUse = super.canUse(p, m) && canUseMove(p, m, gap);
+        boolean canUse = super.canUse(p, m) && this.canUseMove(p, m, gap);
         if (!canUse) {
             return false;
         } else if (!Objects.equals(p.stance.ID, SoarStance.STANCE_ID)) {
             return true;
         } else {
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[1];
+            this.cantUseMessage = this.cardStrings.EXTENDED_DESCRIPTION[1];
             return false;
         }
     }

@@ -19,7 +19,7 @@ public class ClimbingBackpackRelic extends BaseRelic {
     }
 
     @Override
-    public void atPreBattle() {
+    public void atTurnStart() {
         AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new LandStance()));
     }
 

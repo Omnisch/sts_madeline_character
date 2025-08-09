@@ -17,7 +17,7 @@ import omnismadeline.util.CardStats;
 
 import static omnismadeline.util.MadelineUtils.canDash;
 
-public class DashForward extends BaseCard {
+public class DashForward extends BaseDashCard {
     public static final String ID = makeID(DashForward.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR, // The card color.
@@ -42,37 +42,20 @@ public class DashForward extends BaseCard {
         super(ID, info); // Pass the required information to the BaseCard constructor.
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
-
-        tags.add(CustomTags.DASH);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
+        super.use(p, m);
+
         this.addToBot(new MadelineMoveAction(m, p, GAP));
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
         this.addToBot(new ApplyPowerAction(m, p, new VulnerablePower(m, magicNumber, false), 1));
     }
 
     @Override
-    public void triggerOnGlowCheck() {
-        super.triggerOnGlowCheck();
-        if (canDash(AbstractDungeon.player)) {
-            this.glowColor = AbstractCard.GOLD_BORDER_GLOW_COLOR.cpy();
-        }
-    }
-
-    @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
-        boolean canUse = super.canUse(p, m);
-        if (!canUse) {
-            return false;
-        } else if (canDash(p)) {
-            return true;
-        } else {
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
-            return false;
-        }
+        return this.canUseDash(p, m, GAP);
     }
 
     @Override
