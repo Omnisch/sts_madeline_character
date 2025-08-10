@@ -1,7 +1,6 @@
 package omnismadeline.stances;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,13 +11,13 @@ import omnismadeline.powers.DashChancePower;
 import static omnismadeline.MadelineMod.makeID;
 import static omnismadeline.util.MadelineUtils.*;
 
-public class LandStance extends AbstractStance {
-    public static final String STANCE_ID = makeID("Land");
+public class StayStance extends AbstractStance {
+    public static final String STANCE_ID = makeID("Stay");
     private static final StanceStrings stanceString = CardCrawlGame.languagePack.getStanceString(STANCE_ID);
     //private static long sfxId;
     private final AbstractPlayer p;
 
-    public LandStance() {
+    public StayStance() {
         this.ID = STANCE_ID;
         this.name = stanceString.NAME;
         this.p = AbstractDungeon.player;
@@ -32,20 +31,6 @@ public class LandStance extends AbstractStance {
 
     @Override
     public void onEnterStance() {
-        refillDashes();
-    }
-
-    @Override
-    public void atStartOfTurn() {
-        refillDashes();
-    }
-
-    @Override
-    public void onPlayCard(AbstractCard card) {
-        refillDashes();
-    }
-
-    private void refillDashes() {
         if (!hasDashChances(p)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DashChancePower(p, 1), 1));
         }

@@ -103,13 +103,11 @@ public class MadelineMoveAction extends AbstractGameAction {
     }
 
     private void madelineMove(AbstractCard c) {
-        if (c.tags.contains(CustomTags.ENVIRONMENT)) {
-            ((BaseEnvironmentCard)c).isAboutToMove = true;
-            if (target != p) {
-                this.addToTop(new NewQueueCardAction(c, target, false, true));
-            } else {
-                this.addToTop(new NewQueueCardAction(c, true, false, true));
+        if (c.costForTurn <= p.energy.energy) {
+            if (c.tags.contains(CustomTags.ENVIRONMENT)) {
+                ((BaseEnvironmentCard)c).isAboutToMove = true;
             }
+            this.addToTop(new NewQueueCardAction(c, true, false, false));
         } else {
             this.p.hand.moveToDiscardPile(c);
         }

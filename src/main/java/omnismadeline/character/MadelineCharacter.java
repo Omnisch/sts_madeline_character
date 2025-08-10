@@ -20,6 +20,7 @@ import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.*;
 import omnismadeline.relics.ClimbingBackpackRelic;
+import omnismadeline.stances.LandStance;
 
 import java.util.ArrayList;
 
@@ -137,16 +138,16 @@ public class MadelineCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(Defend.ID);
-        retVal.add(StandingJump.ID);
         retVal.add(DashForward.ID);
-        retVal.add(CrumbleBlock.ID);
+        retVal.add(DashForward.ID);
+        retVal.add(Hop.ID);
+        retVal.add(Hop.ID);
+        retVal.add(Hop.ID);
+        retVal.add(Spring.ID);
+        retVal.add(Spring.ID);
+        retVal.add(Spring.ID);
+        retVal.add(Strike.ID);
+        retVal.add(Strike.ID);
 
         return retVal;
     }
@@ -260,5 +261,13 @@ public class MadelineCharacter extends CustomPlayer {
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
         return new MadelineCharacter();
+    }
+
+    // Make Madeline always in a stance.
+    @Override
+    public void preBattlePrep() {
+        super.preBattlePrep();
+
+        this.stance = new LandStance();
     }
 }

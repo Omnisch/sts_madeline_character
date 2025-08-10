@@ -1,10 +1,10 @@
 package omnismadeline.relics;
 
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.stances.LandStance;
+import omnismadeline.enums.CustomTags;
 
 import static omnismadeline.MadelineMod.makeID;
 
@@ -19,8 +19,12 @@ public class ClimbingBackpackRelic extends BaseRelic {
     }
 
     @Override
-    public void atTurnStart() {
-        AbstractDungeon.actionManager.addToBottom(new ChangeStanceAction(new LandStance()));
+    public void onPlayerEndTurn() {
+        for (AbstractCard card : AbstractDungeon.player.hand.group) {
+            if (card.tags.contains(CustomTags.DASH) || card.tags.contains(CustomTags.JUMP)) {
+                card.retain = true;
+            }
+        }
     }
 
     @Override

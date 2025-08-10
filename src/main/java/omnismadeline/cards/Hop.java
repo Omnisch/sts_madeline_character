@@ -1,14 +1,21 @@
 package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
+import omnismadeline.enums.CustomTags;
+import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
-public class Defend extends BaseCard {
-    public static final String ID = makeID(Defend.class.getSimpleName());
+import static omnismadeline.util.MadelineUtils.*;
+
+public class Hop extends BaseCard {
+    public static final String ID = makeID(Hop.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR, // The card color.
             CardType.SKILL,     // The type. ATTACK / SKILL / POWER / CURSE / STATUS
@@ -22,22 +29,46 @@ public class Defend extends BaseCard {
 
     // These will be used in the constructor. Technically you can just use the values directly,
     // but constants at the top of the file are easy to adjust.
+    private static final int GAP = 1;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 
-    public Defend() {
+    public Hop() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
-        setBlock(BLOCK, UPG_BLOCK); // Sets the card's damage and how much it changes when upgraded.
-        tags.add(CardTags.STARTER_DEFEND);
+        this.setBlock(BLOCK, UPG_BLOCK); // Sets the card's damage and how much it changes when upgraded.
+
+        this.tags.add(CardTags.STARTER_DEFEND);
+        this.tags.add(CustomTags.JUMP);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, p, this.block));
+        this.addToBot(new ChangeStanceAction(new SoarStance()));
+
+        this.addToBot(new GainBlockAction(p, p, block));
+        this.addToBot(new MadelineMoveAction(p, p, GAP));
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        if (!super.canUse(p, m)) {
+            return false;
+        } else if (!canJump(p)) {
+            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    public void triggerOnGlowCheck() {
+        super.triggerOnGlowCheck();
+        this.isGlowing = canJump(AbstractDungeon.player);
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Defend();
+        return new Hop();
     }
 }

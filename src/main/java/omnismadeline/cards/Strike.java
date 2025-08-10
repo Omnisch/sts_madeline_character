@@ -19,7 +19,7 @@ public class Strike extends BaseCard {
             // Curse is for curses, except for special curses like Curse of the Bell and Necronomicurse.
             CardTarget.ENEMY,   // The target. Single target is ENEMY, all enemies is ALL_ENEMY.
             // Look at cards similar to what you want to see what to use.
-            1                   // The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
+            1                   // The card's base cost. -1 is X cost, -2 is no-cost for unplayable cards like curses, or Reflex.
     );
 
     // These will be used in the constructor. Technically you can just use the values directly,

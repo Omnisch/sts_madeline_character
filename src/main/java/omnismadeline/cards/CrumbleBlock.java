@@ -1,16 +1,19 @@
 package omnismadeline.cards;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.powers.DexterityPower;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.stances.LandStance;
 import omnismadeline.stances.SoarStance;
+import omnismadeline.stances.StayStance;
 import omnismadeline.util.CardStats;
 
-public class CrumbleBlock extends BaseEnvironmentCard {
+public class CrumbleBlock extends BaseCard {
     public static final String ID = makeID(CrumbleBlock.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR, // The card color.
@@ -20,25 +23,25 @@ public class CrumbleBlock extends BaseEnvironmentCard {
             // Curse is for curses, except for special curses like Curse of the Bell and Necronomicurse.
             CardTarget.SELF,    // The target. Single target is ENEMY, all enemies is ALL_ENEMY.
             // Look at cards similar to what you want to see what to use.
-            -2                  // The card's base cost. -1 is X cost, -2 is no cost for unplayable cards like curses, or Reflex.
+            1                   // The card's base cost. -1 is X cost, -2 is no-cost for unplayable cards like curses, or Reflex.
     );
 
     // These will be used in the constructor. Technically you can just use the values directly,
     // but constants at the top of the file are easy to adjust.
-    private static final int BLOCK = 6;
-    private static final int UPG_BLOCK = 3;
+    private static final int MAGIC = 2;
 
     public CrumbleBlock() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
-        setBlock(BLOCK, UPG_BLOCK);
-        setSelfRetain(true);
+        setMagic(MAGIC);
+        setSelfRetain(false, true);
+        setExhaust(true);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        super.use(p, m);
-        this.addToBot(new ChangeStanceAction(new LandStance()));
-        this.addToBot(new GainBlockAction(p, p, block));
+        this.addToBot(new ChangeStanceAction(new StayStance()));
+
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, magicNumber), magicNumber));
     }
 
     @Override
