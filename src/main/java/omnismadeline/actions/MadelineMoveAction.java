@@ -1,7 +1,7 @@
 package omnismadeline.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.utility.NewQueueCardAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -9,9 +9,12 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
-import omnismadeline.cards.BaseEnvironmentCard;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.enums.CustomActions;
-import omnismadeline.enums.CustomTags;
+import omnismadeline.powers.MomentumPower;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static omnismadeline.MadelineMod.modID;
 
@@ -26,6 +29,12 @@ public class MadelineMoveAction extends AbstractGameAction {
 
     private MadelineMoveAction(int amount, boolean isRandom, boolean anyNumber, boolean canPickZero) {
         this.p = AbstractDungeon.player;
+
+        // Amount is affected by Momentum.
+        if (p.hasPower(MomentumPower.POWER_ID)) {
+            amount += p.getPower(MomentumPower.POWER_ID).amount;
+        }
+
         this.amount = amount;
         this.isRandom = isRandom;
         this.anyNumber = anyNumber;
@@ -58,8 +67,11 @@ public class MadelineMoveAction extends AbstractGameAction {
         this.source = source;
     }
 
+    @Override
     public void update() {
         if (this.duration == this.startDuration) {
+            this.addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, 1), 1));
+
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
                 return;
@@ -67,16 +79,6 @@ public class MadelineMoveAction extends AbstractGameAction {
 
             if (!this.anyNumber && this.p.hand.size() <= this.amount) {
                 this.amount = this.p.hand.size();
-                numMoved = this.amount;
-                int tmp = this.p.hand.size();
-
-                for(int i = 0; i < tmp; ++i) {
-                    AbstractCard c = this.p.hand.getTopCard();
-                    this.madelineMove(c);
-                }
-
-                this.tickDuration();
-                return;
             }
 
             if (!this.isRandom) {
@@ -86,31 +88,24 @@ public class MadelineMoveAction extends AbstractGameAction {
                 return;
             }
 
+            List<AbstractCard> randomCards = new ArrayList<>();
             for(int i = 0; i < this.amount; ++i) {
-                this.madelineMove(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng));
+                randomCards.add(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng));
             }
+            this.addToBot(new MadelineMoveCardListAction(
+                    randomCards,
+                    AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng)));
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            for(AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                this.madelineMove(c);
-            }
+            this.addToBot(new MadelineMoveCardListAction(
+                    AbstractDungeon.handCardSelectScreen.selectedCards.group,
+                    AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng)));
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
 
         this.tickDuration();
-    }
-
-    private void madelineMove(AbstractCard c) {
-        if (c.costForTurn <= p.energy.energy) {
-            if (c.tags.contains(CustomTags.ENVIRONMENT)) {
-                ((BaseEnvironmentCard)c).isAboutToMove = true;
-            }
-            this.addToTop(new NewQueueCardAction(c, true, false, false));
-        } else {
-            this.p.hand.moveToDiscardPile(c);
-        }
     }
 
     static {

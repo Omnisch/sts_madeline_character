@@ -64,12 +64,6 @@ public class DashForward extends BaseCard {
     }
 
     @Override
-    public void triggerOnGlowCheck() {
-        super.triggerOnGlowCheck();
-        this.isGlowing = hasDashChances(AbstractDungeon.player);
-    }
-
-    @Override
     public AbstractCard makeCopy() {
         return new DashForward();
     }

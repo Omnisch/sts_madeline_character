@@ -62,12 +62,6 @@ public class Hop extends BaseCard {
     }
 
     @Override
-    public void triggerOnGlowCheck() {
-        super.triggerOnGlowCheck();
-        this.isGlowing = canJump(AbstractDungeon.player);
-    }
-
-    @Override
     public AbstractCard makeCopy() {
         return new Hop();
     }

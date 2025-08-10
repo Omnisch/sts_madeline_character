@@ -1,6 +1,7 @@
 package omnismadeline.stances;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import omnismadeline.powers.DashChancePower;
+import omnismadeline.powers.MomentumPower;
 
 import static omnismadeline.MadelineMod.makeID;
 import static omnismadeline.util.MadelineUtils.*;
@@ -33,21 +35,30 @@ public class LandStance extends AbstractStance {
     @Override
     public void onEnterStance() {
         refillDashes();
+        clearMomentum();
     }
 
     @Override
     public void atStartOfTurn() {
         refillDashes();
+        clearMomentum();
     }
 
     @Override
     public void onPlayCard(AbstractCard card) {
         refillDashes();
+        clearMomentum();
     }
 
     private void refillDashes() {
         if (!hasDashChances(p)) {
             AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p, p, new DashChancePower(p, 1), 1));
+        }
+    }
+
+    private void clearMomentum() {
+        if (p.hasPower(MomentumPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
         }
     }
 }

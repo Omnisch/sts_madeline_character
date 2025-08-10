@@ -36,7 +36,6 @@ public class Spring extends BaseEnvironmentCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        super.use(p, m);
         this.addToBot(new ChangeStanceAction(new StayStance()));
 
         this.addToBot(new GainBlockAction(p, p, block));

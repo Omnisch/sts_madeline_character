@@ -14,7 +14,7 @@ public abstract class BaseEnvironmentCard extends BaseCard {
     }
 
     @Override
-    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+    public void onMoveToDiscard() {
         isAboutToMove = false;
     }
 
