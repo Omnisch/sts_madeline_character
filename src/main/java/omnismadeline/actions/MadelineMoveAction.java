@@ -11,6 +11,9 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.enums.CustomActions;
 import omnismadeline.powers.MomentumPower;
+import omnismadeline.stances.LandStance;
+
+import java.util.Objects;
 
 import static omnismadeline.MadelineMod.modID;
 
@@ -62,7 +65,9 @@ public class MadelineMoveAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
-            this.addToTop(new ApplyPowerAction(p, p, new MomentumPower(p, 1), 1));
+            if (!Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
+                this.addToTop(new ApplyPowerAction(p, p, new MomentumPower(p, 1), 1));
+            }
 
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;

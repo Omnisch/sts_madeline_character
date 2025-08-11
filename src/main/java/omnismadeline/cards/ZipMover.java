@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import com.megacrit.cardcrawl.stances.NeutralStance;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.stances.LandStance;
 import omnismadeline.stances.StayStance;

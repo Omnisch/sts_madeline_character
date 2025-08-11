@@ -23,7 +23,7 @@ public class MadelinePendedAction extends AbstractGameAction implements OnStartB
 
         AbstractGameAction a = actionsPended.pollFirst();
         this.addToBot(a);
-        logger.info("Add pended action {} to bottom.", a.getClass().getSimpleName());
+        logger.info("Add pended action {}.", a.getClass().getSimpleName());
         this.isDone = true;
     }
 
