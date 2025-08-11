@@ -39,7 +39,7 @@ public class DashForward extends BaseDashCard {
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         System.out.println("OnUse");
-        this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         this.addToBot(new MadelineMoveAction(m, GAP));
     }
 

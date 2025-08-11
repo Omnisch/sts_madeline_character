@@ -29,7 +29,7 @@ public class Hop extends BaseJumpCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new GainBlockAction(p, p, block));
+        this.addToBot(new GainBlockAction(p, p, this.block));
         this.addToBot(new MadelineMoveAction(m, GAP));
     }
 

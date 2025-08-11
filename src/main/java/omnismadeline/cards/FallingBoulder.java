@@ -35,8 +35,8 @@ public class FallingBoulder extends BaseCard {
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChangeStanceAction(new LandStance()));
-        this.addToBot(new GainBlockAction(p, p, block));
-        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -magicNumber), -magicNumber));
+        this.addToBot(new GainBlockAction(p, p, this.block));
+        this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, -this.magicNumber), -this.magicNumber));
     }
 
     @Override
