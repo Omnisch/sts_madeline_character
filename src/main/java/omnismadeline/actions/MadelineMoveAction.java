@@ -4,7 +4,6 @@ import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
-import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -13,29 +12,31 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.enums.CustomActions;
 import omnismadeline.powers.MomentumPower;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import static omnismadeline.MadelineMod.modID;
 
 public class MadelineMoveAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
     public static final String[] TEXT;
     private final AbstractPlayer p;
+    private final AbstractMonster m;
     private final boolean isRandom;
     private final boolean anyNumber;
     private final boolean canPickZero;
     public static int numMoved;
 
-    private MadelineMoveAction(int amount, boolean isRandom, boolean anyNumber, boolean canPickZero) {
+    private MadelineMoveAction(AbstractMonster m, int amount, boolean isRandom, boolean anyNumber, boolean canPickZero) {
         this.p = AbstractDungeon.player;
+        this.m = m;
 
         // Amount is affected by Momentum.
+        int movedAmount;
         if (p.hasPower(MomentumPower.POWER_ID)) {
-            amount += p.getPower(MomentumPower.POWER_ID).amount;
+            movedAmount = amount + p.getPower(MomentumPower.POWER_ID).amount;
+        } else {
+            movedAmount = amount;
         }
 
-        this.amount = amount;
+        this.amount = movedAmount;
         this.isRandom = isRandom;
         this.anyNumber = anyNumber;
         this.canPickZero = canPickZero;
@@ -43,34 +44,25 @@ public class MadelineMoveAction extends AbstractGameAction {
         this.actionType = CustomActions.MADELINE_MOVE;
     }
 
-    public MadelineMoveAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean anyNumber, boolean canPickZero) {
-        this(amount, isRandom, anyNumber, canPickZero);
+    public MadelineMoveAction(AbstractMonster target, int amount, boolean isRandom, boolean anyNumber) {
+        this(target, amount, isRandom, anyNumber, false);
         this.target = target;
-        this.source = source;
     }
 
-    public MadelineMoveAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom, boolean anyNumber) {
-        this(amount, isRandom, anyNumber, false);
+    public MadelineMoveAction(AbstractMonster target, int amount, boolean isRandom) {
+        this(target, amount, isRandom, false, false);
         this.target = target;
-        this.source = source;
     }
 
-    public MadelineMoveAction(AbstractCreature target, AbstractCreature source, int amount, boolean isRandom) {
-        this(amount, isRandom, false, false);
+    public MadelineMoveAction(AbstractMonster target, int amount) {
+        this(target, amount, false, false, false);
         this.target = target;
-        this.source = source;
-    }
-
-    public MadelineMoveAction(AbstractCreature target, AbstractCreature source, int amount) {
-        this(amount, false, false, false);
-        this.target = target;
-        this.source = source;
     }
 
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
-            this.addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, 1), 1));
+            this.addToTop(new ApplyPowerAction(p, p, new MomentumPower(p, 1), 1));
 
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
@@ -88,19 +80,15 @@ public class MadelineMoveAction extends AbstractGameAction {
                 return;
             }
 
-            List<AbstractCard> randomCards = new ArrayList<>();
             for(int i = 0; i < this.amount; ++i) {
-                randomCards.add(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng));
+                MadelinePendedAction.actionsPended.addLast(new MadelineMoveOneCardAction(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng), m));
             }
-            this.addToBot(new MadelineMoveCardListAction(
-                    randomCards,
-                    AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng)));
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
-            this.addToBot(new MadelineMoveCardListAction(
-                    AbstractDungeon.handCardSelectScreen.selectedCards.group,
-                    AbstractDungeon.getCurrRoom().monsters.getRandomMonster((AbstractMonster)null, true, AbstractDungeon.cardRandomRng)));
+            for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
+                MadelinePendedAction.actionsPended.addLast(new MadelineMoveOneCardAction(c, m));
+            }
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }

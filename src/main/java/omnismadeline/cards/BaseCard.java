@@ -3,8 +3,10 @@ package omnismadeline.cards;
 import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import basemod.abstracts.DynamicVariable;
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import omnismadeline.MadelineMod;
 import omnismadeline.util.CardStats;
+import omnismadeline.actions.MadelinePendedAction;
 import omnismadeline.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -596,6 +598,13 @@ public abstract class BaseCard extends CustomCard {
             var.value = var.base;
         }
     }
+
+    @Override
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        onUse(abstractPlayer, abstractMonster);
+        this.addToBot(new MadelinePendedAction());
+    }
+    protected abstract void onUse(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
 
     private static class QuickDynamicVariable extends DynamicVariable {
         final String localKey, key;

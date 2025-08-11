@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.VulnerablePower;
 import omnismadeline.actions.MadelineMoveAction;
+import omnismadeline.actions.MadelinePendedAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.powers.DashChancePower;
@@ -44,11 +45,11 @@ public class DashForward extends BaseCard {
     }
 
     @Override
-    public void use(AbstractPlayer p, AbstractMonster m) {
+    protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
 
         this.addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL)));
-        this.addToBot(new MadelineMoveAction(m, p, GAP));
+        this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
     @Override
