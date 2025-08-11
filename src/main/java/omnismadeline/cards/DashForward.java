@@ -27,7 +27,6 @@ public class DashForward extends BaseDashCard {
             1
     );
 
-    private static final int GAP = 1;
     private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
 

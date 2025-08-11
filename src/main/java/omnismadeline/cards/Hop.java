@@ -18,7 +18,6 @@ public class Hop extends BaseJumpCard {
             1
     );
 
-    private static final int GAP = 1;
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 

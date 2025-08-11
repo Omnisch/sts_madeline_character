@@ -11,6 +11,8 @@ import omnismadeline.util.CardStats;
 import static omnismadeline.util.MadelineUtils.canJump;
 
 public abstract class BaseJumpCard extends BaseCard {
+    protected static final int GAP = 1;
+
     public BaseJumpCard(String ID, CardStats info) {
         super(ID, info);
         this.tags.add(CustomTags.JUMP);

@@ -11,6 +11,8 @@ import omnismadeline.util.CardStats;
 import static omnismadeline.util.MadelineUtils.hasDashChances;
 
 public abstract class BaseDashCard extends BaseCard {
+    protected static final int GAP = 1;
+
     public BaseDashCard(String ID, CardStats info) {
         super(ID, info);
         this.tags.add(CustomTags.DASH);

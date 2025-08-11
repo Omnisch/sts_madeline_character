@@ -24,23 +24,9 @@
       "我没有足够的 NL 冲刺机会！"
     ]
   },
-  "${modID}:DashUpward": {
-    "NAME": "上冲",
-    "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害， NL 给予!M!层 易伤 。",
-    "EXTENDED_DESCRIPTION": [
-      "我没有足够的 NL 冲刺机会！"
-    ]
-  },
   "${modID}:Hop": {
     "NAME": "小跳",
     "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。",
-    "EXTENDED_DESCRIPTION": [
-      "我需要先 NL 着陆或落地！"
-    ]
-  },
-  "${modID}:JumpInPlace": {
-    "NAME": "原地跳",
-    "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 。 NL 获得!M!点临时 敏捷 。 NL 抽一张牌。",
     "EXTENDED_DESCRIPTION": [
       "我需要先 NL 着陆或落地！"
     ]
