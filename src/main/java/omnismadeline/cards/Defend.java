@@ -27,7 +27,7 @@ public class Defend extends BaseCard {
 
     public Defend() {
         super(ID, info); // Pass the required information to the BaseCard constructor.
-        setBlock(BLOCK, UPG_BLOCK); // Sets the card's damage and how much it changes when upgraded.
+        setBlock(BLOCK, UPG_BLOCK); // Sets the card's block and how much it changes when upgraded.
         tags.add(CardTags.STARTER_DEFEND);
     }
 
