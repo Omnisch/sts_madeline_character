@@ -9,7 +9,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class Strike extends BaseCard {
+public abstract class Strike extends BaseCard {
     public static final String ID = makeID(Strike.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR, // The card color.
@@ -39,8 +39,8 @@ public class Strike extends BaseCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Strike();
-    }
+//    @Override
+//    public AbstractCard makeCopy() {
+//        return new Strike();
+//    }
 }

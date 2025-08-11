@@ -7,7 +7,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class Defend extends BaseCard {
+public abstract class Defend extends BaseCard {
     public static final String ID = makeID(Defend.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR, // The card color.
@@ -36,8 +36,8 @@ public class Defend extends BaseCard {
         this.addToBot(new GainBlockAction(p, p, this.block));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Defend();
-    }
+//    @Override
+//    public AbstractCard makeCopy() {
+//        return new Defend();
+//    }
 }

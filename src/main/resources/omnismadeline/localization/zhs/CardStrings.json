@@ -31,6 +31,10 @@
       "我需要先 NL 着陆或落地！"
     ]
   },
+  "${modID}:ZipMover": {
+    "NAME": "交通方块",
+    "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。"
+  },
   "${modID}:Spring": {
     "NAME": "弹簧",
     "DESCRIPTION": "${modID}:落脚 。 NL 获得!B!点 格挡 。"

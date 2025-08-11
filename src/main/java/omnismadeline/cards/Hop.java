@@ -24,7 +24,6 @@ public class Hop extends BaseJumpCard {
     public Hop() {
         super(ID, info);
         this.setBlock(BLOCK, UPG_BLOCK);
-
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 

@@ -143,11 +143,11 @@ public class MadelineCharacter extends CustomPlayer {
         retVal.add(Hop.ID);
         retVal.add(Hop.ID);
         retVal.add(Hop.ID);
+        retVal.add(ZipMover.ID);
+        retVal.add(ZipMover.ID);
+        retVal.add(ZipMover.ID);
         retVal.add(Spring.ID);
         retVal.add(Spring.ID);
-        retVal.add(Spring.ID);
-        retVal.add(Strike.ID);
-        retVal.add(Strike.ID);
 
         return retVal;
     }
@@ -166,6 +166,14 @@ public class MadelineCharacter extends CustomPlayer {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
         return new DashForward();
+    }
+
+    // Make Madeline always in a stance.
+    @Override
+    public void preBattlePrep() {
+        super.preBattlePrep();
+
+        this.stance = new LandStance();
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/
@@ -261,13 +269,5 @@ public class MadelineCharacter extends CustomPlayer {
     public AbstractPlayer newInstance() {
         //Makes a new instance of your character class.
         return new MadelineCharacter();
-    }
-
-    // Make Madeline always in a stance.
-    @Override
-    public void preBattlePrep() {
-        super.preBattlePrep();
-
-        this.stance = new LandStance();
     }
 }
