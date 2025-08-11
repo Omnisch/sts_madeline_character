@@ -35,6 +35,10 @@
     "NAME": "交通方块",
     "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。"
   },
+  "${modID}:Spikes": {
+    "NAME": "尖刺",
+    "DESCRIPTION": "造成!D!点伤害。 NL 获得!M!点 荆棘 。"
+  },
   "${modID}:Spring": {
     "NAME": "弹簧",
     "DESCRIPTION": "${modID}:落脚 。 NL 获得!B!点 格挡 。"
