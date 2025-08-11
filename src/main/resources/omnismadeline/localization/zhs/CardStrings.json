@@ -39,9 +39,14 @@
     "NAME": "尖刺",
     "DESCRIPTION": "造成!D!点伤害。 NL 获得!M!点 荆棘 。"
   },
+
   "${modID}:Spring": {
     "NAME": "弹簧",
     "DESCRIPTION": "${modID}:落脚 。 NL 获得!B!点 格挡 。"
+  },
+  "${modID}:FallingBoulder": {
+    "NAME": "冰冻落石",
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得!B!点 格挡 。 NL 失去!M!点 敏捷 。"
   },
   "${modID}:CrumbleBlock": {
     "NAME": "碎石平台",
