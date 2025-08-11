@@ -61,5 +61,10 @@
   "${modID}:Refill": {
     "NAME": "冲刺水晶",
     "DESCRIPTION": "若你没有 ${modID}:冲刺机会 ，获得!M!点 ${modID}:冲刺机会 。"
+  },
+  "${modID}:ScatteredAndLost": {
+    "NAME": "分散与失落",
+    "DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
+    "UPGRADE_DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。"
   }
 }
