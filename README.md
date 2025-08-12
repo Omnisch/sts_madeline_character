@@ -1,36 +1,202 @@
-# Basic Mod
+# 玛德琳角色设计
 
-This is an empty Slay the Spire mod + a modding tutorial.
+## 遗物
 
-This tutorial will help with setup and the basics of Slay the Spire modding, but it will not teach you Java. If you know nothing of Java or programming in general, you are strongly recommended to look up a free online course and do at least some of it. It is possible to do modding with almost no proper knowledge, but it will make things much more difficult.
+- [x] 登山背包 `Climbing Backpack` 初始遗物。在你的回合结束时，保留所有的跳跃和冲刺。
+- [ ] 不知所谓的机器 `Pointless Machines` 你每打出1张冲刺，获得（2？）点格挡。在打出24张冲刺后升级。
+- [ ] 沉重与脆弱 `Heavy and Frail` 你每打出3张冲刺，获得12点格挡。
 
----
+## 事件
 
-## Check the wiki to get started:
+- [ ] 无冲 `No Dash`
+- [ ] 无抓 `No Grab`
 
-https://github.com/Alchyr/BasicMod/wiki
+## 姿态
 
----
+- [x] 着陆 `Land`：保持不小于1点冲刺机会。失去所有动量。
+- [x] 落脚 `Stay`：进入这一姿态时，若你没有冲刺机会，获得1点冲刺机会。你打出下一张牌时，进入凌空。
+- [x] 凌空 `Soar`：你不能打出跳跃。
 
-## Know what you're doing?
+## 能力
 
-You can still use this mod as a base, or you could use another template like https://github.com/DarkVexon/ProTemplate
+- [x] 冲刺机会 `Dash Chance` (点)：你需要冲刺机会来打出冲刺。
+- [x] 动量 `Momentum` (层)：移动须额外选择与层数相等的牌。
 
-You can find more options in the pins of the #modding-technical channel in the Slay the Spire discord server.
+## 卡牌关键字
 
----
+- [x] 移动 `Move`：获得1层动量。选择一张手牌耗能打出，若无法打出则丢弃。
+- [x] 跳跃 `Jump`：进入凌空。
+- [x] 冲刺 `Dash`：只能在有冲刺机会时打出，失去1点冲刺机会。
 
-### Some HD Slay the Spire art assets (courtesy of Gremious, creator of DefaultMod):
+## 卡牌
 
-Includes:
-- Empty Relic Template feat. empty bottle
-- Empty Card Template
-- Color-Changable cardback
-- A couple of HD Monster vectors (Louse, Nob, Sentry, Sneaky Gremlin)
-- A coupe of HD items (J.A.X., A Coin)
-- 2 people silhouettes
-- A curse Background
+【平均】攻击 26 : 技能 36 : 能力 13 = 75
+【目前】攻击 24 : 技能 37 : 能力 10 = 71
 
-https://github.com/Gremious/StS-DefaultModBase#some-hd-slay-the-spire-art-assets
+【平均】常见 23 : 罕见 35 : 稀有 17
+【目前】常见 24 : 罕见 32 : 稀有 16 : 无色 9
 
----
+初始卡牌：横冲x2 小跳x3 交通方块x3 弹簧x2
+
+图例：**粗体**为攻击牌，正常体为技能牌，*斜体*为能力牌。
+
+- [x] **打击** `Strike` 初始 ①
+  > 造成【6/9】点伤害。
+- [x] 防御 `Defend` 初始 ①
+  > 获得【5/8】点格挡。
+
+### 技巧
+
+冲刺
+
+- [x] **横冲** `Dash Forward` 初始 ①
+  > 冲刺移动。造成【6/9】点伤害。
+- [ ] **上冲** `Dash Upward` 常见 ①
+  > 冲刺移动。造成【8/10】点伤害，给予【1/2】层虚弱。
+- [ ] **切版冲刺** `Transition Dash` 常见 ①
+  > 冲刺移动。造成【10/14】点伤害，结束你的回合。你在下一回合开始时处于落脚。消耗。
+- [ ] **Demo冲刺** `Demo Dash` 罕见
+- [ ] **Super冲刺** `Super Dash` 无色
+- [ ] **Hyper冲刺** `Hyper Dash` 无色
+- [ ] **Ultra冲刺** `Ultra Dash` 无色
+
+跳跃
+
+- [x] 小跳 `Hop` 初始 ①
+  > 跳跃移动。获得【5/8】点格挡。
+- [ ] 原地跳 `Jump in Place` 常见 ①
+  > 跳跃着陆。获得【2/3】点临时敏捷，抽1张牌。
+- [ ] 兔子跳 `Bunnyhop` 常见 ①
+  > 跳跃移动。获得【4/7】点格挡，获得【1/2】层动量。
+- [ ] 中性跳 `Neutral Jump` 罕见 ⓪
+  > 【固有。】跳跃移动。抽2张牌。
+- [ ] 蹬墙跳 `Wallbounce` 罕见 ①
+  > 冲刺跳跃移动。给予所有敌人【3/5】层易伤。消耗。
+- [ ] 咖啡跳 `Cornerkick` 稀有
+- [ ] 抓角加速 `Cornerboost` 稀有
+- [ ] *狼跳* `Coyote Time` 罕见
+
+其他
+
+- [ ] 攀爬 `Climb` 常见
+  > 你每打出一张牌，失去1点敏捷，着陆或落脚时恢复。
+- [ ] 翻越 `Climbhop` 常见
+- [ ] 速降 `Fastfall` 罕见
+
+### 1. 城市
+
+- [x] **交通方块** `Zip Mover` 初始 ①
+  > 着陆。造成【6/9】点伤害。
+- [x] **尖刺** `Spikes` 常见 #
+  > 造成【8/10】点伤害。获得【2/3】点荆棘。
+- [x] 弹簧 `Spring` 初始 #
+  > 落脚。获得【4/7】点格挡。
+- [x] 冰冻落石 `Falling Boulder` 常见 ①
+  > 着陆。获得【10/13】点格挡。失去1点敏捷。
+- [x] 碎石平台 `Crumble Block` 常见 ①
+  > 【保留。】落脚。获得2点敏捷。消耗。
+- [x] 羽翼草莓 `Winged Strawberry` 罕见 #
+  > 获得【2/3】点能量。在打出冲刺时消耗。
+- [x] 冲刺水晶 `Refill` 常见 ⓪
+  > 若你没有冲刺机会，获得【1/2】点冲刺机会。
+- [ ] 营地 `Bonfire` 罕见 ②
+  > 着陆。获得1层人工制品。消耗。
+
+### 2. 梦境
+
+- [ ] **梦冲刺** `Dream Dash` 常见 ①
+  > 冲刺。造成14点伤害。本回合你每打出一张手牌，丢弃一张随机手牌，抽1张牌。
+- [ ] 草莓种子 `Strawberry Seed` 罕见 #
+  > 将一张【草莓/草莓+】放入你的抽牌堆。抽1张牌。
+  - [ ] 草莓 `Strawberry` 无色 【①/⓪】
+    > 获得2点能量。消耗。
+- [ ] 触控开关 `Touch Switch` 常见
+- [ ] *紧追不舍* `Chaser` 罕见
+- [ ] *复活* `Resurrections` 罕见 ②
+  > 你的回合开始时，将一张切版冲刺放入你的手牌。
+
+### 3. 山庄
+
+- [ ] **尘球** `Dust Bunnies` 常见 ①
+  > 对所有意图是攻击的敌人造成【10/13】点伤害。
+- [ ] **山庄老板** `Oshiro Boss` 罕见 ②
+  > 造成【20/24】点伤害。回合结束时若处于凌空，失去4点生命。
+- [ ] 下沉平台 `Sinking Platform` 常见 ①
+  > 着陆。获得7点格挡，给予1层虚弱。
+- [ ] 尘球墙 `Dust Triggers` 罕见
+- [x] *分散与失落* `Scattered and Lost` 罕见 ①
+  > 在你的回合开始时，少抽1张牌，从弃牌堆中选择一张牌放入你的手牌中。【虚无。/】
+
+### 4. 山脊
+
+- [ ] **雪球** `Snowball` 常见
+- [ ] **绿泡泡** `Green Booster` 罕见 【①/⓪】
+  > 落脚。造成6点伤害，抽1张牌。
+- [ ] 青云 `Cloud` 罕见
+- [ ] 移动平台 `Moving Platform` 常见
+- [ ] 移动方块 `Move Block` 罕见
+- [ ] *风暴之眼* `Eye of the Storm` 罕见 ①
+  > 你每有一回合未打出跳跃，获得【2/3】点敏捷。
+
+### 5. 寺庙
+
+- [ ] **红泡泡** `Red Booster` 罕见 【①/⓪】
+  > 落脚。造成6点伤害。本回合你打出冲刺前，丢弃一张随机手牌，抽1张牌。
+- [ ] **冲刺方块** `Dash Block` 罕见
+- [ ] **刀片机关** `Blade` 罕见 ①
+  > 对所有敌人造成【11/14】点伤害。这张牌被抽到时，若你未处于着陆，失去3点生命。
+- [ ] **循迹鬼** `Seeker` 罕见
+- [ ] **Theo水晶** `Theo Crystal` 稀有
+- [ ] 蓝火把 `Blue Torch` 罕见
+- [ ] *平静与坠落* `Quiet and Falling` 稀有 【③/②】
+  > 在一回合内，当你打出3张跳跃时，获得3点力量。
+
+### 6. 沉思
+
+- [ ] **凯文** `Kevin` 罕见
+- [ ] **反弹外壳** `Bumper` 罕见
+- [ ] 黄金羽毛 `Feather` 稀有
+- [ ] 沉思之水 `Water` 罕见
+- [ ] Badeline泡泡 `Badeline Booster` 稀有
+
+### 7. 山顶
+
+- [ ] 山顶检查点 `Checkpoint Flag` 稀有
+- [ ] *粉色朝霞* `Pink Sunrise` 稀有 ③
+
+### 8. 核心
+
+- [ ] **火球** `Fireball` 常见
+- [ ] 冰球 `Ice Ball` 常见
+- [ ] **熔岩方块** `Magma Block` 罕见
+  - [ ] 寒冰方块 `Ice Block` 无色
+- [ ] 传送带 `Conveyor Belt` 罕见
+  - [ ] 冰墙 `Ice Wall` 无色
+- [ ] 心之门 `Heart Door` 稀有
+- [ ] 冷热交替 `Core Switch` 稀有 ②
+  > 选择：对所有敌人给予【3/5】层易伤、或【3/5】层虚弱。消耗。
+- [ ] *山之心* `Heart of the Mountain` 稀有
+
+### 9. 月亮
+
+- [ ] **河豚** `Pufferfish` 罕见
+- [ ] **小蓝鸟** `Bird` 稀有
+- [ ] **凌波微步** `Wave Dash` 罕见
+- [ ] 双重水晶 `Double Refill` 罕见
+- [ ] 水母 `Jellyfish` 稀有 #
+  > 获得【6/9】点格挡，获得1层动量。将这张牌放回你的手牌中。
+- [ ] 电箱 `Generator` 稀有
+
+### 其他
+
+- [ ] 磁带 `Cassette` 罕见
+- [ ] 磁带方块 `Cassette Block` 罕见
+- [ ] *草莓派* `Strawberry Pie` 稀有 ②
+  > 你每消耗【6/5】点能量，对所有敌人造成10点伤害。
+- [ ] *再见* `Farewell` 稀有
+
+### 未配置
+
+以下设计尚未算入分类计数。
+
+- 能力：受到伤害时，进入落脚。
