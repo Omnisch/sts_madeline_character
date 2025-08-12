@@ -67,7 +67,7 @@ public class MadelineCharacter extends CustomPlayer {
         private static final String SMALL_ORB = characterPath("cardback/small_orb.png");
 
         //This is used to color *some* images, but NOT the actual cards. For that, edit the images in the cardback folder!
-        private static final Color cardColor = new Color(1f, 180f/255f, 205f/255f, 1f);
+        private static final Color cardColor = new Color(187f/255f, 87f/255f, 128f/255f, 1f);
 
         //Methods that will be used in the main mod file
         public static void registerColor() {
@@ -193,9 +193,9 @@ public class MadelineCharacter extends CustomPlayer {
         };
     }
 
-    private final Color cardRenderColor = Color.valueOf("#EDC8FF").cpy(); //Used for some vfx on moving cards (sometimes) (maybe)
-    private final Color cardTrailColor = Color.valueOf("#EDC8FF").cpy(); //Used for card trail vfx during gameplay.
-    private final Color slashAttackColor = Color.valueOf("#EDC8FF").cpy(); //Used for a screen tint effect when you attack the heart.
+    private final Color cardRenderColor = Color.valueOf("#FFC8F0").cpy(); //Used for some vfx on moving cards (sometimes) (maybe)
+    private final Color cardTrailColor = Color.valueOf("#FFC8F0").cpy(); //Used for card trail vfx during gameplay.
+    private final Color slashAttackColor = Color.valueOf("#FFC8F0").cpy(); //Used for a screen tint effect when you attack the heart.
     @Override
     public Color getCardRenderColor() {
         return cardRenderColor;
