@@ -117,7 +117,7 @@
 - [ ] 下沉平台 `Sinking Platform` 常见 ①
   > 着陆。获得7点格挡，给予1层虚弱。
 - [ ] 尘球墙 `Dust Triggers` 罕见
-- [ ] *分散与失落* `Scattered and Lost` 罕见 ①
+- [x] *分散与失落* `Scattered and Lost` 罕见 ①
   > 在你的回合开始时，少抽1张牌，从弃牌堆中选择一张牌放入你的手牌中。【虚无。/】
 
 ### 4. 山脊
