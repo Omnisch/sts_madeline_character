@@ -25,7 +25,7 @@
     "NAMES": [
       "着陆"
     ],
-    "DESCRIPTION": "保持 #y冲刺机会 不小于 #b1 点。失去所有 #y动量 。"
+    "DESCRIPTION": "保持 #y冲刺机会 不小于 #b1 点。你无法积累 #y动量 。"
   },
   {
     "PROPER_NAME": "凌空",

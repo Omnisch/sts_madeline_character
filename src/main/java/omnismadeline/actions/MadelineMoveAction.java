@@ -1,7 +1,7 @@
 package omnismadeline.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -11,9 +11,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.enums.CustomActions;
 import omnismadeline.powers.MomentumPower;
-import omnismadeline.stances.LandStance;
-
-import java.util.Objects;
 
 import static omnismadeline.MadelineMod.modID;
 
@@ -53,23 +50,20 @@ public class MadelineMoveAction extends AbstractGameAction {
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount, boolean isRandom) {
-        this(target, amount, isRandom, false, false);
+        this(target, amount, isRandom, true, false);
         this.target = target;
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount) {
-        this(target, amount, false, false, false);
+        this(target, amount, false, true, false);
         this.target = target;
     }
 
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
-            if (!Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
-                this.addToTop(new ApplyPowerAction(p, p, new MomentumPower(p, 1), 1));
-            }
-
             if (this.p.hand.isEmpty()) {
+                this.addToBot(new DrawCardAction(1));
                 this.isDone = true;
                 return;
             }
@@ -88,12 +82,14 @@ public class MadelineMoveAction extends AbstractGameAction {
             for(int i = 0; i < this.amount; ++i) {
                 MadelinePendedAction.actionsPended.addLast(new MadelineMoveOneCardAction(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng), m));
             }
+            MadelinePendedAction.actionsPended.addLast(new DrawCardAction(1));
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 MadelinePendedAction.actionsPended.addLast(new MadelineMoveOneCardAction(c, m));
             }
+            MadelinePendedAction.actionsPended.addLast(new DrawCardAction(1));
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
