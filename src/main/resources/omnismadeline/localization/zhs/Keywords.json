@@ -25,14 +25,7 @@
     "NAMES": [
       "着陆"
     ],
-    "DESCRIPTION": "保持不小于 #b1 点 #y冲刺机会 。失去所有 #y动量 。"
-  },
-  {
-    "PROPER_NAME": "落脚",
-    "NAMES": [
-      "落脚"
-    ],
-    "DESCRIPTION": "进入这一姿态时，若你没有 #y冲刺机会 ，获得 #b1 点 #y冲刺机会 。你打出下一张牌时，进入 #y凌空 。"
+    "DESCRIPTION": "保持 #y冲刺机会 不小于 #b1 点。失去所有 #y动量 。"
   },
   {
     "PROPER_NAME": "凌空",
@@ -46,34 +39,57 @@
     "NAMES": [
       "冲刺机会"
     ],
-    "DESCRIPTION": "你需要冲刺机会来打出 #y冲刺 。"
+    "DESCRIPTION": "你需要冲刺机会来打出 #y冲刺 。上限为 #b1 点。"
   },
   {
     "PROPER_NAME": "动量",
     "NAMES": [
       "动量"
     ],
-    "DESCRIPTION": "你打出的 #y移动 须额外选择与层数相等的牌。"
+    "DESCRIPTION": "你打出的 #y移动 至多额外选择与点数相等的牌。"
   },
   {
     "PROPER_NAME": "移动",
     "NAMES": [
       "移动"
     ],
-    "DESCRIPTION": "获得 #b1 层 #y 动量。选择一张手牌耗能打出，若无法打出则将其丢弃。"
+    "DESCRIPTION": "选择一张手牌耗能打出，若无法打出则将其丢弃。抽一张牌。"
   },
   {
     "PROPER_NAME": "跳跃",
     "NAMES": [
       "跳跃"
     ],
-    "DESCRIPTION": "在 #y着陆 或 #y落脚 前，你只能打出一次 #y跳跃 。"
+    "DESCRIPTION": "进入 #y凌空 ，处于这一姿态时你不能再打出跳跃。获得 #b1 点 #y 动量。"
   },
   {
     "PROPER_NAME": "冲刺",
     "NAMES": [
       "冲刺"
     ],
-    "DESCRIPTION": "只能在有 #y冲刺机会 时打出，失去 #b1 点 #y冲刺机会 。"
+    "DESCRIPTION": "只能在有 #y冲刺机会 时打出。失去 #b1 点 #y冲刺机会 ，获得 #b1 点 #y 动量。"
+  },
+  {
+    "PROPER_NAME": "充能",
+    "NAMES": [
+      "充能"
+    ],
+    "DESCRIPTION": "获得 #b1 点 #y冲刺机会 。"
+  },
+  {
+    "PROPER_NAME": "初始打击",
+    "NAMES": [
+      "初始打击",
+      "打击"
+    ],
+    "DESCRIPTION": "这张牌在事件中视作 #y打击 。"
+  },
+  {
+    "PROPER_NAME": "初始防御",
+    "NAMES": [
+      "初始防御",
+      "防御"
+    ],
+    "DESCRIPTION": "这张牌在事件中视作 #y防御 。"
   }
 ]

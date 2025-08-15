@@ -6,8 +6,8 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.DexterityPower;
+import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.stances.StayStance;
 import omnismadeline.util.CardStats;
 
 public class CrumbleBlock extends BaseCard {
@@ -31,8 +31,8 @@ public class CrumbleBlock extends BaseCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChangeStanceAction(new StayStance()));
         this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new MadelineRefillAction());
     }
 
     @Override
