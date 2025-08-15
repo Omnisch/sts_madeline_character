@@ -19,21 +19,21 @@
   },
   "${modID}:DashForward": {
     "NAME": "横冲",
-    "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。 NL ${modID}:初始打击 。",
+    "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。",
     "EXTENDED_DESCRIPTION": [
       "我没有足够的 NL 冲刺机会！"
     ]
   },
   "${modID}:Hop": {
     "NAME": "小跳",
-    "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。 NL ${modID}:初始防御 。",
+    "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。",
     "EXTENDED_DESCRIPTION": [
       "我需要先 NL 着陆或落地！"
     ]
   },
   "${modID}:ZipMover": {
     "NAME": "交通方块",
-    "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。 NL ${modID}:初始打击 。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。"
   },
   "${modID}:Spikes": {
     "NAME": "尖刺",

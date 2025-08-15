@@ -20,15 +20,14 @@ public class Spikes extends BaseEnvironmentCard {
             -2
     );
 
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 2;
+    private static final int DAMAGE = 5;
+    private static final int UPG_DAMAGE = 3;
     private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 1;
 
     public Spikes() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(MAGIC, UPG_MAGIC);
+        setMagic(MAGIC);
     }
 
     @Override
