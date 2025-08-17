@@ -84,6 +84,19 @@
     "NAME": "营地",
     "DESCRIPTION": "${modID}:着陆 。 NL 获得!M!层 再生 。 NL 消耗 。"
   },
+  "${modID}:StrawberrySeed": {
+    "NAME": "草莓种子",
+    "DESCRIPTION": "将一张 *草莓 放入你的抽牌堆。 NL 抽一张牌。",
+    "UPGRADE_DESCRIPTION": "将一张 *草莓+ 放入你的抽牌堆。 NL 抽一张牌。"
+  },
+  "${modID}:Strawberry": {
+    "NAME": "草莓",
+    "DESCRIPTION": "获得 [E] [E] 。 NL 消耗 。"
+  },
+  "${modID}:Chaser": {
+    "NAME": "紧追不舍",
+    "DESCRIPTION": "抽!M!张牌。 NL 将一张 *疑虑 放入你的抽牌堆中。"
+  },
   "${modID}:ScatteredAndLost": {
     "NAME": "分散与失落",
     "DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
