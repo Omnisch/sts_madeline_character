@@ -4,37 +4,35 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class Hop extends BaseJumpCard {
-    public static final String ID = makeID(Hop.class.getSimpleName());
+public class OneWayPlatform extends BaseCard {
+    public static final String ID = makeID(OneWayPlatform.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
-            CardTarget.ENEMY,
+            CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardTarget.SELF,
             1
     );
 
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 
-    public Hop() {
+    public OneWayPlatform() {
         super(ID, info);
-        this.setBlock(BLOCK, UPG_BLOCK);
+        setBlock(BLOCK, UPG_BLOCK);
         this.tags.add(CardTags.STARTER_DEFEND);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
-        this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Hop();
+        return new OneWayPlatform();
     }
 }

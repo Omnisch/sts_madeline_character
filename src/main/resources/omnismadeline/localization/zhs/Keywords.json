@@ -21,6 +21,13 @@
     "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
   },
   {
+    "PROPER_NAME": "永恒",
+    "NAMES": [
+      "永恒"
+    ],
+    "DESCRIPTION": "这张牌永远在你的手牌中。"
+  },
+  {
     "PROPER_NAME": "着陆",
     "NAMES": [
       "着陆"

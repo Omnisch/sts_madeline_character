@@ -12,9 +12,9 @@ public class InfDash extends BaseDashCard {
     private static final CardStats info = new CardStats(
             CardColor.COLORLESS,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.SPECIAL, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
-            0
+            -2
     );
 
     public InfDash() {
@@ -27,6 +27,11 @@ public class InfDash extends BaseDashCard {
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MadelineMoveAction(m, GAP));
+    }
+
+    @Override
+    public boolean canUpgrade() {
+        return false;
     }
 
     @Override

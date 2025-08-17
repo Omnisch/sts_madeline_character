@@ -14,7 +14,7 @@ public class DashForward extends BaseDashCard {
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
             1
     );

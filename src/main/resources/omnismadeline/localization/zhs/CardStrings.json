@@ -17,23 +17,41 @@
     "NAME": "防御",
     "DESCRIPTION": "获得!B!点 格挡 。"
   },
+  "${modID}:InfDash": {
+    "NAME": "冲刺",
+    "DESCRIPTION": "${modID}:永恒 。 NL ${modID}:冲刺 ${modID}:移动 。",
+    "EXTENDED_DESCRIPTION": [
+      "没有足够的 NL 冲刺机会！"
+    ]
+  },
   "${modID}:DashForward": {
     "NAME": "横冲",
     "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。",
     "EXTENDED_DESCRIPTION": [
-      "我没有足够的 NL 冲刺机会！"
+      "没有足够的 NL 冲刺机会！"
+    ]
+  },
+  "${modID}:InfHop": {
+    "NAME": "跳跃",
+    "DESCRIPTION": "${modID}:永恒 。 NL ${modID}:跳跃 ${modID}:移动 。",
+    "EXTENDED_DESCRIPTION": [
+      "需要先着陆！"
     ]
   },
   "${modID}:Hop": {
     "NAME": "小跳",
     "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。",
     "EXTENDED_DESCRIPTION": [
-      "我需要先 NL 着陆或落地！"
+      "需要先着陆！"
     ]
   },
   "${modID}:ZipMover": {
     "NAME": "交通方块",
     "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。"
+  },
+  "${modID}:OneWayPlatform": {
+    "NAME": "单向平台",
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得!B!点 格挡 。"
   },
   "${modID}:Spikes": {
     "NAME": "尖刺",

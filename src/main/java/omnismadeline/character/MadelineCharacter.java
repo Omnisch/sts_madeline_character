@@ -19,6 +19,7 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.*;
+import omnismadeline.cards.colorless.*;
 import omnismadeline.relics.ClimbingBackpackRelic;
 import omnismadeline.stances.LandStance;
 
@@ -138,16 +139,16 @@ public class MadelineCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
-        retVal.add(DashForward.ID);
-        retVal.add(DashForward.ID);
-        retVal.add(Hop.ID);
-        retVal.add(Hop.ID);
-        retVal.add(Hop.ID);
         retVal.add(ZipMover.ID);
         retVal.add(ZipMover.ID);
         retVal.add(ZipMover.ID);
-        retVal.add(Spring.ID);
-        retVal.add(Spring.ID);
+        retVal.add(ZipMover.ID);
+        retVal.add(OneWayPlatform.ID);
+        retVal.add(OneWayPlatform.ID);
+        retVal.add(OneWayPlatform.ID);
+        retVal.add(OneWayPlatform.ID);
+        retVal.add(InfDash.ID);
+        retVal.add(InfHop.ID);
 
         return retVal;
     }
