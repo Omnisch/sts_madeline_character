@@ -1,5 +1,6 @@
 package omnismadeline.cards.colorless;
 
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -14,18 +15,23 @@ public class InfHop extends BaseJumpCard {
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
-            -2
+            1
     );
+
+    private static final int BLOCK = 7;
+    private static final int UPG_BLOCK = 3;
 
     public InfHop() {
         super(ID, info);
         setInnate(true);
         setSelfRetain(true);
+        setBlock(BLOCK, UPG_BLOCK);
         this.returnToHand = true;
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new GainBlockAction(p, this.block));
         this.addToBot(new MadelineMoveAction(m, GAP));
     }
 

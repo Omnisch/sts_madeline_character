@@ -1,6 +1,8 @@
 package omnismadeline.cards.colorless;
 
+import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineMoveAction;
@@ -14,18 +16,23 @@ public class InfDash extends BaseDashCard {
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
-            -2
+            1
     );
+
+    private static final int DAMAGE = 9;
+    private static final int UPG_DAMAGE = 2;
 
     public InfDash() {
         super(ID, info);
         setInnate(true);
         setSelfRetain(true);
+        setDamage(DAMAGE, UPG_DAMAGE);
         this.returnToHand = true;
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
