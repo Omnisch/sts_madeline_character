@@ -17,10 +17,10 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.relics.BagOfPreparation;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.*;
 import omnismadeline.cards.colorless.*;
-import omnismadeline.relics.ClimbingBackpackRelic;
 import omnismadeline.stances.LandStance;
 
 import java.util.ArrayList;
@@ -157,7 +157,7 @@ public class MadelineCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(ClimbingBackpackRelic.ID);
+        retVal.add(BagOfPreparation.ID);
 
         return retVal;
     }
