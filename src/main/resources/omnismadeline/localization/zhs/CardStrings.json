@@ -80,6 +80,10 @@
     "NAME": "冲刺水晶",
     "DESCRIPTION": "获得!M!点 ${modID}:冲刺机会 。"
   },
+  "${modID}:Bonfire": {
+    "NAME": "营地",
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得!M!层 再生 。 NL 消耗 。"
+  },
   "${modID}:ScatteredAndLost": {
     "NAME": "分散与失落",
     "DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
