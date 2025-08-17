@@ -80,16 +80,16 @@ public class MadelineMoveAction extends AbstractGameAction {
             }
 
             for(int i = 0; i < this.amount; ++i) {
-                MadelinePendedAction.actionsPended.addLast(new MadelineMoveOneCardAction(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng), m));
+                MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng), m));
             }
-            MadelinePendedAction.actionsPended.addLast(new DrawCardAction(1));
+            MadelinePendAndFlushAction.actionsPended.addLast(new DrawCardAction(1));
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                MadelinePendedAction.actionsPended.addLast(new MadelineMoveOneCardAction(c, m));
+                MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(c, m));
             }
-            MadelinePendedAction.actionsPended.addLast(new DrawCardAction(1));
+            MadelinePendAndFlushAction.actionsPended.addLast(new DrawCardAction(1));
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }

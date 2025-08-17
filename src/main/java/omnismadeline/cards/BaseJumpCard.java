@@ -1,14 +1,11 @@
 package omnismadeline.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
-import omnismadeline.actions.MadelinePendedAction;
+import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.enums.CustomTags;
-import omnismadeline.powers.MomentumPower;
-import omnismadeline.stances.LandStance;
 import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
@@ -27,7 +24,7 @@ public abstract class BaseJumpCard extends BaseCard {
         this.addToBot(new ChangeStanceAction(new SoarStance()));
         onUse(p, m);
         this.addToBot(new MadelineGainMomentumAction(1));
-        this.addToBot(new MadelinePendedAction());
+        this.addToBot(new MadelinePendAndFlushAction());
     }
 
     @Override

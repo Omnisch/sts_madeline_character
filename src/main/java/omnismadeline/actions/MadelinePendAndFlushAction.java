@@ -10,20 +10,17 @@ import org.apache.logging.log4j.Logger;
 
 import static omnismadeline.MadelineMod.modID;
 
-public class MadelinePendedAction extends AbstractGameAction implements OnStartBattleSubscriber {
+public class MadelinePendAndFlushAction extends AbstractGameAction implements OnStartBattleSubscriber {
     public static final Logger logger = LogManager.getLogger(modID);
     public static final ArrayDeque<AbstractGameAction> actionsPended = new ArrayDeque<>();
 
     @Override
     public void update() {
-        if (actionsPended.isEmpty()) {
-            this.isDone = true;
-            return;
+        while (!actionsPended.isEmpty()) {
+            AbstractGameAction a = actionsPended.pollFirst();
+            this.addToBot(a);
+            logger.info("Add pended action {}.", a.getClass().getSimpleName());
         }
-
-        AbstractGameAction a = actionsPended.pollFirst();
-        this.addToBot(a);
-        logger.info("Add pended action {}.", a.getClass().getSimpleName());
         this.isDone = true;
     }
 

@@ -6,7 +6,7 @@ import basemod.abstracts.DynamicVariable;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import omnismadeline.MadelineMod;
 import omnismadeline.util.CardStats;
-import omnismadeline.actions.MadelinePendedAction;
+import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.util.TriFunction;
 import com.badlogic.gdx.graphics.Color;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -602,7 +602,7 @@ public abstract class BaseCard extends CustomCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         onUse(abstractPlayer, abstractMonster);
-        this.addToBot(new MadelinePendedAction());
+        this.addToBot(new MadelinePendAndFlushAction());
     }
     protected abstract void onUse(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
 
