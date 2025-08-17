@@ -1,7 +1,9 @@
 package omnismadeline.relics;
 
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.actions.common.RelicAboveCreatureAction;
 import com.megacrit.cardcrawl.cards.colorless.DeepBreath;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import omnismadeline.character.MadelineCharacter;
 
@@ -19,6 +21,7 @@ public class ClimbingBackpackRelic extends BaseRelic {
 
     @Override
     public void atBattleStartPreDraw() {
+        this.addToBot(new RelicAboveCreatureAction(AbstractDungeon.player, this));
         this.addToBot(new MakeTempCardInHandAction(new DeepBreath()));
     }
 
