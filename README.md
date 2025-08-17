@@ -2,7 +2,7 @@
 
 ## 遗物
 
-- [ ] 登山背包 `Climbing Backpack` 初始遗物。
+- [x] 登山背包 `Climbing Backpack` 初始遗物。在每场战斗开始时，将一张深呼吸放入你的手牌。
 - [ ] 不知所谓的机器 `Pointless Machines` 你每打出1张冲刺，获得2点格挡。在打出24张冲刺后升级。
 - [ ] 沉重与脆弱 `Heavy and Frail` 你每打出3张冲刺，获得12点格挡。
 

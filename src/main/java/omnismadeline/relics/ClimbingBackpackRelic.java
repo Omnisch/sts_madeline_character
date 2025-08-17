@@ -1,10 +1,9 @@
 package omnismadeline.relics;
 
-import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
+import com.megacrit.cardcrawl.cards.colorless.DeepBreath;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.enums.CustomTags;
 
 import static omnismadeline.MadelineMod.makeID;
 
@@ -19,12 +18,8 @@ public class ClimbingBackpackRelic extends BaseRelic {
     }
 
     @Override
-    public void onPlayerEndTurn() {
-        for (AbstractCard card : AbstractDungeon.player.hand.group) {
-            if (card.tags.contains(CustomTags.DASH) || card.tags.contains(CustomTags.JUMP)) {
-                card.retain = true;
-            }
-        }
+    public void atBattleStartPreDraw() {
+        this.addToBot(new MakeTempCardInHandAction(new DeepBreath()));
     }
 
     @Override
