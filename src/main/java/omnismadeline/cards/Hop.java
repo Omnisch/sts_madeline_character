@@ -15,7 +15,7 @@ public class Hop extends BaseJumpCard {
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
-            1
+            0
     );
 
     private static final int BLOCK = 5;

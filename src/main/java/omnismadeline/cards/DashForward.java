@@ -16,7 +16,7 @@ public class DashForward extends BaseDashCard {
             CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
-            1
+            0
     );
 
     private static final int DAMAGE = 6;
