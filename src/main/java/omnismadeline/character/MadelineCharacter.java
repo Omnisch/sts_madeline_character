@@ -166,14 +166,13 @@ public class MadelineCharacter extends CustomPlayer {
     public AbstractCard getStartCardForEvent() {
         //This card is used for the Gremlin card matching game.
         //It should be a non-strike non-defend starter card, but it doesn't have to be.
-        return new DashForward();
+        return new ZipMover();
     }
 
     // Make Madeline always in a stance.
     @Override
     public void preBattlePrep() {
         super.preBattlePrep();
-
         this.stance = new LandStance();
     }
 
