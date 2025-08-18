@@ -1,16 +1,20 @@
-package omnismadeline.cards;
+package omnismadeline.cards.colorless;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import omnismadeline.cards.BaseEnvironmentCard;
+import omnismadeline.cards.MagmaCube;
 import omnismadeline.enums.CustomTags;
+import omnismadeline.powers.MomentumPower;
 import omnismadeline.util.CardStats;
 
-public class IceBall extends BaseEnvironmentCard {
-    public static final String ID = makeID(IceBall.class.getSimpleName());
+public class IceCube extends BaseEnvironmentCard {
+    public static final String ID = makeID(IceCube.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.COLORLESS,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -19,29 +23,35 @@ public class IceBall extends BaseEnvironmentCard {
             -2
     );
 
-    private static final int BLOCK = 8;
-    private static final int UPG_BLOCK = 3;
+    private static final int BLOCK = 6;
+    private static final int UPG_BLOCK = 2;
+    private static final int MAGIC = 1;
 
-    public IceBall() {
+    public IceCube() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
+        setMagic(MAGIC);
         setExhaust(true);
         this.tags.add(CustomTags.ICE);
-        this.cardsToPreview = new MagmaBall(false);
+        this.cardsToPreview = new MagmaCube(false);
     }
-    public IceBall(boolean isPreview) {
+    public IceCube(boolean isPreview) {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
+        setMagic(MAGIC);
         setExhaust(true);
         this.tags.add(CustomTags.ICE);
         if (isPreview) {
-            this.cardsToPreview = new MagmaBall(false);
+            this.cardsToPreview = new MagmaCube(false);
         }
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
+        if (p.hasPower(MomentumPower.POWER_ID)) {
+            this.addToBot(new ReducePowerAction(p, p, MomentumPower.POWER_ID, this.magicNumber));
+        }
         this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
     }
 
@@ -55,6 +65,6 @@ public class IceBall extends BaseEnvironmentCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new IceBall();
+        return new IceCube();
     }
 }

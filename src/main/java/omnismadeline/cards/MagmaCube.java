@@ -6,44 +6,49 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.cards.colorless.IceBall;
+import omnismadeline.actions.MadelineGainMomentumAction;
+import omnismadeline.cards.colorless.IceCube;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
-public class MagmaBall extends BaseEnvironmentCard {
-    public static final String ID = makeID(MagmaBall.class.getSimpleName());
+public class MagmaCube extends BaseEnvironmentCard {
+    public static final String ID = makeID(MagmaCube.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.UNCOMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
             -2
     );
 
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 8;
     private static final int UPG_DAMAGE = 2;
+    private static final int MAGIC = 1;
 
-    public MagmaBall() {
+    public MagmaCube() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC);
         setExhaust(true);
         this.tags.add(CustomTags.MAGMA);
-        this.cardsToPreview = new IceBall(false);
+        this.cardsToPreview = new IceCube(false);
     }
-    public MagmaBall(boolean isPreview) {
+    public MagmaCube(boolean isPreview) {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
+        setMagic(MAGIC);
         setExhaust(true);
         this.tags.add(CustomTags.MAGMA);
         if (isPreview) {
-            this.cardsToPreview = new IceBall(false);
+            this.cardsToPreview = new IceCube(false);
         }
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
+        this.addToBot(new MadelineGainMomentumAction(this.magicNumber));
         this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
     }
 
@@ -57,6 +62,6 @@ public class MagmaBall extends BaseEnvironmentCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new MagmaBall();
+        return new MagmaCube();
     }
 }

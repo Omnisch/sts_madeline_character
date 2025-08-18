@@ -1,4 +1,4 @@
-package omnismadeline.cards;
+package omnismadeline.cards.colorless;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
@@ -6,38 +6,38 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.cards.colorless.IceBall;
-import omnismadeline.character.MadelineCharacter;
+import omnismadeline.cards.BaseEnvironmentCard;
+import omnismadeline.cards.MagmaBall;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
-public class MagmaBall extends BaseEnvironmentCard {
-    public static final String ID = makeID(MagmaBall.class.getSimpleName());
+public class IceBall extends BaseEnvironmentCard {
+    public static final String ID = makeID(IceBall.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            MadelineCharacter.Meta.CARD_COLOR,
-            CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
+            CardColor.COLORLESS,
+            CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             -2
     );
 
-    private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 2;
+    private static final int BLOCK = 8;
+    private static final int UPG_BLOCK = 2;
 
-    public MagmaBall() {
+    public IceBall() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setBlock(BLOCK, UPG_BLOCK);
         setExhaust(true);
-        this.tags.add(CustomTags.MAGMA);
-        this.cardsToPreview = new IceBall(false);
+        this.tags.add(CustomTags.ICE);
+        this.cardsToPreview = new MagmaBall(false);
     }
-    public MagmaBall(boolean isPreview) {
+    public IceBall(boolean isPreview) {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        setBlock(BLOCK, UPG_BLOCK);
         setExhaust(true);
-        this.tags.add(CustomTags.MAGMA);
+        this.tags.add(CustomTags.ICE);
         if (isPreview) {
-            this.cardsToPreview = new IceBall(false);
+            this.cardsToPreview = new MagmaBall(false);
         }
     }
 
@@ -57,6 +57,6 @@ public class MagmaBall extends BaseEnvironmentCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new MagmaBall();
+        return new IceBall();
     }
 }
