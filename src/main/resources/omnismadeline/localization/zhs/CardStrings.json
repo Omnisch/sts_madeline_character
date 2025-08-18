@@ -73,8 +73,8 @@
   },
   "${modID}:WingedStrawberry": {
     "NAME": "羽翼草莓",
-    "DESCRIPTION": "获得 [E] [E] 。 NL 在打出 ${modID}:冲刺 时 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 在打出 ${modID}:冲刺 时 消耗 。"
+    "DESCRIPTION": "获得 [E] [E] 。 NL 你打出 ${modID}:冲刺 时，若这张牌在手牌中，则 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 你打出 ${modID}:冲刺 时，若这张牌在手牌中，则 消耗 。"
   },
   "${modID}:Refill": {
     "NAME": "冲刺水晶",
