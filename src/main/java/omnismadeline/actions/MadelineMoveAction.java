@@ -63,7 +63,6 @@ public class MadelineMoveAction extends AbstractGameAction {
     public void update() {
         if (this.duration == this.startDuration) {
             if (this.p.hand.isEmpty()) {
-                this.addToBot(new DrawCardAction(1));
                 this.isDone = true;
                 return;
             }
@@ -82,14 +81,12 @@ public class MadelineMoveAction extends AbstractGameAction {
             for(int i = 0; i < this.amount; ++i) {
                 MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng), m));
             }
-            MadelinePendAndFlushAction.actionsPended.addLast(new DrawCardAction(1));
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
                 MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(c, m));
             }
-            MadelinePendAndFlushAction.actionsPended.addLast(new DrawCardAction(1));
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;
         }
