@@ -106,5 +106,15 @@
     "NAME": "分散与失落",
     "DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
     "UPGRADE_DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。"
+  },
+  "${modID}:Fireball": {
+    "NAME": "熔岩球",
+    "DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球 放入你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球+ 放入你的抽牌堆中。 NL 消耗 。"
+  },
+  "${modID}:IceBall": {
+    "NAME": "寒冰球",
+    "DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球 放入你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球+ 放入你的抽牌堆中。 NL 消耗 。"
   }
 }
