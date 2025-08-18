@@ -47,11 +47,11 @@
   },
   "${modID}:ZipMover": {
     "NAME": "交通方块",
-    "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。 NL ${modID}:打击 。"
   },
   "${modID}:OneWayPlatform": {
     "NAME": "单向平台",
-    "DESCRIPTION": "${modID}:着陆 。 NL 获得!B!点 格挡 。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得!B!点 格挡 。 NL ${modID}:防御 。"
   },
   "${modID}:Spikes": {
     "NAME": "尖刺",
