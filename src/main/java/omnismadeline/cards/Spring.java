@@ -14,8 +14,8 @@ public class Spring extends BaseEnvironmentCard {
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.UNCOMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
-            CardTarget.SELF,
-            1
+            CardTarget.NONE,
+            0
     );
 
     private static final int MAGIC = 2;
