@@ -1,6 +1,8 @@
 package omnismadeline.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -18,6 +20,12 @@ public class EyeOfTheStormPower extends BasePower {
     public EyeOfTheStormPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
         p = AbstractDungeon.player;
+        this.updateDescription();
+    }
+
+    @Override
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        this.updateDescription();
     }
 
     @Override
@@ -29,5 +37,10 @@ public class EyeOfTheStormPower extends BasePower {
 
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
+        if (GAM_fieldPatch.totalJumpPlayedThisTurn == 0) {
+            this.description += DESCRIPTIONS[2];
+        } else {
+            this.description += DESCRIPTIONS[3];
+        }
     }
 }

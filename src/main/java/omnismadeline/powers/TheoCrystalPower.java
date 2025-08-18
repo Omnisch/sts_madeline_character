@@ -21,12 +21,14 @@ public class TheoCrystalPower extends BasePower {
     public TheoCrystalPower(AbstractCreature owner, int amount, boolean upgraded) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
         this.upgraded = upgraded;
+        this.updateDescription();
     }
 
     @Override
     public int onLoseHp(int damageAmount) {
-        if (upgraded) {
+        if (this.upgraded) {
             if (damageReceiveCount++ < 1) {
+                this.updateDescription();
                 return damageAmount;
             }
         }
@@ -46,6 +48,13 @@ public class TheoCrystalPower extends BasePower {
     }
 
     public void updateDescription() {
-        this.description = upgraded ? DESCRIPTIONS[1] : DESCRIPTIONS[0];
+        if (this.upgraded) {
+            this.description = DESCRIPTIONS[1];
+            if (damageReceiveCount > 0) {
+                this.description += DESCRIPTIONS[2];
+            }
+        } else {
+            this.description = DESCRIPTIONS[0];
+        }
     }
 }
