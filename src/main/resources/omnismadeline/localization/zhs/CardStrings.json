@@ -103,6 +103,11 @@
     "NAME": "紧追不舍",
     "DESCRIPTION": "抽!M!张牌。 NL 将一张 *疑虑 放入你的抽牌堆中。"
   },
+  "${modID}:DustTower": {
+    "NAME": "尘球塔",
+    "DESCRIPTION": "给予!M!层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "给予!M!层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。"
+  },
   "${modID}:ScatteredAndLost": {
     "NAME": "分散与失落",
     "DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
