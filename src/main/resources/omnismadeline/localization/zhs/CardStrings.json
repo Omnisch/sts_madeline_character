@@ -103,6 +103,10 @@
     "NAME": "紧追不舍",
     "DESCRIPTION": "抽!M!张牌。 NL 将一张 *疑虑 放入你的抽牌堆中。"
   },
+  "${modID}:DustBunnies": {
+    "NAME": "尘球",
+    "DESCRIPTION": "只能被 ${modID}:移动 打出。 NL 造成!D!点伤害，对意图是攻击的所有敌人再造成!D!点伤害。"
+  },
   "${modID}:DustTower": {
     "NAME": "尘球塔",
     "DESCRIPTION": "给予!M!层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。 NL 消耗 。",
