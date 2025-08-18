@@ -2,6 +2,8 @@ package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelinePendAndFlushAction;
@@ -13,6 +15,8 @@ import omnismadeline.util.CardStats;
 import java.util.Objects;
 
 public abstract class BaseDashCard extends BaseCard {
+    private static final UIStrings uiStrings;
+    private static final String CANT_DASH_MESSAGE;
     protected static final int GAP = 1;
 
     public BaseDashCard(String ID, CardStats info) {
@@ -35,7 +39,7 @@ public abstract class BaseDashCard extends BaseCard {
         if (!super.canUse(p, m)) {
             return false;
         } else if (!hasDashChances(p)) {
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            this.cantUseMessage = CANT_DASH_MESSAGE;
             return false;
         } else {
             return true;
@@ -44,5 +48,10 @@ public abstract class BaseDashCard extends BaseCard {
 
     private static boolean hasDashChances(AbstractPlayer p) {
         return p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount > 0;
+    }
+
+    static {
+        uiStrings = CardCrawlGame.languagePack.getUIString(makeID(BaseDashCard.class.getSimpleName()));
+        CANT_DASH_MESSAGE = uiStrings.TEXT[0];
     }
 }

@@ -2,6 +2,8 @@ package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelinePendAndFlushAction;
@@ -12,6 +14,8 @@ import omnismadeline.util.CardStats;
 import java.util.Objects;
 
 public abstract class BaseJumpCard extends BaseCard {
+    private static final UIStrings uiStrings;
+    private static final String CANT_JUMP_MESSAGE;
     protected static final int GAP = 1;
 
     public BaseJumpCard(String ID, CardStats info) {
@@ -32,10 +36,15 @@ public abstract class BaseJumpCard extends BaseCard {
         if (!super.canUse(p, m)) {
             return false;
         } else if (Objects.equals(p.stance.ID, SoarStance.STANCE_ID)) {
-            this.cantUseMessage = cardStrings.EXTENDED_DESCRIPTION[0];
+            this.cantUseMessage = CANT_JUMP_MESSAGE;
             return false;
         } else {
             return true;
         }
+    }
+
+    static {
+        uiStrings = CardCrawlGame.languagePack.getUIString(makeID(BaseJumpCard.class.getSimpleName()));
+        CANT_JUMP_MESSAGE = uiStrings.TEXT[0];
     }
 }

@@ -13,6 +13,21 @@
       "This is a key": "This is a value."
     }
   },
+  "${modID}:BaseDashCard": {
+    "TEXT": [
+      "没有足够的 NL #r冲刺机会 ！"
+    ]
+  },
+  "${modID}:BaseEnvironmentCard": {
+    "TEXT": [
+      "只能被 #r移动 打出！"
+    ]
+  },
+  "${modID}:BaseJumpCard": {
+    "TEXT": [
+      "需要先 #r着陆 ！"
+    ]
+  },
   "${modID}:MadelineMoveAction": {
     "TEXT": [
       "移动"

@@ -1,7 +1,6 @@
 package omnismadeline.actions;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -16,7 +15,7 @@ import static omnismadeline.MadelineMod.modID;
 
 public class MadelineMoveAction extends AbstractGameAction {
     private static final UIStrings uiStrings;
-    public static final String[] TEXT;
+    public static final String SELECT_SCREEN_MESSAGE;
     private final AbstractPlayer p;
     private final AbstractMonster m;
     private final boolean isRandom;
@@ -73,7 +72,7 @@ public class MadelineMoveAction extends AbstractGameAction {
 
             if (!this.isRandom) {
                 numMoved = this.amount;
-                AbstractDungeon.handCardSelectScreen.open(TEXT[0], this.amount, this.anyNumber, this.canPickZero);
+                AbstractDungeon.handCardSelectScreen.open(SELECT_SCREEN_MESSAGE, this.amount, this.anyNumber, this.canPickZero);
                 this.tickDuration();
                 return;
             }
@@ -96,6 +95,6 @@ public class MadelineMoveAction extends AbstractGameAction {
 
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString(modID + ":" + MadelineMoveAction.class.getSimpleName());
-        TEXT = uiStrings.TEXT;
+        SELECT_SCREEN_MESSAGE = uiStrings.TEXT[0];
     }
 }

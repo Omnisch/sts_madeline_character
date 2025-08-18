@@ -19,17 +19,11 @@
   },
   "${modID}:InfDash": {
     "NAME": "冲刺",
-    "DESCRIPTION": "${modID}:永恒 。 NL ${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。",
-    "EXTENDED_DESCRIPTION": [
-      "没有足够的 NL 冲刺机会！"
-    ]
+    "DESCRIPTION": "${modID}:永恒 。 NL ${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。"
   },
   "${modID}:DashForward": {
     "NAME": "横冲",
-    "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。",
-    "EXTENDED_DESCRIPTION": [
-      "没有足够的 NL 冲刺机会！"
-    ]
+    "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。"
   },
   "${modID}:InfHop": {
     "NAME": "跳跃",

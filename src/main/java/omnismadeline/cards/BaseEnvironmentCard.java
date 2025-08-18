@@ -1,11 +1,15 @@
 package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public abstract class BaseEnvironmentCard extends BaseCard {
+    private static final UIStrings uiStrings;
+    private static final String NOT_MOVED_MESSAGE;
     public boolean isAboutToMove = false;
 
     public BaseEnvironmentCard(String ID, CardStats info) {
@@ -22,8 +26,16 @@ public abstract class BaseEnvironmentCard extends BaseCard {
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) {
             return false;
+        } else if (!isAboutToMove) {
+            this.cantUseMessage = NOT_MOVED_MESSAGE;
+            return false;
         } else {
-            return isAboutToMove;
+            return true;
         }
+    }
+
+    static {
+        uiStrings = CardCrawlGame.languagePack.getUIString(makeID(BaseEnvironmentCard.class.getSimpleName()));
+        NOT_MOVED_MESSAGE = uiStrings.TEXT[0];
     }
 }
