@@ -30,13 +30,13 @@ public class TouchSwitch extends BaseCard {
         setBlock(BLOCK);
         setMagic(MAGIC, UPG_MAGIC);
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null) {
-            this.setCostForTurn(this.costForTurn - GAM_fieldPatch.totalDashTagPlayedThisTurn - GAM_fieldPatch.totalJumpTagPlayedThisTurn);
+            this.setCostForTurn(this.costForTurn - GAM_fieldPatch.totalMovePlayedThisTurn);
         }
     }
 
     @Override
     public void triggerOnCardPlayed(AbstractCard c) {
-        if (c.tags.contains(CustomTags.DASH) || c.tags.contains(CustomTags.JUMP)) {
+        if (c.tags.contains(CustomTags.MOVE)) {
             this.setCostForTurn(this.costForTurn - 1);
         }
     }

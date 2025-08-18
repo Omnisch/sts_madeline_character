@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.cards.BaseEnvironmentCard;
 import omnismadeline.enums.CustomTags;
+import omnismadeline.patches.GAM_fieldPatch;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -33,9 +34,13 @@ public class MadelineMoveOneCardAction extends AbstractGameAction {
 
         if (c.canUse(p, m)) {
             this.addToBot(new NewQueueCardAction(c, m, false, false));
+            GAM_fieldPatch.totalMovedAsUsedThisTurn++;
+            GAM_fieldPatch.totalMovedAsUsedThisCombat++;
             logger.info("Move card {} as played.", c.cardID);
         } else {
             p.limbo.moveToDiscardPile(c);
+            GAM_fieldPatch.totalMovedAsDiscardedThisTurn++;
+            GAM_fieldPatch.totalMovedAsDiscardedThisCombat++;
             logger.info("Move card {} as discarded.", c.cardID);
         }
 

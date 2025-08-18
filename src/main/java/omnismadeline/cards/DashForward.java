@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
+import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public class DashForward extends BaseDashCard {
@@ -26,6 +27,7 @@ public class DashForward extends BaseDashCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.tags.add(CardTags.STARTER_STRIKE);
+        this.tags.add(CustomTags.MOVE);
     }
 
     @Override

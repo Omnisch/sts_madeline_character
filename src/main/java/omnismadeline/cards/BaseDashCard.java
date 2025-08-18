@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.enums.CustomTags;
+import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.DashChancePower;
 import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
@@ -32,6 +33,8 @@ public abstract class BaseDashCard extends BaseCard {
         onUse(p, m);
         this.addToBot(new MadelineGainMomentumAction(1));
         this.addToBot(new MadelinePendAndFlushAction());
+        GAM_fieldPatch.totalDashPlayedThisTurn++;
+        GAM_fieldPatch.totalDashPlayedThisCombat++;
     }
 
     @Override

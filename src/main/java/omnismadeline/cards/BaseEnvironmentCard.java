@@ -4,7 +4,9 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.enums.CustomTags;
+import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.util.CardStats;
 
 public abstract class BaseEnvironmentCard extends BaseCard {
@@ -20,6 +22,14 @@ public abstract class BaseEnvironmentCard extends BaseCard {
     @Override
     public void onMoveToDiscard() {
         isAboutToMove = false;
+    }
+
+    @Override
+    public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        onUse(abstractPlayer, abstractMonster);
+        this.addToBot(new MadelinePendAndFlushAction());
+        GAM_fieldPatch.totalEnvrPlayedThisTurn++;
+        GAM_fieldPatch.totalEnvrPlayedThisCombat++;
     }
 
     @Override

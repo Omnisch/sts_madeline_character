@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.cards.BaseJumpCard;
+import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public class InfHop extends BaseJumpCard {
@@ -27,6 +28,7 @@ public class InfHop extends BaseJumpCard {
         setSelfRetain(true);
         setBlock(BLOCK, UPG_BLOCK);
         this.returnToHand = true;
+        this.tags.add(CustomTags.MOVE);
     }
 
     @Override

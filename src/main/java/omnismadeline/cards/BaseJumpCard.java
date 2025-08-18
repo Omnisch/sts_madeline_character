@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.enums.CustomTags;
+import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
@@ -29,6 +30,8 @@ public abstract class BaseJumpCard extends BaseCard {
         onUse(p, m);
         this.addToBot(new MadelineGainMomentumAction(1));
         this.addToBot(new MadelinePendAndFlushAction());
+        GAM_fieldPatch.totalJumpPlayedThisTurn++;
+        GAM_fieldPatch.totalJumpPlayedThisCombat++;
     }
 
     @Override

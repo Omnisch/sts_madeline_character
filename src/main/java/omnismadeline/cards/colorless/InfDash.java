@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.cards.BaseDashCard;
+import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public class InfDash extends BaseDashCard {
@@ -28,6 +29,7 @@ public class InfDash extends BaseDashCard {
         setSelfRetain(true);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.returnToHand = true;
+        this.tags.add(CustomTags.MOVE);
     }
 
     @Override

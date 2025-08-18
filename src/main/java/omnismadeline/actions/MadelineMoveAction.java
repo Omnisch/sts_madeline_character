@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.enums.CustomActions;
+import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.MomentumPower;
 
 import static omnismadeline.MadelineMod.modID;
@@ -61,6 +62,9 @@ public class MadelineMoveAction extends AbstractGameAction {
     @Override
     public void update() {
         if (this.duration == this.startDuration) {
+            GAM_fieldPatch.totalMovePlayedThisTurn++;
+            GAM_fieldPatch.totalMovePlayedThisCombat++;
+
             if (this.p.hand.isEmpty()) {
                 this.isDone = true;
                 return;

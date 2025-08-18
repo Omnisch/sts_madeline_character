@@ -22,7 +22,7 @@ public class EyeOfTheStormPower extends BasePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if (GAM_fieldPatch.totalJumpTagPlayedThisTurn == 0) {
+        if (GAM_fieldPatch.totalJumpPlayedThisTurn == 0) {
             this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.amount), this.amount));
         }
     }

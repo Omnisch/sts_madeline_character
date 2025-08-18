@@ -16,11 +16,14 @@ public class MadelinePendAndFlushAction extends AbstractGameAction implements On
 
     @Override
     public void update() {
-        while (!actionsPended.isEmpty()) {
-            AbstractGameAction a = actionsPended.pollFirst();
-            this.addToBot(a);
-            logger.info("Add pended action {}.", a.getClass().getSimpleName());
+        if (actionsPended.isEmpty()) {
+            this.isDone = true;
+            return;
         }
+
+        AbstractGameAction a = actionsPended.pollFirst();
+        this.addToBot(a);
+        logger.info("Add pended action {}.", a.getClass().getSimpleName());
         this.isDone = true;
     }
 
