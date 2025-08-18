@@ -1,10 +1,12 @@
 package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
+import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
 public class OneWayPlatform extends BaseCard {
@@ -28,6 +30,7 @@ public class OneWayPlatform extends BaseCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new ChangeStanceAction(new LandStance()));
         this.addToBot(new GainBlockAction(p, p, this.block));
     }
 

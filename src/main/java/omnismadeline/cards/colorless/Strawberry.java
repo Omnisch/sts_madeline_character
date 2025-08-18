@@ -17,12 +17,12 @@ public class Strawberry extends BaseCard {
             1
     );
 
-    private static final int UPG_COST = 0;
     private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     public Strawberry() {
         super(ID, info);
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
         setExhaust(true);
     }
 
