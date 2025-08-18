@@ -21,6 +21,13 @@
       " 张牌，从弃牌堆中选择一张牌放入你的手牌中。"
     ]
   },
+  "${modID}:EyeOfTheStorm": {
+    "NAME": "风暴之眼",
+    "DESCRIPTIONS": [
+      "你每有一回合未打出 #y跳跃 ，在你的回合结束时获得 #b",
+      " 点 #y敏捷 。"
+    ]
+  },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",
     "DESCRIPTIONS": [

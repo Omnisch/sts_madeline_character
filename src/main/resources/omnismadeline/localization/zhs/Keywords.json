@@ -67,14 +67,14 @@
     "NAMES": [
       "跳跃"
     ],
-    "DESCRIPTION": "下一次着陆前你不能再打出跳跃。获得 #b1 点 #y 动量。"
+    "DESCRIPTION": "每次着陆后你最多打出一张跳跃。获得 #b1 点 #y动量 。"
   },
   {
     "PROPER_NAME": "冲刺",
     "NAMES": [
       "冲刺"
     ],
-    "DESCRIPTION": "消耗 #b1 点 #y冲刺机会 。获得 #b1 点 #y 动量。"
+    "DESCRIPTION": "消耗 #b1 点 #y冲刺机会 。获得 #b1 点 #y动量 。"
   },
   {
     "PROPER_NAME": "充能",
