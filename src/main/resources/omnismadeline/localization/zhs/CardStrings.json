@@ -78,7 +78,8 @@
   },
   "${modID}:Refill": {
     "NAME": "冲刺水晶",
-    "DESCRIPTION": "获得!M!点 ${modID}:冲刺机会 。"
+    "DESCRIPTION": "获得1点 ${modID}:冲刺机会 。",
+    "UPGRADE_DESCRIPTION": "获得1点 ${modID}:冲刺机会 。 NL 抽一张牌。"
   },
   "${modID}:Bonfire": {
     "NAME": "营地",
