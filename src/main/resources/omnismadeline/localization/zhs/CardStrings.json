@@ -107,6 +107,11 @@
     "DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
     "UPGRADE_DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。"
   },
+  "${modID}:Snowball": {
+    "NAME": "雪球",
+    "DESCRIPTION": "造成!D!点伤害，抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害，抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
+  },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",
     "DESCRIPTION": "若你在本场战斗中未受到伤害，战斗结束时额外获得一件遗物。",
