@@ -27,7 +27,7 @@ public class IceBall extends BaseEnvironmentCard {
         setBlock(BLOCK, UPG_BLOCK);
         setExhaust(true);
         this.tags.add(CustomTags.ICE);
-        this.cardsToPreview = new Fireball(false);
+        this.cardsToPreview = new MagmaBall(false);
     }
     public IceBall(boolean isPreview) {
         super(ID, info);
@@ -35,7 +35,7 @@ public class IceBall extends BaseEnvironmentCard {
         setExhaust(true);
         this.tags.add(CustomTags.ICE);
         if (isPreview) {
-            this.cardsToPreview = new Fireball(false);
+            this.cardsToPreview = new MagmaBall(false);
         }
     }
 

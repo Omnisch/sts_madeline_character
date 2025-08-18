@@ -10,8 +10,8 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
-public class Fireball extends BaseEnvironmentCard {
-    public static final String ID = makeID(Fireball.class.getSimpleName());
+public class MagmaBall extends BaseEnvironmentCard {
+    public static final String ID = makeID(MagmaBall.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -23,18 +23,18 @@ public class Fireball extends BaseEnvironmentCard {
     private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 3;
 
-    public Fireball() {
+    public MagmaBall() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setExhaust(true);
-        this.tags.add(CustomTags.FIRE);
+        this.tags.add(CustomTags.MAGMA);
         this.cardsToPreview = new IceBall(false);
     }
-    public Fireball(boolean isPreview) {
+    public MagmaBall(boolean isPreview) {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setExhaust(true);
-        this.tags.add(CustomTags.FIRE);
+        this.tags.add(CustomTags.MAGMA);
         if (isPreview) {
             this.cardsToPreview = new IceBall(false);
         }
@@ -56,6 +56,6 @@ public class Fireball extends BaseEnvironmentCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Fireball();
+        return new MagmaBall();
     }
 }
