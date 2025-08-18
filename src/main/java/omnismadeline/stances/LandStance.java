@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.powers.DashChancePower;
+import omnismadeline.powers.HeartOfTheMountainPower;
 import omnismadeline.powers.MomentumPower;
 
 import static omnismadeline.MadelineMod.makeID;
@@ -27,18 +28,28 @@ public class LandStance extends AbstractStance {
 
     @Override
     public void updateDescription() {
-        this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[1];
+        if (p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
+            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[2];
+        } else {
+            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[1];
+        }
     }
 
     @Override
     public void onEnterStance() {
         AbstractDungeon.actionManager.addToBottom(new MadelineRefillAction());
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
+        if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
+        }
+        this.updateDescription();
     }
 
     @Override
     public void atStartOfTurn() {
         AbstractDungeon.actionManager.addToBottom(new MadelineRefillAction());
-        AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
+        if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
+        }
+        this.updateDescription();
     }
 }

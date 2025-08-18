@@ -5,6 +5,7 @@ import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import omnismadeline.powers.HeartOfTheMountainPower;
 import omnismadeline.powers.MomentumPower;
 import omnismadeline.stances.LandStance;
 
@@ -23,6 +24,8 @@ public class MadelineGainMomentumAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
 
         if (!Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
+            this.addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, amount), amount));
+        } else if (p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new MomentumPower(p, amount), amount));
         }
 
