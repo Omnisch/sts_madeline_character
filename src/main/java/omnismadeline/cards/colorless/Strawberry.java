@@ -22,7 +22,6 @@ public class Strawberry extends BaseCard {
 
     public Strawberry() {
         super(ID, info);
-        setCostUpgrade(UPG_COST);
         setMagic(MAGIC);
         setExhaust(true);
     }
