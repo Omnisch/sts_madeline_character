@@ -12,5 +12,19 @@
     "DESCRIPTIONS": [
       "default"
     ]
+  },
+  "${modID}:PointlessMachine": {
+    "NAME": "Pointless Machine",
+    "FLAVOR": "default",
+    "DESCRIPTIONS": [
+      "default"
+    ]
+  },
+  "${modID}:HeavyAndFrail": {
+    "NAME": "Heavy and Frail",
+    "FLAVOR": "default",
+    "DESCRIPTIONS": [
+      "default"
+    ]
   }
 }
