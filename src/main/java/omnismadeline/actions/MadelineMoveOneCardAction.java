@@ -34,11 +34,13 @@ public class MadelineMoveOneCardAction extends AbstractGameAction {
 
         if (c.canUse(p, m)) {
             this.addToBot(new NewQueueCardAction(c, m, false, false));
+            // the PendAndFlushAction here is performed at BaseCard.use().
             GAM_fieldPatch.totalMovedAsUsedThisTurn++;
             GAM_fieldPatch.totalMovedAsUsedThisCombat++;
             logger.info("Move card {} as played.", c.cardID);
         } else {
             p.limbo.moveToDiscardPile(c);
+            this.addToBot(new MadelinePendAndFlushAction());
             GAM_fieldPatch.totalMovedAsDiscardedThisTurn++;
             GAM_fieldPatch.totalMovedAsDiscardedThisCombat++;
             logger.info("Move card {} as discarded.", c.cardID);

@@ -8,7 +8,7 @@ import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class Spring extends BaseEnvironmentCard {
+public class Spring extends BaseCard {
     public static final String ID = makeID(Spring.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,

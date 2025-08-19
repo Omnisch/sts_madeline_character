@@ -1,6 +1,7 @@
 package omnismadeline.cards.colorless;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -35,6 +36,11 @@ public class InfHop extends BaseJumpCard {
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, this.block));
         this.addToBot(new MadelineMoveAction(m, GAP));
+    }
+
+    @Override
+    public void onMoveToDiscard() {
+        this.addToBot(new DiscardToHandAction(this));
     }
 
     @Override
