@@ -20,11 +20,11 @@ public class CrumbleBlock extends BaseCard {
     );
 
     private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     public CrumbleBlock() {
         super(ID, info);
-        setMagic(MAGIC);
-        setSelfRetain(false, true);
+        setMagic(MAGIC, UPG_MAGIC);
         setExhaust(true);
     }
 

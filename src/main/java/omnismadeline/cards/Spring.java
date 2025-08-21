@@ -19,11 +19,11 @@ public class Spring extends BaseCard {
     );
 
     private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = 1;
 
     public Spring() {
         super(ID, info);
-        setMagic(MAGIC);
-        setExhaust(true, false);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

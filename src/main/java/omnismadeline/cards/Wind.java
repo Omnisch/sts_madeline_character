@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.WeakPower;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class Wind extends BaseCard {
+public class Wind extends BaseEnvironmentCard {
     public static final String ID = makeID(Wind.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
@@ -25,7 +25,6 @@ public class Wind extends BaseCard {
 
     public Wind() {
         super(ID, info);
-        setSelfRetain(false, true);
         setExhaust(true);
     }
 
@@ -34,7 +33,9 @@ public class Wind extends BaseCard {
         for (AbstractMonster em : AbstractDungeon.getCurrRoom().monsters.monsters) {
             this.addToBot(new ApplyPowerAction(em, p, new VulnerablePower(em, VULNERABLE, false), VULNERABLE));
         }
-        this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, WEAK, false), WEAK));
+        if (!this.upgraded) {
+            this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, WEAK, false), WEAK));
+        }
     }
 
     @Override

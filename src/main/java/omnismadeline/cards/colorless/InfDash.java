@@ -15,7 +15,7 @@ public class InfDash extends BaseDashCard {
     public static final String ID = makeID(InfDash.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.COLORLESS,
-            CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
+            CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
             1

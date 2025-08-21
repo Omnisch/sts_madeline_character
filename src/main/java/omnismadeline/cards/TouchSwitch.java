@@ -22,13 +22,13 @@ public class TouchSwitch extends BaseCard {
     );
 
     private static final int BLOCK = 4;
+    private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 1;
 
     public TouchSwitch() {
         super(ID, info);
-        setBlock(BLOCK);
-        setMagic(MAGIC, UPG_MAGIC);
+        setBlock(BLOCK, UPG_BLOCK);
+        setMagic(MAGIC);
         if (CardCrawlGame.dungeon != null && AbstractDungeon.currMapNode != null) {
             this.setCostForTurn(this.costForTurn - GAM_fieldPatch.totalMovePlayedThisTurn);
         }
