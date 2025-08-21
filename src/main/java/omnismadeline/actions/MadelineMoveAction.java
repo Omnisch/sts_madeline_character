@@ -45,17 +45,17 @@ public class MadelineMoveAction extends AbstractGameAction {
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount, boolean isRandom, boolean anyNumber) {
-        this(target, amount, isRandom, anyNumber, false);
+        this(target, amount, isRandom, anyNumber, true);
         this.target = target;
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount, boolean isRandom) {
-        this(target, amount, isRandom, true, false);
+        this(target, amount, isRandom, true, true);
         this.target = target;
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount) {
-        this(target, amount, false, true, false);
+        this(target, amount, false, true, true);
         this.target = target;
     }
 

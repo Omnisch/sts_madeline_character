@@ -23,7 +23,7 @@
 
 ## 卡牌关键字
 
-- [x] 移动 `Move` 选择一张手牌耗能打出，若无法打出则将其丢弃。
+- [x] 移动 `Move` （可以）选择一张手牌耗能打出，若无法打出则将其丢弃。
 - [x] 跳跃 `Jump` 进入凌空。获得1点动量。
 - [x] 冲刺 `Dash` 只能在有冲刺机会时打出。失去1点冲刺机会，获得1点动量。
 - [x] 充能 `Refill` 获得1点冲刺机会。
@@ -65,11 +65,11 @@
   > 冲刺移动。造成【8/10】点伤害，给予【1/2】层虚弱。
 - [ ] **切版冲刺** `Transition Dash` 常见 ①
   > 冲刺移动。造成【10/14】点伤害，结束你的回合。你在下一回合开始时充能。消耗。
-- [ ] **凌波微步** `Wave Dash` 罕见
-- [ ] **Demo冲刺** `Demo Dash` 罕见
-- [ ] **Super冲刺** `Super Dash` 无色
-- [ ] **Hyper冲刺** `Hyper Dash` 无色
-- [ ] **Ultra冲刺** `Ultra Dash` 无色
+- **凌波微步** `Wave Dash` 罕见
+- **Demo冲刺** `Demo Dash` 罕见
+- **Super冲刺** `Super Dash` 无色
+- **Hyper冲刺** `Hyper Dash` 无色
+- **Ultra冲刺** `Ultra Dash` 无色
 
 跳跃
 
@@ -83,18 +83,18 @@
   > 跳跃移动。获得【4/7】点格挡，获得【1/2】点动量。
 - [ ] 中性跳 `Neutral Jump` 罕见 ①
   > 跳跃移动。获得【2/3】点临时敏捷。
-- [ ] 蹬墙跳 `Wallbounce` 罕见 ①
+- 蹬墙跳 `Wallbounce` 罕见 ①
   > 冲刺跳跃移动。
-- [ ] 咖啡跳 `Cornerkick` 稀有
-- [ ] 抓角加速 `Cornerboost` 稀有
-- [ ] *狼跳* `Coyote Time` 罕见
+- 咖啡跳 `Cornerkick` 稀有
+- 抓角加速 `Cornerboost` 稀有
+- *狼跳* `Coyote Time` 罕见
 
 其他
 
 - [ ] *攀附* `Climb` 罕见 ②
   > 获得等同于你当前动量【+1】的力量。在每回合结束时失去所有动量。
-- [ ] 翻越 `Climbhop` 常见
-- [ ] 速降 `Fastfall` 罕见
+- 翻越 `Climbhop` 常见
+- 速降 `Fastfall` 罕见
 
 ### 1. 城市
 
