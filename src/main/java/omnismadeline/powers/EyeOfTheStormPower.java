@@ -32,15 +32,14 @@ public class EyeOfTheStormPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (GAM_fieldPatch.totalJumpPlayedThisTurn == 0) {
             this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.amount), this.amount));
+            this.flash();
         }
     }
 
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        if (GAM_fieldPatch.totalJumpPlayedThisTurn == 0) {
+        if (GAM_fieldPatch.totalJumpPlayedThisTurn > 0) {
             this.description += DESCRIPTIONS[2];
-        } else {
-            this.description += DESCRIPTIONS[3];
         }
     }
 }

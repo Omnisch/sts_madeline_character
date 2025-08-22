@@ -16,21 +16,18 @@ public class ScatteredAndLostPower extends BasePower {
     }
 
     @Override
-    public void onInitialApplication() {
-        --AbstractDungeon.player.gameHandSize;
+    public void atStartOfTurn() {
+        AbstractDungeon.player.gameHandSize -= this.amount;
     }
 
     @Override
     public void atStartOfTurnPostDraw() {
-        this.addToBot(new BetterDiscardPileToHandAction(1));
-    }
-
-    @Override
-    public void onRemove() {
-        ++AbstractDungeon.player.gameHandSize;
+        AbstractDungeon.player.gameHandSize += this.amount;
+        this.addToBot(new BetterDiscardPileToHandAction(this.amount));
+        this.flash();
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1];
+        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + amount + DESCRIPTIONS[2];
     }
 }

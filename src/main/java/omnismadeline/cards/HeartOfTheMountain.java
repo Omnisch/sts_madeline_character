@@ -26,7 +26,9 @@ public class HeartOfTheMountain extends BaseCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new HeartOfTheMountainPower(p, this.magicNumber), this.magicNumber));
+        if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
+            this.addToBot(new ApplyPowerAction(p, p, new HeartOfTheMountainPower(p)));
+        }
     }
 
     @Override

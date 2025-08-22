@@ -27,8 +27,10 @@ public class TheoCrystalPower extends BasePower {
     @Override
     public int onLoseHp(int damageAmount) {
         if (this.upgraded) {
-            if (damageReceiveCount++ < 1) {
+            ++damageReceiveCount;
+            if (damageReceiveCount < 1) {
                 this.updateDescription();
+                this.flash();
                 return damageAmount;
             }
         }
@@ -44,7 +46,9 @@ public class TheoCrystalPower extends BasePower {
 
         if (!(room instanceof MonsterRoom)) return;
 
-        room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+        for (int i = 0; i < this.amount; ++i) {
+            room.addRelicToRewards(AbstractDungeon.returnRandomRelicTier());
+        }
     }
 
     public void updateDescription() {
