@@ -27,17 +27,16 @@
   },
   "${modID}:InfHop": {
     "NAME": "跳跃",
-    "DESCRIPTION": "${modID}:永恒 。 NL ${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。",
-    "EXTENDED_DESCRIPTION": [
-      "需要先着陆！"
-    ]
+    "DESCRIPTION": "${modID}:永恒 。 NL ${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。"
   },
   "${modID}:Hop": {
     "NAME": "小跳",
-    "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。",
-    "EXTENDED_DESCRIPTION": [
-      "需要先着陆！"
-    ]
+    "DESCRIPTION": "${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。"
+  },
+  "${modID}:Climb": {
+    "NAME": "攀爬",
+    "DESCRIPTION": "获得等同于你当前 ${modID}:动量 的 力量 。在每回合结束时失去所有 ${modID}:动量 。",
+    "UPGRADE_DESCRIPTION": "获得等同于你当前 ${modID}:动量 +!M!的 力量 。在每回合结束时失去所有 ${modID}:动量 。"
   },
   "${modID}:ZipMover": {
     "NAME": "交通方块",
@@ -115,8 +114,8 @@
   },
   "${modID}:Snowball": {
     "NAME": "雪球",
-    "DESCRIPTION": "造成!D!点伤害，抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害，抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
   },
   "${modID}:Wind": {
     "NAME": "山风",
@@ -134,23 +133,23 @@
   },
   "${modID}:MagmaBall": {
     "NAME": "熔岩球",
-    "DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球 放入你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球+ 放入你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球 放入你的抽牌堆中。 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球+ 放入你的抽牌堆中。 消耗 。"
   },
   "${modID}:IceBall": {
     "NAME": "寒冰球",
-    "DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球 放入你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球+ 放入你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球 放入你的抽牌堆中。 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球+ 放入你的抽牌堆中。 消耗 。"
   },
   "${modID}:MagmaCube": {
     "NAME": "熔岩块",
-    "DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块 放入你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块+ 放入你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块 放入你的抽牌堆中。 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块+ 放入你的抽牌堆中。 消耗 。"
   },
   "${modID}:IceCube": {
     "NAME": "寒冰块",
-    "DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块 放入你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块+ 放入你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块 放入你的抽牌堆中。 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块+ 放入你的抽牌堆中。 消耗 。"
   },
   "${modID}:HeartOfTheMountain": {
     "NAME": "山之心",

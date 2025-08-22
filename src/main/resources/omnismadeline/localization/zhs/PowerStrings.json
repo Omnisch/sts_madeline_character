@@ -14,6 +14,12 @@
       " 张牌。"
     ]
   },
+  "${modID}:Climb": {
+    "NAME": "攀爬",
+    "DESCRIPTIONS": [
+      "在每回合结束时，你失去所有动量。"
+    ]
+  },
   "${modID}:OshiroBoss": {
     "NAME": "山庄老板",
     "DESCRIPTIONS": [
