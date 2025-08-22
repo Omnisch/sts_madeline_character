@@ -14,6 +14,13 @@
       " 张牌。"
     ]
   },
+  "${modID}:OshiroBoss": {
+    "NAME": "山庄老板",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，若你未处于 #y凌空 ，失去 #b",
+      " 点生命。"
+    ]
+  },
   "${modID}:ScatteredAndLost": {
     "NAME": "分散与失落",
     "DESCRIPTIONS": [
