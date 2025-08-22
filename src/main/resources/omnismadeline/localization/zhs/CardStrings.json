@@ -155,6 +155,11 @@
     "NAME": "山之心",
     "DESCRIPTION": "你在 ${modID}:着陆 时不再失去 ${modID}:动量 。 NL 虚无 。"
   },
+  "${modID}:DoubleRefill": {
+    "NAME": "双重水晶",
+    "DESCRIPTION": "在本场战斗中，将你的 ${modID}:冲刺机会 上限变为2。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 在本场战斗中，将你的 ${modID}:冲刺机会 上限变为2。"
+  },
   "${modID}:Farewell": {
     "NAME": "再见",
     "DESCRIPTION": "获得一场非 boss 战斗胜利。 NL 从你的牌组中移除这张牌。 NL 虚无 。"

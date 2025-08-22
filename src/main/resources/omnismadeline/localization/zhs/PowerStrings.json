@@ -56,5 +56,11 @@
     "DESCRIPTIONS": [
       "你在 #y着陆 时不再失去 #y动量 。"
     ]
+  },
+  "${modID}:DoubleRefill": {
+    "NAME": "双重水晶",
+    "DESCRIPTIONS": [
+      "在本场战斗中，将你的 #y冲刺机会 上限变为 #b2 。"
+    ]
   }
 }
