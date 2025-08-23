@@ -25,6 +25,10 @@
     "NAME": "横冲",
     "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害。"
   },
+  "${modID}:TransitionDash": {
+    "NAME": "切版冲刺",
+    "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害，结束你的回合。在你的下回合开始时 ${modID}:充能 。 NL 消耗 。"
+  },
   "${modID}:InfHop": {
     "NAME": "跳跃",
     "DESCRIPTION": "${modID}:永恒 。 NL ${modID}:跳跃 ${modID}:移动 。 NL 获得!B!点 格挡 。"

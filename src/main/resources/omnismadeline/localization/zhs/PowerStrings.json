@@ -14,6 +14,14 @@
       " 张牌。"
     ]
   },
+  "${modID}:RefillAtNextTurn": {
+    "NAME": "充能",
+    "DESCRIPTIONS": [
+      "在你的下回合开始时 #y充能 。",
+      "在你的下 #b",
+      " 个回合开始时 #y充能 。"
+    ]
+  },
   "${modID}:Climb": {
     "NAME": "攀爬",
     "DESCRIPTIONS": [
