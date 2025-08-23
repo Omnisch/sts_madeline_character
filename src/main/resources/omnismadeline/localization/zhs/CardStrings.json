@@ -142,6 +142,10 @@
     "NAME": "风暴之眼",
     "DESCRIPTION": "你每有一回合未打出 ${modID}:跳跃 ，在你的回合结束时获得!M!点 敏捷 。"
   },
+  "${modID}:RedBubble": {
+    "NAME": "红泡泡",
+    "DESCRIPTION": "造成!D!点伤害。 NL 丢弃一张牌，抽!M!张牌。 NL ${modID}:充能 。"
+  },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",
     "DESCRIPTION": "若你在本场战斗中未受到伤害，战斗结束时额外获得一件遗物。",
