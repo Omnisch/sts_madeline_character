@@ -35,6 +35,14 @@
       " 张牌。"
     ]
   },
+  "${modID}:Resurrections": {
+    "NAME": "复活",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，将一张 #y切版冲刺 放入你的手牌。",
+      "在你的回合开始时，将 #b",
+      " 张 #y切版冲刺 放入你的手牌。"
+    ]
+  },
   "${modID}:OshiroBoss": {
     "NAME": "山庄老板",
     "DESCRIPTIONS": [

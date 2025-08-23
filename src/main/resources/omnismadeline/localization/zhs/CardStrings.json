@@ -98,6 +98,10 @@
     "NAME": "紧追不舍",
     "DESCRIPTION": "你下次打出 ${modID}:移动 时抽!M!张牌。"
   },
+  "${modID}:Resurrections": {
+    "NAME": "复活",
+    "DESCRIPTION": "在你的回合开始时，将一张 *切版冲刺 放入你的手牌。"
+  },
   "${modID}:DustBunnies": {
     "NAME": "尘球",
     "DESCRIPTION": "只能被 ${modID}:移动 打出。 NL 造成!D!点伤害，对意图是攻击的所有敌人再造成!D!点伤害。"
