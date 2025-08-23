@@ -143,10 +143,10 @@ public class MadelineCharacter extends CustomPlayer {
         retVal.add(ZipMover.ID);
         retVal.add(ZipMover.ID);
         retVal.add(ZipMover.ID);
-        retVal.add(OneWayPlatform.ID);
-        retVal.add(OneWayPlatform.ID);
-        retVal.add(OneWayPlatform.ID);
-        retVal.add(OneWayPlatform.ID);
+        retVal.add(Jumpthrough.ID);
+        retVal.add(Jumpthrough.ID);
+        retVal.add(Jumpthrough.ID);
+        retVal.add(Jumpthrough.ID);
         retVal.add(InfDash.ID);
         retVal.add(InfHop.ID);
 

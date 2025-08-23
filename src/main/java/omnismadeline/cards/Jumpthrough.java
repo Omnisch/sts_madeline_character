@@ -9,8 +9,8 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
-public class OneWayPlatform extends BaseCard {
-    public static final String ID = makeID(OneWayPlatform.class.getSimpleName());
+public class Jumpthrough extends BaseCard {
+    public static final String ID = makeID(Jumpthrough.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -22,7 +22,7 @@ public class OneWayPlatform extends BaseCard {
     private static final int BLOCK = 5;
     private static final int UPG_BLOCK = 3;
 
-    public OneWayPlatform() {
+    public Jumpthrough() {
         super(ID, info);
         setBlock(BLOCK, UPG_BLOCK);
         this.tags.add(CardTags.STARTER_DEFEND);
@@ -36,6 +36,6 @@ public class OneWayPlatform extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new OneWayPlatform();
+        return new Jumpthrough();
     }
 }
