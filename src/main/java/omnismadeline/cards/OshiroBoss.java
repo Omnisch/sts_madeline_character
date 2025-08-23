@@ -8,7 +8,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.OshiroBossPower;
+import omnismadeline.powers.OshiroBossImplicitPower;
 import omnismadeline.util.CardStats;
 
 public class OshiroBoss extends BaseCard {
@@ -34,7 +34,7 @@ public class OshiroBoss extends BaseCard {
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new ApplyPowerAction(p, p, new OshiroBossPower(p, magicNumber)));
+        this.addToBot(new ApplyPowerAction(p, p, new OshiroBossImplicitPower(p, magicNumber)));
     }
 
     @Override

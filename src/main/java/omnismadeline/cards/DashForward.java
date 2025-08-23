@@ -26,7 +26,6 @@ public class DashForward extends BaseDashCard {
     public DashForward() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        this.tags.add(CardTags.STARTER_STRIKE);
         this.tags.add(CustomTags.MOVE);
     }
 

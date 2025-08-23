@@ -92,7 +92,7 @@
   },
   "${modID}:Chaser": {
     "NAME": "紧追不舍",
-    "DESCRIPTION": "抽!M!张牌。 NL 将一张 *疑虑 放入你的抽牌堆中。"
+    "DESCRIPTION": "你下次打出 ${modID}:移动 时抽!M!张牌。"
   },
   "${modID}:DustBunnies": {
     "NAME": "尘球",

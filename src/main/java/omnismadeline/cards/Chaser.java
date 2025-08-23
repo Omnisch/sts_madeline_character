@@ -2,15 +2,11 @@ package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DrawCardAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.curses.Doubt;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.RegenPower;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.stances.LandStance;
+import omnismadeline.powers.ChaserImplicitPower;
 import omnismadeline.util.CardStats;
 
 public class Chaser extends BaseCard {
@@ -29,13 +25,11 @@ public class Chaser extends BaseCard {
     public Chaser() {
         super(ID, info);
         setMagic(MAGIC, UPG_MAGIC);
-        this.cardsToPreview = new Doubt();
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DrawCardAction(magicNumber));
-        this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
+        this.addToBot(new ApplyPowerAction(p, p, new ChaserImplicitPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override

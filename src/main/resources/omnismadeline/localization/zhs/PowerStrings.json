@@ -20,6 +20,13 @@
       "在每回合结束时，你失去所有动量。"
     ]
   },
+  "${modID}:Chaser": {
+    "NAME": "紧追不舍",
+    "DESCRIPTIONS": [
+      "你下次打出 #y移动 时抽 #b",
+      " 张牌。"
+    ]
+  },
   "${modID}:OshiroBoss": {
     "NAME": "山庄老板",
     "DESCRIPTIONS": [
