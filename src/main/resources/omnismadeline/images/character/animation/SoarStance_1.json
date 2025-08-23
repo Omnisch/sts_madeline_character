@@ -1,0 +1,1 @@
+{"skeleton":{"width":104,"height":136,"fps":24,"hash":" ","name":"Sprite"},"bones":[{"name":"root"}],"slots":[{"name":"sheetSlot","bone":"root","attachment":"madeline_2"}],"skins":{"default":{"sheetSlot":{"madeline_2":{"name":"madeline_2","width":104,"height":136,"x":10.4,"y":136}}}}}

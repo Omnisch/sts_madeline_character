@@ -1,8 +1,11 @@
 package omnismadeline.stances;
 
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import omnismadeline.character.MadelineCharacter;
+import omnismadeline.powers.DashChancePower;
 
 import static omnismadeline.MadelineMod.makeID;
 
@@ -24,6 +27,11 @@ public class SoarStance extends AbstractStance {
 
     @Override
     public void updateAnimation() {
-        super.updateAnimation();
+        final MadelineCharacter madeline = (MadelineCharacter) AbstractDungeon.player;
+        int dashChanceAmount = 0;
+        if (madeline.hasPower(DashChancePower.POWER_ID)) {
+            dashChanceAmount = madeline.getPower(DashChancePower.POWER_ID).amount;
+        }
+        madeline.changeAnimation(dashChanceAmount);
     }
 }

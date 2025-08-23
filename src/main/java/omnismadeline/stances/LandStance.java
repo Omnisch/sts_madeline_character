@@ -7,6 +7,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
 import omnismadeline.actions.MadelineRefillAction;
+import omnismadeline.character.MadelineCharacter;
 import omnismadeline.powers.DashChancePower;
 import omnismadeline.powers.HeartOfTheMountainPower;
 import omnismadeline.powers.MomentumPower;
@@ -27,15 +28,6 @@ public class LandStance extends AbstractStance {
     }
 
     @Override
-    public void updateDescription() {
-        if (p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
-            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[2];
-        } else {
-            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[1];
-        }
-    }
-
-    @Override
     public void onEnterStance() {
         AbstractDungeon.actionManager.addToBottom(new MadelineRefillAction());
         if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
@@ -51,5 +43,24 @@ public class LandStance extends AbstractStance {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
         }
         this.updateDescription();
+    }
+
+    @Override
+    public void updateDescription() {
+        if (p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
+            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[2];
+        } else {
+            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[1];
+        }
+    }
+
+    @Override
+    public void updateAnimation() {
+        final MadelineCharacter madeline = (MadelineCharacter) AbstractDungeon.player;
+        int dashChanceAmount = 0;
+        if (madeline.hasPower(DashChancePower.POWER_ID)) {
+            dashChanceAmount = madeline.getPower(DashChancePower.POWER_ID).amount;
+        }
+        madeline.changeAnimation(dashChanceAmount);
     }
 }

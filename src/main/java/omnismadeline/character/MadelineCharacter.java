@@ -3,6 +3,7 @@ package omnismadeline.character;
 import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
+import basemod.animations.SpineAnimation;
 import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
@@ -17,6 +18,7 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
+import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.relics.BagOfPreparation;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.*;
@@ -119,7 +121,8 @@ public class MadelineCharacter extends CustomPlayer {
     public MadelineCharacter() {
         super(getNames()[0], Meta.OMNISMADELINE,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
-                new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+                //new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
+                new SpineAnimation(characterPath("animation/LandStance_1.atlas"), characterPath("animation/LandStance_1.json"), 1f));
 
         initializeClass(null,
                 SHOULDER_2,
@@ -174,6 +177,13 @@ public class MadelineCharacter extends CustomPlayer {
     public void preBattlePrep() {
         super.preBattlePrep();
         this.stance = new LandStance();
+    }
+
+    public void changeAnimation(int dashChanceAmount) {
+        final String atlasUrl = characterPath("animation/" + this.stance.getClass().getSimpleName() + "_" + dashChanceAmount + ".atlas");
+        final String skeletonUrl = characterPath("animation/" + this.stance.getClass().getSimpleName() + "_" + dashChanceAmount + ".json");
+        SpineAnimation spine = new SpineAnimation(atlasUrl, skeletonUrl, 1f);
+        this.loadAnimation(spine.atlasUrl, spine.skeletonUrl, spine.scale);
     }
 
     /*- Below this is methods that you should *probably* adjust, but don't have to. -*/

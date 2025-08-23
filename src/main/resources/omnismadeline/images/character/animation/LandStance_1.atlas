@@ -1,0 +1,13 @@
+
+madeline_land_1.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+madeline_1
+  rotate: false
+  xy: 1, 1
+  size: 104, 136
+  orig: 104, 136
+  offset: 0, 0
+  index: -1
