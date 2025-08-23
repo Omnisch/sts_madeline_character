@@ -112,7 +112,7 @@
   },
   "${modID}:OshiroBoss": {
     "NAME": "山庄老板",
-    "DESCRIPTION": "造成!D!点伤害。 NL 在你的回合结束时，若你未处于 ${modID}:凌空 ，失去!M!点生命。"
+    "DESCRIPTION": "造成!D!点伤害。 NL 在你的回合结束时，若你处于 ${modID}:着陆 ，失去!M!点生命。"
   },
   "${modID}:SinkingPlatform": {
     "NAME": "下沉平台",
@@ -130,8 +130,8 @@
   },
   "${modID}:Snowball": {
     "NAME": "雪球",
-    "DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你未处于 ${modID}:凌空 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
   },
   "${modID}:Wind": {
     "NAME": "山风",
@@ -145,6 +145,10 @@
   "${modID}:RedBubble": {
     "NAME": "红泡泡",
     "DESCRIPTION": "造成!D!点伤害。 NL 丢弃一张牌，抽!M!张牌。 NL ${modID}:充能 。"
+  },
+  "${modID}:Blade": {
+    "NAME": "刀片机关",
+    "DESCRIPTION": "对所有敌人造成!D!点伤害。 NL 这张牌被抽到时，若你处于 ${modID}:凌空 ，失去!M!点生命。"
   },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",

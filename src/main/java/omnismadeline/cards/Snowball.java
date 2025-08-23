@@ -10,6 +10,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
+import omnismadeline.stances.LandStance;
 import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
@@ -39,7 +40,7 @@ public class Snowball extends BaseEnvironmentCard {
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         this.addToBot(new DrawCardAction(magicNumber));
-        if (!Objects.equals(p.stance.ID, SoarStance.STANCE_ID)) {
+        if (Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
             this.addToBot(new MakeTempCardInHandAction(this.cardsToPreview.makeCopy()));
         }
         if (this.upgraded) {

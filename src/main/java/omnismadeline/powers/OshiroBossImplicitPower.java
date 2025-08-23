@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import omnismadeline.stances.LandStance;
 import omnismadeline.stances.SoarStance;
 
 import java.util.Objects;
@@ -25,7 +26,7 @@ public class OshiroBossImplicitPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             AbstractPlayer p = AbstractDungeon.player;
-            if (!Objects.equals(p.stance.ID, SoarStance.STANCE_ID)) {
+            if (Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
                 this.addToBot(new DamageAction(p, new DamageInfo(p, this.amount, DamageInfo.DamageType.HP_LOSS)));
             }
             this.addToBot(new ReducePowerAction(p, p, this, this.amount));

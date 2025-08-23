@@ -35,7 +35,7 @@ public class RedBubble extends BaseCard {
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         this.addToBot(new DiscardAction(p, p, 1, false));
-        this.addToBot(new DrawCardAction(2));
+        this.addToBot(new DrawCardAction(this.magicNumber));
         this.addToBot(new MadelineRefillAction());
     }
 
