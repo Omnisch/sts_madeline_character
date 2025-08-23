@@ -106,6 +106,10 @@
     "NAME": "山庄老板",
     "DESCRIPTION": "造成!D!点伤害。 NL 在你的回合结束时，若你未处于 ${modID}:凌空 ，失去!M!点生命。"
   },
+  "${modID}:SinkingPlatform": {
+    "NAME": "下沉平台",
+    "DESCRIPTION": "只能被 ${modID}:移动 打出。 NL ${modID}:着陆 。 NL 获得!B!点 格挡 ， NL 给予!M!层 虚弱 。"
+  },
   "${modID}:DustTower": {
     "NAME": "尘球塔",
     "DESCRIPTION": "给予!M!层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。 NL 消耗 。",
