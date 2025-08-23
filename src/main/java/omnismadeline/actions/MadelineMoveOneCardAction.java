@@ -32,8 +32,10 @@ public class MadelineMoveOneCardAction extends AbstractGameAction {
             ((BaseEnvironmentCard)c).isAboutToMove = true;
         }
 
-        if (c.canUse(p, m)) {
-            this.addToBot(new NewQueueCardAction(c, m, false, false));
+        AbstractMonster actualTarget = m.isDead ? AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true) : m;
+
+        if (c.canUse(p, actualTarget)) {
+            this.addToBot(new NewQueueCardAction(c, actualTarget, false, false));
             // the PendAndFlushAction here is performed at BaseCard.use().
             GAM_fieldPatch.totalMovedAsUsedThisTurn++;
             GAM_fieldPatch.totalMovedAsUsedThisCombat++;
