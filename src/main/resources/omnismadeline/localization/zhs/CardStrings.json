@@ -150,10 +150,18 @@
     "NAME": "刀片机关",
     "DESCRIPTION": "对所有敌人造成!D!点伤害。 NL 这张牌被抽到时，若你处于 ${modID}:凌空 ，失去!M!点生命。"
   },
+  "${modID}:Seeker": {
+    "NAME": "循迹鬼",
+    "DESCRIPTION": "获得4点 力量 和2层 易伤 。 NL 消耗 。"
+  },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",
     "DESCRIPTION": "若你在本场战斗中未受到伤害，战斗结束时额外获得一件遗物。",
     "UPGRADE_DESCRIPTION": "若你在本场战斗中受到不多于一次伤害，战斗结束时额外获得一件遗物。"
+  },
+  "${modID}:Kevin": {
+    "NAME": "凯文",
+    "DESCRIPTION": "${modID}:冲刺 ${modID}:移动 。 NL 造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。"
   },
   "${modID}:MagmaBall": {
     "NAME": "熔岩球",
