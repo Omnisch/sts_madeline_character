@@ -16,25 +16,33 @@ public class TheoCrystalPower extends BasePower {
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
     private final boolean upgraded;
-    private int damageReceiveCount = 0;
+    private boolean showAlert = false;
 
     public TheoCrystalPower(AbstractCreature owner, int amount, boolean upgraded) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
         this.upgraded = upgraded;
+
+        if (AbstractDungeon.player.damagedThisCombat == 1) {
+            showAlert = true;
+        }
         this.updateDescription();
     }
 
     @Override
-    public int onLoseHp(int damageAmount) {
+    public int onAttacked(DamageInfo info, int damageAmount) {
+        if (damageAmount == 0) {
+            return damageAmount;
+        }
+
+        AbstractPlayer p = AbstractDungeon.player;
         if (this.upgraded) {
-            ++damageReceiveCount;
-            if (damageReceiveCount < 1) {
+            if (p.damagedThisCombat == 0) {
+                this.showAlert = true;
                 this.updateDescription();
                 this.flash();
                 return damageAmount;
             }
         }
-        AbstractPlayer p = AbstractDungeon.player;
         this.addToBot(new RemoveSpecificPowerAction(p, p, this));
         return damageAmount;
     }
@@ -54,7 +62,7 @@ public class TheoCrystalPower extends BasePower {
     public void updateDescription() {
         if (this.upgraded) {
             this.description = DESCRIPTIONS[1];
-            if (damageReceiveCount > 0) {
+            if (showAlert) {
                 this.description += DESCRIPTIONS[2];
             }
         } else {

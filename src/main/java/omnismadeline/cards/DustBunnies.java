@@ -1,13 +1,11 @@
 package omnismadeline.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.ThornsPower;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
@@ -34,7 +32,7 @@ public class DustBunnies extends BaseEnvironmentCard {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
         for (AbstractMonster em : AbstractDungeon.getMonsters().monsters) {
             if (em.getIntentBaseDmg() >= 0) {
-                this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
+                this.addToBot(new DamageAction(em, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
             }
         }
     }

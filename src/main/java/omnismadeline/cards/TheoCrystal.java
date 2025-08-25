@@ -25,7 +25,10 @@ public class TheoCrystal extends BaseCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new TheoCrystalPower(p, 1, this.upgraded), 1));
+        final boolean stillCanGetAward = p.damagedThisCombat <= (this.upgraded ? 1 : 0);
+        if (stillCanGetAward) {
+            this.addToBot(new ApplyPowerAction(p, p, new TheoCrystalPower(p, 1, this.upgraded), 1));
+        }
     }
 
     @Override
