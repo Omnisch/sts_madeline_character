@@ -9,13 +9,20 @@ import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.util.CardStats;
 
+import static omnismadeline.MadelineMod.characterPath;
+
 public abstract class BaseEnvironmentCard extends BaseCard {
     private static final UIStrings uiStrings;
     private static final String NOT_MOVED_MESSAGE;
     public boolean isAboutToMove = false;
 
     public BaseEnvironmentCard(String ID, CardStats info) {
-        super(ID, info); // Pass the required information to the BaseCard constructor.
+        super(ID, info);
+        final String cardType =
+                info.cardType == CardType.ATTACK ? "_attack" :
+                        info.cardType == CardType.SKILL ? "_skill" :
+                                info.cardType == CardType.POWER ? "_power" : "";
+        setBackgroundTexture(characterPath("cardback/bg"+ cardType +"_env.png"), characterPath("cardback/bg"+ cardType + "_env_p.png"));
         tags.add(CustomTags.ENVIRONMENT);
     }
 

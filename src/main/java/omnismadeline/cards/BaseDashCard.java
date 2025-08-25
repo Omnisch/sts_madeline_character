@@ -15,6 +15,8 @@ import omnismadeline.util.CardStats;
 
 import java.util.Objects;
 
+import static omnismadeline.MadelineMod.characterPath;
+
 public abstract class BaseDashCard extends BaseCard {
     private static final UIStrings uiStrings;
     private static final String CANT_DASH_MESSAGE;
@@ -22,6 +24,11 @@ public abstract class BaseDashCard extends BaseCard {
 
     public BaseDashCard(String ID, CardStats info) {
         super(ID, info);
+        final String cardType =
+                info.cardType == CardType.ATTACK ? "_attack" :
+                        info.cardType == CardType.SKILL ? "_skill" :
+                                info.cardType == CardType.POWER ? "_power" : "";
+        setBackgroundTexture(characterPath("cardback/bg"+ cardType +"_dash.png"), characterPath("cardback/bg"+ cardType + "_dash_p.png"));
         this.tags.add(CustomTags.DASH);
     }
 
