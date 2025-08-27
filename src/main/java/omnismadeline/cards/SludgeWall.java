@@ -26,7 +26,6 @@ public class SludgeWall extends BaseEnvironmentCard {
     public SludgeWall() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setExhaust(true);
     }
 
     @Override
