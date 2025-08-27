@@ -8,11 +8,15 @@
     "DESCRIPTION": "获得!B!点 格挡 。"
   },
   "${modID}:InfDash": {
-    "NAME": "冲刺",
+    "NAME": "无限冲刺",
     "DESCRIPTION": "${modID}:永恒 。 NL 造成!D!点伤害。"
   },
   "${modID}:DashForward": {
     "NAME": "横冲",
+    "DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 虚弱 。"
+  },
+  "${modID}:DiagonalDownDash": {
+    "NAME": "斜下冲",
     "DESCRIPTION": "造成!D!点伤害。"
   },
   "${modID}:TransitionDash": {
@@ -20,7 +24,7 @@
     "DESCRIPTION": "造成!D!点伤害，结束你的回合。在你的下回合开始时 ${modID}:充能 。 NL 消耗 。"
   },
   "${modID}:InfHop": {
-    "NAME": "跳跃",
+    "NAME": "无限跳跃",
     "DESCRIPTION": "${modID}:永恒 。 NL 获得!B!点 格挡 。"
   },
   "${modID}:Hop": {

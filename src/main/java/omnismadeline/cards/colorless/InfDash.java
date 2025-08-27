@@ -12,7 +12,7 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
-public class InfDash extends BaseDashCard {
+public abstract class InfDash extends BaseDashCard {
     public static final String ID = makeID(InfDash.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
@@ -50,8 +50,8 @@ public class InfDash extends BaseDashCard {
         return false;
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new InfDash();
-    }
+//    @Override
+//    public AbstractCard makeCopy() {
+//        return new InfDash();
+//    }
 }

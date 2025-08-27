@@ -11,7 +11,7 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
-public class InfHop extends BaseJumpCard {
+public abstract class InfHop extends BaseJumpCard {
     public static final String ID = makeID(InfHop.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
@@ -49,8 +49,8 @@ public class InfHop extends BaseJumpCard {
         return false;
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new InfHop();
-    }
+//    @Override
+//    public AbstractCard makeCopy() {
+//        return new InfHop();
+//    }
 }

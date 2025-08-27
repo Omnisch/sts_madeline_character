@@ -142,6 +142,7 @@ public class MadelineCharacter extends CustomPlayer {
         ArrayList<String> retVal = new ArrayList<>();
         //List of IDs of cards for your starting deck.
         //If you want multiple of the same card, you have to add it multiple times.
+        retVal.add(DashForward.ID);
         retVal.add(ZipMover.ID);
         retVal.add(ZipMover.ID);
         retVal.add(ZipMover.ID);
@@ -150,8 +151,6 @@ public class MadelineCharacter extends CustomPlayer {
         retVal.add(Jumpthrough.ID);
         retVal.add(Jumpthrough.ID);
         retVal.add(Jumpthrough.ID);
-        retVal.add(InfDash.ID);
-        retVal.add(InfHop.ID);
 
         return retVal;
     }
