@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
+import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
@@ -28,6 +29,7 @@ public abstract class BaseJumpCard extends BaseCard {
                         info.cardType == CardType.SKILL ? "_skill" :
                                 info.cardType == CardType.POWER ? "_power" : "";
         setBackgroundTexture(characterPath("cardback/bg"+ cardType +"_jump.png"), characterPath("cardback/bg"+ cardType + "_jump_p.png"));
+        this.tags.add(CustomTags.MOVE);
         this.tags.add(CustomTags.JUMP);
     }
 
@@ -35,6 +37,7 @@ public abstract class BaseJumpCard extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChangeStanceAction(new SoarStance()));
         onUse(p, m);
+        this.addToBot(new MadelineMoveAction(m, GAP));
         this.addToBot(new MadelineGainMomentumAction(1));
         this.addToBot(new MadelinePendAndFlushAction());
         GAM_fieldPatch.totalJumpPlayedThisTurn++;

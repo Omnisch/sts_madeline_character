@@ -7,9 +7,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
-import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public class Kevin extends BaseDashCard {
@@ -31,14 +29,12 @@ public class Kevin extends BaseDashCard {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
         setMagic(MAGIC, UPG_MAGIC);
-        this.tags.add(CustomTags.MOVE);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SMASH));
         this.addToBot(new MadelineGainMomentumAction(this.magicNumber));
-        this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
     @Override

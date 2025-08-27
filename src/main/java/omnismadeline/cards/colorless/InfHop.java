@@ -30,7 +30,6 @@ public abstract class InfHop extends BaseJumpCard {
         setSelfRetain(true);
         setBlock(BLOCK, UPG_BLOCK);
         this.returnToHand = true;
-        this.tags.add(CustomTags.MOVE);
     }
 
     @Override

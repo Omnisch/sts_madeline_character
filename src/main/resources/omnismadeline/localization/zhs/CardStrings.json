@@ -94,11 +94,11 @@
   },
   "${modID}:TouchSwitch": {
     "NAME": "触控开关",
-    "DESCRIPTION": "获得!B!点 格挡 !M!次。 NL 你在这个回合内每打出一张 ${modID}:移动 ，耗能就减少1 [E] 。"
+    "DESCRIPTION": "获得!B!点 格挡 !M!次。 NL 你在这个回合内每打出一张 ${modID}:跳跃 或 ${modID}:冲刺 ，耗能就减少1 [E] 。"
   },
   "${modID}:Chaser": {
     "NAME": "紧追不舍",
-    "DESCRIPTION": "你下次打出 ${modID}:移动 时抽!M!张牌。"
+    "DESCRIPTION": "你下次打出 ${modID}:跳跃 或 ${modID}:冲刺 时抽!M!张牌。"
   },
   "${modID}:Resurrections": {
     "NAME": "复活",

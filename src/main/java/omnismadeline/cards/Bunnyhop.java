@@ -5,9 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
-import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public class Bunnyhop extends BaseJumpCard {
@@ -29,14 +27,12 @@ public class Bunnyhop extends BaseJumpCard {
         super(ID, info);
         this.setBlock(BLOCK, UPG_BLOCK);
         this.setMagic(MAGIC, UPG_MAGIC);
-        this.tags.add(CustomTags.MOVE);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
         this.addToBot(new MadelineGainMomentumAction(this.magicNumber));
-        this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
     @Override

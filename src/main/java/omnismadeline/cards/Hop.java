@@ -4,9 +4,7 @@ import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public class Hop extends BaseJumpCard {
@@ -25,13 +23,11 @@ public class Hop extends BaseJumpCard {
     public Hop() {
         super(ID, info);
         this.setBlock(BLOCK, UPG_BLOCK);
-        this.tags.add(CustomTags.MOVE);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
-        this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
     @Override

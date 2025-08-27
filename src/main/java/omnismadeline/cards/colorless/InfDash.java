@@ -31,7 +31,6 @@ public abstract class InfDash extends BaseDashCard {
         setSelfRetain(true);
         setDamage(DAMAGE, UPG_DAMAGE);
         this.returnToHand = true;
-        this.tags.add(CustomTags.MOVE);
     }
 
     @Override
