@@ -1,12 +1,10 @@
 package omnismadeline.cards;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
@@ -22,21 +20,18 @@ public class DashForward extends BaseDashCard {
             1
     );
 
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 2;
-    private static final int MAGIC = 1;
+    private static final int DAMAGE = 9;
+    private static final int UPG_DAMAGE = 3;
 
     public DashForward() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(MAGIC);
         this.tags.add(CustomTags.MOVE);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
-        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
         this.addToBot(new MadelineMoveAction(m, GAP));
     }
 

@@ -13,7 +13,7 @@
   },
   "${modID}:DashForward": {
     "NAME": "横冲",
-    "DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 虚弱 。"
+    "DESCRIPTION": "造成!D!点伤害。"
   },
   "${modID}:DiagonalDownDash": {
     "NAME": "斜下冲",
@@ -26,6 +26,10 @@
   "${modID}:InfHop": {
     "NAME": "无限跳跃",
     "DESCRIPTION": "${modID}:永恒 。 NL 获得!B!点 格挡 。"
+  },
+  "${modID}:JumpInPlace": {
+    "NAME": "原地跳",
+    "DESCRIPTION": "获得!M!点临时 敏捷 ， NL 给予1层 虚弱 。"
   },
   "${modID}:Hop": {
     "NAME": "小跳",

@@ -30,7 +30,7 @@
   },
   "${modID}:MadelineMoveAction": {
     "TEXT": [
-      "移动"
+      "尝试打出"
     ]
   }
 }
