@@ -4,7 +4,6 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpineAnimation;
-import basemod.animations.SpriterAnimation;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.math.MathUtils;
@@ -18,11 +17,9 @@ import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.helpers.CardLibrary;
 import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
-import com.megacrit.cardcrawl.powers.AbstractPower;
-import com.megacrit.cardcrawl.relics.BagOfPreparation;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.*;
-import omnismadeline.cards.colorless.*;
+import omnismadeline.relics.ClimbingBackpackRelic;
 import omnismadeline.stances.LandStance;
 
 import java.util.ArrayList;
@@ -121,7 +118,6 @@ public class MadelineCharacter extends CustomPlayer {
     public MadelineCharacter() {
         super(getNames()[0], Meta.OMNISMADELINE,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
-                //new SpriterAnimation(characterPath("animation/default.scml"))); //Animation
                 new SpineAnimation(characterPath("animation/LandStance_1.atlas"), characterPath("animation/LandStance_1.json"), 1f));
 
         initializeClass(null,
@@ -160,7 +156,7 @@ public class MadelineCharacter extends CustomPlayer {
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
         //IDs of starting relics. You can have multiple, but one is recommended.
-        retVal.add(BagOfPreparation.ID);
+        retVal.add(ClimbingBackpackRelic.ID);
 
         return retVal;
     }
