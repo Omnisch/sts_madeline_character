@@ -26,7 +26,7 @@ public class Blade extends BaseCard {
 
     private static final int DAMAGE = 10;
     private static final int UPG_DAMAGE = 3;
-    private static final int MAGIC = 2;
+    private static final int MAGIC = 3;
 
     public Blade() {
         super(ID, info);

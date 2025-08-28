@@ -1,5 +1,6 @@
 package omnismadeline.powers;
 
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
@@ -26,7 +27,7 @@ public class OshiroBossImplicitPower extends BasePower {
         if (isPlayer) {
             AbstractPlayer p = AbstractDungeon.player;
             if (Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
-                this.addToBot(new DamageAction(p, new DamageInfo(p, this.amount, DamageInfo.DamageType.HP_LOSS)));
+                this.addToBot(new DamageAction(p, new DamageInfo(p, this.amount, DamageInfo.DamageType.HP_LOSS), AbstractGameAction.AttackEffect.FIRE));
             }
             this.addToBot(new RemoveSpecificPowerAction(p, p, this));
         }

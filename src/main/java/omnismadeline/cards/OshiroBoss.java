@@ -33,7 +33,7 @@ public class OshiroBoss extends BaseCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
         this.addToBot(new ApplyPowerAction(p, p, new OshiroBossImplicitPower(p, magicNumber)));
     }
 

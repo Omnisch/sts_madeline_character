@@ -108,7 +108,7 @@
     "NAME": "复活",
     "DESCRIPTION": "在你的回合开始时，将一张 *切版冲刺 放入你的手牌。"
   },
-  "${modID}:DustBunnies": {
+  "${modID}:DustBunny": {
     "NAME": "尘球",
     "DESCRIPTION": "造成!D!点伤害，对意图是攻击的所有敌人再造成!D!点伤害。"
   },
