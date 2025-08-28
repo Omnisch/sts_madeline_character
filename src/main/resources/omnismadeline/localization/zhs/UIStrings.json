@@ -32,5 +32,10 @@
     "TEXT": [
       "尝试打出"
     ]
+  },
+  "${modID}:MadelineStargazingAction": {
+    "TEXT": [
+      "放到牌堆顶"
+    ]
   }
 }

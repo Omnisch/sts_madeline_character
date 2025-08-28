@@ -135,6 +135,10 @@
     "DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。",
     "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
   },
+  "${modID}:MoveBlock": {
+    "NAME": "移动方块",
+    "DESCRIPTION": "${modID}:着陆 。 NL 从你的抽牌堆中选择!M!张牌放到抽牌堆顶部。"
+  },
   "${modID}:Wind": {
     "NAME": "山风",
     "DESCRIPTION": "给予所有敌人3层 易伤 ，获得2层 虚弱 。 NL 消耗 。",
