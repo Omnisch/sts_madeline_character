@@ -11,6 +11,7 @@ public class GAM_fieldPatch {
     public static int totalMovePlayedThisTurn = 0;
     public static int totalMovedAsUsedThisTurn = 0;
     public static int totalMovedAsDiscardedThisTurn = 0;
+    public static int totalMomentumGainedThisTurn = 0;
 
     public static int totalDashPlayedThisCombat = 0;
     public static int totalEnvrPlayedThisCombat = 0;
@@ -18,4 +19,5 @@ public class GAM_fieldPatch {
     public static int totalMovePlayedThisCombat = 0;
     public static int totalMovedAsUsedThisCombat = 0;
     public static int totalMovedAsDiscardedThisCombat = 0;
+    public static int totalMomentumGainedThisCombat = 0;
 }

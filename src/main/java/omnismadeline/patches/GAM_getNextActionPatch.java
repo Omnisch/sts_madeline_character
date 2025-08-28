@@ -19,6 +19,7 @@ public class GAM_getNextActionPatch {
             GAM_fieldPatch.totalMovePlayedThisTurn = 0;
             GAM_fieldPatch.totalMovedAsUsedThisTurn = 0;
             GAM_fieldPatch.totalMovedAsDiscardedThisTurn = 0;
+            GAM_fieldPatch.totalMomentumGainedThisTurn = 0;
         }
     }
 }
