@@ -23,7 +23,7 @@ public class Refill extends BaseCard {
 
     public Refill() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        this.setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

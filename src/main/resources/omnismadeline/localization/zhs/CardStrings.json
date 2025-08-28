@@ -177,6 +177,10 @@
     "NAME": "反弹外壳",
     "DESCRIPTION": "造成!D!点伤害， NL 获得!B!点 格挡 。 NL ${modID}:充能 。"
   },
+  "${modID}:Feather": {
+    "NAME": "金羽毛",
+    "DESCRIPTION": "获得!M!点 力量 和 敏捷、 NL 1点 ${modID}:动量 和 1层 无实体 。 NL ${modID}:充能 。 NL 消耗 。"
+  },
   "${modID}:MagmaBall": {
     "NAME": "熔岩球",
     "DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球 放入你的抽牌堆中。 消耗 。",
