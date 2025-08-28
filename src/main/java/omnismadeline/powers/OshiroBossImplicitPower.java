@@ -1,13 +1,12 @@
 package omnismadeline.powers;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import omnismadeline.stances.LandStance;
-import omnismadeline.stances.SoarStance;
 
 import java.util.Objects;
 
@@ -29,7 +28,7 @@ public class OshiroBossImplicitPower extends BasePower {
             if (Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
                 this.addToBot(new DamageAction(p, new DamageInfo(p, this.amount, DamageInfo.DamageType.HP_LOSS)));
             }
-            this.addToBot(new ReducePowerAction(p, p, this, this.amount));
+            this.addToBot(new RemoveSpecificPowerAction(p, p, this));
         }
     }
 

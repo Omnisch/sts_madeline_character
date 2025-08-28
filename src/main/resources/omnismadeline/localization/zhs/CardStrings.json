@@ -156,6 +156,10 @@
     "NAME": "红泡泡",
     "DESCRIPTION": "造成!D!点伤害。 NL 丢弃一张牌，抽!M!张牌。 NL ${modID}:充能 。"
   },
+  "${modID}:DashBlock": {
+    "NAME": "冲刺方块",
+    "DESCRIPTION": "造成!D!点伤害。 NL 本回合内，你每打出一张 ${modID}:冲刺 ，对随机敌人造成!M!点伤害。"
+  },
   "${modID}:Blade": {
     "NAME": "刀片机关",
     "DESCRIPTION": "对所有敌人造成!D!点伤害。 NL 这张牌被抽到时，若你处于 ${modID}:凌空 ，失去!M!点生命。"

@@ -66,6 +66,13 @@
       " #r你已经打出过跳跃了。"
     ]
   },
+  "${modID}:DashBlock": {
+    "NAME": "冲刺方块",
+    "DESCRIPTIONS": [
+      "本回合内，你每打出一张 #y冲刺 ，对随机敌人造成 #b",
+      " 点伤害。"
+    ]
+  },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",
     "DESCRIPTIONS": [
