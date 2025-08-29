@@ -92,5 +92,13 @@
     "DESCRIPTIONS": [
       "在本场战斗中，将你的 #y冲刺机会 上限变为 #b2 。"
     ]
+  },
+  "${modID}:TutorialBoard": {
+    "NAME": "教学板",
+    "DESCRIPTIONS": [
+      "你每打出一张 #y跳跃 ，抽一张牌。",
+      "你每打出一张 #y跳跃 ，抽 #b",
+      " 张牌。"
+    ]
   }
 }

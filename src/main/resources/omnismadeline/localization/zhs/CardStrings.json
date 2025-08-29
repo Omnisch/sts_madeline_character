@@ -214,6 +214,10 @@
     "DESCRIPTION": "在本场战斗中，将你的 ${modID}:冲刺机会 上限变为2。",
     "UPGRADE_DESCRIPTION": "固有 。 NL 在本场战斗中，将你的 ${modID}:冲刺机会 上限变为2。"
   },
+  "${modID}:TutorialBoard": {
+    "NAME": "教学板",
+    "DESCRIPTION": "你每打出一张 ${modID}:跳跃 ， NL 抽一张牌。"
+  },
   "${modID}:Farewell": {
     "NAME": "再见",
     "DESCRIPTION": "获得一场非 boss 战斗胜利。 NL 从你的牌组中移除这张牌。 NL 虚无 。"

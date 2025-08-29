@@ -5,11 +5,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.ScatteredAndLostPower;
+import omnismadeline.powers.TutorialBoardPower;
 import omnismadeline.util.CardStats;
 
-public class ScatteredAndLost extends BaseCard {
-    public static final String ID = makeID(ScatteredAndLost.class.getSimpleName());
+public class TutorialBoard extends BaseCard {
+    public static final String ID = makeID(TutorialBoard.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.POWER, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -20,19 +20,19 @@ public class ScatteredAndLost extends BaseCard {
 
     private static final int MAGIC = 1;
 
-    public ScatteredAndLost() {
+    public TutorialBoard() {
         super(ID, info);
         this.setMagic(MAGIC);
-        this.setEthereal(true, false);
+        this.setCostUpgrade(0);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new ScatteredAndLostPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new TutorialBoardPower(p, this.magicNumber), this.magicNumber));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new ScatteredAndLost();
+        return new TutorialBoard();
     }
 }
