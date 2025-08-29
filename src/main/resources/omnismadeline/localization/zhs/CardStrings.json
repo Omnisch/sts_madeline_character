@@ -232,6 +232,10 @@
     "NAME": "山之心",
     "DESCRIPTION": "你在 ${modID}:着陆 时不再失去 ${modID}:动量 。 NL 虚无 。"
   },
+  "${modID}:Pufferfish": {
+    "NAME": "河豚炸弹",
+    "DESCRIPTION": "造成!D!点伤害。你每有1点动量，耗能就减少1 [E] 。 NL ${modID}:充能 。"
+  },
   "${modID}:DoubleRefill": {
     "NAME": "双重水晶",
     "DESCRIPTION": "在本场战斗中，将你的 ${modID}:冲刺机会 上限变为2。",
