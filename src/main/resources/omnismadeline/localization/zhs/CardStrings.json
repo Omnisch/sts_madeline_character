@@ -209,6 +209,16 @@
     "DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块 放入你的抽牌堆中。 消耗 。",
     "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块+ 放入你的抽牌堆中。 消耗 。"
   },
+  "${modID}:MagmaWall": {
+    "NAME": "熔岩墙",
+    "DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 ${modID}:易伤 。 NL 将一张 *寒冰墙 放入你的抽牌堆中。 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 ${modID}:易伤 。 NL 将一张 *寒冰墙+ 放入你的抽牌堆中。 消耗 。"
+  },
+  "${modID}:IceWall": {
+    "NAME": "寒冰墙",
+    "DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 ${modID}:虚弱 。 NL 将一张 *熔岩墙 放入你的抽牌堆中。 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 ${modID}:虚弱 。 NL 将一张 *熔岩墙+ 放入你的抽牌堆中。 消耗 。"
+  },
   "${modID}:HeartOfTheMountain": {
     "NAME": "山之心",
     "DESCRIPTION": "你在 ${modID}:着陆 时不再失去 ${modID}:动量 。 NL 虚无 。"

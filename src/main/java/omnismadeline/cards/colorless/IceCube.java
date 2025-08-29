@@ -29,17 +29,17 @@ public class IceCube extends BaseEnvironmentCard {
 
     public IceCube() {
         super(ID, info);
-        setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
-        setExhaust(true);
+        this.setBlock(BLOCK, UPG_BLOCK);
+        this.setMagic(MAGIC);
+        this.setExhaust(true);
         this.tags.add(CustomTags.ICE);
         this.cardsToPreview = new MagmaCube(false);
     }
     public IceCube(boolean isPreview) {
         super(ID, info);
-        setBlock(BLOCK, UPG_BLOCK);
-        setMagic(MAGIC);
-        setExhaust(true);
+        this.setBlock(BLOCK, UPG_BLOCK);
+        this.setMagic(MAGIC);
+        this.setExhaust(true);
         this.tags.add(CustomTags.ICE);
         if (isPreview) {
             this.cardsToPreview = new MagmaCube(false);

@@ -24,15 +24,15 @@ public class IceBall extends BaseEnvironmentCard {
 
     public IceBall() {
         super(ID, info);
-        setBlock(BLOCK, UPG_BLOCK);
-        setExhaust(true);
+        this.setBlock(BLOCK, UPG_BLOCK);
+        this.setExhaust(true);
         this.tags.add(CustomTags.ICE);
         this.cardsToPreview = new MagmaBall(false);
     }
     public IceBall(boolean isPreview) {
         super(ID, info);
-        setBlock(BLOCK, UPG_BLOCK);
-        setExhaust(true);
+        this.setBlock(BLOCK, UPG_BLOCK);
+        this.setExhaust(true);
         this.tags.add(CustomTags.ICE);
         if (isPreview) {
             this.cardsToPreview = new MagmaBall(false);

@@ -1,55 +1,55 @@
-package omnismadeline.cards;
+package omnismadeline.cards.colorless;
 
-import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.actions.MadelineGainMomentumAction;
-import omnismadeline.cards.colorless.IceCube;
-import omnismadeline.character.MadelineCharacter;
+import com.megacrit.cardcrawl.powers.WeakPower;
+import omnismadeline.cards.BaseEnvironmentCard;
+import omnismadeline.cards.MagmaWall;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
-public class MagmaCube extends BaseEnvironmentCard {
-    public static final String ID = makeID(MagmaCube.class.getSimpleName());
+public class IceWall extends BaseEnvironmentCard {
+    public static final String ID = makeID(IceWall.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            MadelineCharacter.Meta.CARD_COLOR,
-            CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
+            CardColor.COLORLESS,
+            CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
-            CardTarget.ENEMY,
+            CardTarget.SELF,
             -2
     );
 
-    private static final int DAMAGE = 8;
-    private static final int UPG_DAMAGE = 2;
+    private static final int BLOCK = 4;
+    private static final int UPG_BLOCK = 2;
     private static final int MAGIC = 1;
 
-    public MagmaCube() {
+    public IceWall() {
         super(ID, info);
-        this.setDamage(DAMAGE, UPG_DAMAGE);
+        this.setBlock(BLOCK, UPG_BLOCK);
         this.setMagic(MAGIC);
         this.setExhaust(true);
-        this.tags.add(CustomTags.MAGMA);
-        this.cardsToPreview = new IceCube(false);
+        this.tags.add(CustomTags.ICE);
+        this.cardsToPreview = new MagmaWall(false);
     }
-    public MagmaCube(boolean isPreview) {
+    public IceWall(boolean isPreview) {
         super(ID, info);
-        this.setDamage(DAMAGE, UPG_DAMAGE);
+        this.setBlock(BLOCK, UPG_BLOCK);
         this.setMagic(MAGIC);
         this.setExhaust(true);
-        this.tags.add(CustomTags.MAGMA);
+        this.tags.add(CustomTags.ICE);
         if (isPreview) {
-            this.cardsToPreview = new IceCube(false);
+            this.cardsToPreview = new MagmaWall(false);
         }
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.FIRE));
-        this.addToBot(new MadelineGainMomentumAction(this.magicNumber));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
+        this.addToBot(new ApplyPowerAction(m, p, new WeakPower(m, this.magicNumber, false), this.magicNumber));
         this.addToBot(new MakeTempCardInDrawPileAction(this.cardsToPreview.makeStatEquivalentCopy(), 1, true, true));
     }
 
@@ -63,6 +63,6 @@ public class MagmaCube extends BaseEnvironmentCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new MagmaCube();
+        return new IceWall();
     }
 }
