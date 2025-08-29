@@ -20,7 +20,7 @@
   },
   "${modID}:BaseEnvironmentCard": {
     "TEXT": [
-      "只能被 #r移动 打出！"
+      "只能被 #r冲刺 NL 或 #r跳跃 打出"
     ]
   },
   "${modID}:BaseJumpCard": {
@@ -35,7 +35,7 @@
   },
   "${modID}:MadelineStargazingAction": {
     "TEXT": [
-      "放到牌堆顶"
+      "选择放到抽牌堆顶"
     ]
   }
 }

@@ -35,7 +35,6 @@ public abstract class InfHop extends BaseJumpCard {
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, this.block));
-        this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
     @Override

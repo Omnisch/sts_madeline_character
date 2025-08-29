@@ -34,9 +34,13 @@ public abstract class BaseEnvironmentCard extends BaseCard {
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         onUse(abstractPlayer, abstractMonster);
+
         this.addToBot(new MadelinePendAndFlushAction());
+
         GAM_fieldPatch.totalEnvrPlayedThisTurn++;
         GAM_fieldPatch.totalEnvrPlayedThisCombat++;
+
+        movedFromCardTag = null;
     }
 
     @Override

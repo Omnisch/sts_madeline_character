@@ -37,11 +37,15 @@ public abstract class BaseJumpCard extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChangeStanceAction(new SoarStance()));
         onUse(p, m);
-        this.addToBot(new MadelineMoveAction(m, GAP));
+        this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.JUMP));
         this.addToBot(new MadelineGainMomentumAction(1));
+
         this.addToBot(new MadelinePendAndFlushAction());
+
         GAM_fieldPatch.totalJumpPlayedThisTurn++;
         GAM_fieldPatch.totalJumpPlayedThisCombat++;
+
+        movedFromCardTag = null;
     }
 
     @Override

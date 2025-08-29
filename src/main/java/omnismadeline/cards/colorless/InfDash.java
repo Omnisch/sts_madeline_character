@@ -36,7 +36,6 @@ public abstract class InfDash extends BaseDashCard {
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL)));
-        this.addToBot(new MadelineMoveAction(m, GAP));
     }
 
     @Override

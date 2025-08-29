@@ -599,12 +599,21 @@ public abstract class BaseCard extends CustomCard {
         }
     }
 
+    // Custom edits
+
+    public AbstractCard.CardTags movedFromCardTag = null;
+
     @Override
     public void use(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         onUse(abstractPlayer, abstractMonster);
+
         this.addToBot(new MadelinePendAndFlushAction());
+
+        movedFromCardTag = null;
     }
     protected abstract void onUse(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
+
+    // !Custom edits
 
     private static class QuickDynamicVariable extends DynamicVariable {
         final String localKey, key;

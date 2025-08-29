@@ -19,14 +19,16 @@ public class MadelineMoveAction extends AbstractGameAction {
     public static final String SELECT_SCREEN_MESSAGE;
     private final AbstractPlayer p;
     private final AbstractMonster m;
+    private final AbstractCard.CardTags fromCardTag;
     private final boolean isRandom;
     private final boolean anyNumber;
     private final boolean canPickZero;
     public static int numMoved;
 
-    private MadelineMoveAction(AbstractMonster m, int amount, boolean isRandom, boolean anyNumber, boolean canPickZero) {
+    private MadelineMoveAction(AbstractMonster m, int amount, AbstractCard.CardTags tag, boolean isRandom, boolean anyNumber, boolean canPickZero) {
         this.p = AbstractDungeon.player;
         this.m = m;
+        this.fromCardTag = tag;
 
         // Amount is affected by Momentum.
         int movedAmount;
@@ -44,18 +46,18 @@ public class MadelineMoveAction extends AbstractGameAction {
         this.actionType = CustomActions.MADELINE_MOVE;
     }
 
-    public MadelineMoveAction(AbstractMonster target, int amount, boolean isRandom, boolean anyNumber) {
-        this(target, amount, isRandom, anyNumber, true);
+    public MadelineMoveAction(AbstractMonster target, int amount, AbstractCard.CardTags tag, boolean isRandom, boolean anyNumber) {
+        this(target, amount, tag, isRandom, anyNumber, true);
         this.target = target;
     }
 
-    public MadelineMoveAction(AbstractMonster target, int amount, boolean isRandom) {
-        this(target, amount, isRandom, true, true);
+    public MadelineMoveAction(AbstractMonster target, int amount, AbstractCard.CardTags tag, boolean isRandom) {
+        this(target, amount, tag, isRandom, true, true);
         this.target = target;
     }
 
-    public MadelineMoveAction(AbstractMonster target, int amount) {
-        this(target, amount, false, true, true);
+    public MadelineMoveAction(AbstractMonster target, int amount, AbstractCard.CardTags tag) {
+        this(target, amount, tag, false, true, true);
         this.target = target;
     }
 
@@ -82,13 +84,13 @@ public class MadelineMoveAction extends AbstractGameAction {
             }
 
             for(int i = 0; i < this.amount; ++i) {
-                MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng), m));
+                MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(this.p.hand.getRandomCard(AbstractDungeon.cardRandomRng), m, this.fromCardTag));
             }
         }
 
         if (!AbstractDungeon.handCardSelectScreen.wereCardsRetrieved) {
             for (AbstractCard c : AbstractDungeon.handCardSelectScreen.selectedCards.group) {
-                MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(c, m));
+                MadelinePendAndFlushAction.actionsPended.addLast(new MadelineMoveOneCardAction(c, m, this.fromCardTag));
             }
 
             AbstractDungeon.handCardSelectScreen.wereCardsRetrieved = true;

@@ -40,11 +40,15 @@ public abstract class BaseDashCard extends BaseCard {
             this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
         }
         onUse(p, m);
-        this.addToBot(new MadelineMoveAction(m, GAP));
+        this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.DASH));
         this.addToBot(new MadelineGainMomentumAction(1));
+
         this.addToBot(new MadelinePendAndFlushAction());
+
         GAM_fieldPatch.totalDashPlayedThisTurn++;
         GAM_fieldPatch.totalDashPlayedThisCombat++;
+
+        movedFromCardTag = null;
     }
 
     @Override

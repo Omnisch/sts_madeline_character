@@ -37,7 +37,6 @@ public class TransitionDash extends BaseDashCard {
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        this.addToBot(new MadelineMoveAction(m, GAP));
         this.addToBot(new PressEndTurnButtonAction());
         this.addToBot(new ApplyPowerAction(p, p, new RefillAtNextTurnImplicitPower(p, 1), 1));
     }
