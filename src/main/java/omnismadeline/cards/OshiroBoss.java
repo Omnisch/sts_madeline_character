@@ -27,8 +27,8 @@ public class OshiroBoss extends BaseCard {
 
     public OshiroBoss() {
         super(ID, info);
-        setDamage(DAMAGE, UPG_DAMAGE);
-        setMagic(MAGIC);
+        this.setDamage(DAMAGE, UPG_DAMAGE);
+        this.setMagic(MAGIC);
     }
 
     @Override
