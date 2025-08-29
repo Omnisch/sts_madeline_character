@@ -82,9 +82,13 @@
     "DESCRIPTION": "获得1点 ${modID}:冲刺机会 。",
     "UPGRADE_DESCRIPTION": "获得1点 ${modID}:冲刺机会 。 NL 抽一张牌。"
   },
-  "${modID}:Bonfire": {
+  "${modID}:Campfire": {
     "NAME": "营地",
     "DESCRIPTION": "${modID}:着陆 。 NL 获得!M!层 再生 。 NL 消耗 。"
+  },
+  "${modID}:Telescope": {
+    "NAME": "望远镜",
+    "DESCRIPTION": "跳过一名敌人当前的意图。 NL 消耗 。"
   },
   "${modID}:StrawberrySeed": {
     "NAME": "草莓种子",
