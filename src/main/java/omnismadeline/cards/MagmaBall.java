@@ -7,7 +7,6 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.cards.colorless.IceBall;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;

@@ -1,21 +1,18 @@
-package omnismadeline.cards.colorless;
+package omnismadeline.cards;
 
-import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.cards.BaseEnvironmentCard;
-import omnismadeline.cards.MagmaBall;
+import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
 public class IceBall extends BaseEnvironmentCard {
     public static final String ID = makeID(IceBall.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS,
+            MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.SELF,
