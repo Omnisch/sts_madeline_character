@@ -118,7 +118,7 @@ public class MadelineCharacter extends CustomPlayer {
     public MadelineCharacter() {
         super(getNames()[0], Meta.OMNISMADELINE,
                 new CustomEnergyOrb(orbTextures, characterPath("energyorb/vfx.png"), layerSpeeds), //Energy Orb
-                new SpineAnimation(characterPath("animation/LandStance_1.atlas"), characterPath("animation/LandStance_1.json"), 1f));
+                new SpineAnimation(characterPath("animation/LandStance_0.atlas"), characterPath("animation/LandStance_0.json"), 1f));
 
         initializeClass(null,
                 SHOULDER_2,

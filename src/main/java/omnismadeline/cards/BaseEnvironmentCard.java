@@ -21,8 +21,10 @@ public abstract class BaseEnvironmentCard extends BaseCard {
         final String cardType =
                 info.cardType == CardType.ATTACK ? "_attack" :
                         info.cardType == CardType.SKILL ? "_skill" :
-                                info.cardType == CardType.POWER ? "_power" : "";
-        setBackgroundTexture(characterPath("cardback/bg"+ cardType +"_env.png"), characterPath("cardback/bg"+ cardType + "_env_p.png"));
+                                info.cardType == CardType.POWER ? "_power" : null;
+        if (cardType != null) {
+            setBackgroundTexture(characterPath("cardback/bg"+ cardType +"_env.png"), characterPath("cardback/bg"+ cardType + "_env_p.png"));
+        }
         tags.add(CustomTags.ENVIRONMENT);
     }
 

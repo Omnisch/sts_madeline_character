@@ -13,6 +13,8 @@ import omnismadeline.cards.MagmaWall;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;
 
+import static omnismadeline.MadelineMod.characterPath;
+
 public class IceWall extends BaseEnvironmentCard {
     public static final String ID = makeID(IceWall.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -34,6 +36,8 @@ public class IceWall extends BaseEnvironmentCard {
         this.setExhaust(true);
         this.tags.add(CustomTags.ICE);
         this.cardsToPreview = new MagmaWall(false);
+
+        setBackgroundTexture(characterPath("cardback/bg_skill_env_colorless.png"), characterPath("cardback/bg_skill_env_colorless_p.png"));
     }
     public IceWall(boolean isPreview) {
         super(ID, info);
@@ -44,6 +48,8 @@ public class IceWall extends BaseEnvironmentCard {
         if (isPreview) {
             this.cardsToPreview = new MagmaWall(false);
         }
+
+        setBackgroundTexture(characterPath("cardback/bg_skill_env_colorless.png"), characterPath("cardback/bg_skill_env_colorless_p.png"));
     }
 
     @Override

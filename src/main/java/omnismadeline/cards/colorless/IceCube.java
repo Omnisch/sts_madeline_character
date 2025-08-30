@@ -13,6 +13,8 @@ import omnismadeline.enums.CustomTags;
 import omnismadeline.powers.MomentumPower;
 import omnismadeline.util.CardStats;
 
+import static omnismadeline.MadelineMod.characterPath;
+
 public class IceCube extends BaseEnvironmentCard {
     public static final String ID = makeID(IceCube.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -34,6 +36,8 @@ public class IceCube extends BaseEnvironmentCard {
         this.setExhaust(true);
         this.tags.add(CustomTags.ICE);
         this.cardsToPreview = new MagmaCube(false);
+
+        setBackgroundTexture(characterPath("cardback/bg_skill_env_colorless.png"), characterPath("cardback/bg_skill_env_colorless_p.png"));
     }
     public IceCube(boolean isPreview) {
         super(ID, info);
@@ -44,6 +48,8 @@ public class IceCube extends BaseEnvironmentCard {
         if (isPreview) {
             this.cardsToPreview = new MagmaCube(false);
         }
+
+        setBackgroundTexture(characterPath("cardback/bg_skill_env_colorless.png"), characterPath("cardback/bg_skill_env_colorless_p.png"));
     }
 
     @Override
