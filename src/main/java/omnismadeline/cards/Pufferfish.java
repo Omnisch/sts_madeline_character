@@ -22,8 +22,8 @@ public class Pufferfish extends BaseCard {
             4
     );
 
-    private static final int DAMAGE = 20;
-    private static final int UPG_DAMAGE = 6;
+    private static final int DAMAGE = 22;
+    private static final int UPG_DAMAGE = 4;
 
     public Pufferfish() {
         super(ID, info);

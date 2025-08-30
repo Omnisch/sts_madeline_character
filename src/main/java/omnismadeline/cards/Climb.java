@@ -20,17 +20,18 @@ public class Climb extends BaseCard {
             2
     );
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 0;
+    private static final int UPG_MAGIC = 2;
 
     public Climb() {
         super(ID, info);
-        setMagic(MAGIC);
+        setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         final int currMomentumAmount = p.hasPower(MomentumPower.POWER_ID) ? p.getPower(MomentumPower.POWER_ID).amount : 0;
-        final int amountToApply = this.upgraded ? currMomentumAmount + this.magicNumber : currMomentumAmount;
+        final int amountToApply = currMomentumAmount + this.magicNumber;
         if (amountToApply > 0) {
             this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, amountToApply)));
         }

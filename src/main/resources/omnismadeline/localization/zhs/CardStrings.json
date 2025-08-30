@@ -1,85 +1,84 @@
 {
   "${modID}:Strike": {
     "NAME": "打击",
-    "DESCRIPTION": "造成!D!点伤害。"
+    "DESCRIPTION": "造成 D 点伤害。"
   },
   "${modID}:Defend": {
     "NAME": "防御",
-    "DESCRIPTION": "获得!B!点 格挡 。"
+    "DESCRIPTION": "获得 B 点 格挡 。"
   },
   "${modID}:InfDash": {
     "NAME": "无限冲刺",
-    "DESCRIPTION": "${modID}:永恒 。 NL 造成!D!点伤害。"
+    "DESCRIPTION": "${modID}:永恒 。 NL 造成 D 点伤害。"
   },
   "${modID}:DashForward": {
     "NAME": "横冲",
-    "DESCRIPTION": "造成!D!点伤害。"
+    "DESCRIPTION": "造成 D 点伤害。"
   },
   "${modID}:DiagonalDownDash": {
     "NAME": "斜下冲",
-    "DESCRIPTION": "造成!D!点伤害。"
+    "DESCRIPTION": "造成 D 点伤害。"
   },
   "${modID}:TransitionDash": {
     "NAME": "切版冲刺",
-    "DESCRIPTION": "造成!D!点伤害，结束你的回合。在你的下回合开始时 ${modID}:充能 。 NL 消耗 。"
+    "DESCRIPTION": "造成 D 点伤害，结束你的回合。在你的下回合开始时 ${modID}:充能 。 NL 消耗 。"
   },
   "${modID}:Kevin": {
     "NAME": "凯文",
-    "DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。"
+    "DESCRIPTION": "造成 D 点伤害， NL 获得 M 点 ${modID}:动量 。"
   },
   "${modID}:WaveDash": {
     "NAME": "凌波微步",
-    "DESCRIPTION": "造成!D!点伤害。 NL 若这张牌被 ${modID}:跳跃 打出，获得 [E] [E] 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 若这张牌被 ${modID}:跳跃 打出，获得 [E] [E] 。"
   },
   "${modID}:InfHop": {
     "NAME": "无限跳跃",
-    "DESCRIPTION": "${modID}:永恒 。 NL 获得!B!点 格挡 。"
+    "DESCRIPTION": "${modID}:永恒 。 NL 获得 B 点 格挡 。"
   },
   "${modID}:JumpInPlace": {
     "NAME": "原地跳",
-    "DESCRIPTION": "获得!M!点临时 敏捷 ， NL 给予1层 虚弱 。"
+    "DESCRIPTION": "获得 M 点临时 敏捷 ， NL 给予 1 层 虚弱 。"
   },
   "${modID}:Hop": {
     "NAME": "小跳",
-    "DESCRIPTION": "获得!B!点 格挡 。"
+    "DESCRIPTION": "获得 B 点 格挡 。"
   },
   "${modID}:Bunnyhop": {
     "NAME": "兔子跳",
-    "DESCRIPTION": "获得!B!点 格挡 ， NL 获得!M!点 ${modID}:动量 。"
+    "DESCRIPTION": "获得 B 点 格挡 ， NL 获得 M 点 ${modID}:动量 。"
   },
   "${modID}:Climb": {
     "NAME": "攀爬",
     "DESCRIPTION": "获得等同于你当前 ${modID}:动量 的 力量 。在每回合结束时失去所有 ${modID}:动量 。",
-    "UPGRADE_DESCRIPTION": "获得等同于你当前 ${modID}:动量 +!M!的 力量 。在每回合结束时失去所有 ${modID}:动量 。"
+    "UPGRADE_DESCRIPTION": "获得等同于你当前 ${modID}:动量 + M 的 力量 。在每回合结束时失去所有 ${modID}:动量 。"
   },
   "${modID}:ZipMover": {
     "NAME": "交通方块",
-    "DESCRIPTION": "${modID}:着陆 。 NL 造成!D!点伤害。 NL ${modID}:打击 。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 造成 D 点伤害。 NL ${modID}:打击 。"
   },
   "${modID}:Jumpthrough": {
     "NAME": "单向平台",
-    "DESCRIPTION": "${modID}:着陆 。 NL 获得!B!点 格挡 。 NL ${modID}:防御 。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得 B 点 格挡 。 NL ${modID}:防御 。"
   },
   "${modID}:Spikes": {
     "NAME": "尖刺",
-    "DESCRIPTION": "造成!D!点伤害。 NL 获得!M!点 荆棘 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 获得 M 点 荆棘 。"
   },
   "${modID}:Spring": {
     "NAME": "弹簧",
-    "DESCRIPTION": "获得!M!点 ${modID}:动量 。 NL ${modID}:充能 。"
+    "DESCRIPTION": "获得 M 点 ${modID}:动量 。 NL ${modID}:充能 。"
   },
   "${modID}:FallingBoulder": {
     "NAME": "冰冻落石",
-    "DESCRIPTION": "${modID}:着陆 。 NL 获得!B!点 格挡 。 NL 失去!M!点 敏捷 。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得 B 点 格挡 。 NL 失去 M 点 敏捷 。"
   },
   "${modID}:CrumbleBlock": {
     "NAME": "碎石平台",
-    "DESCRIPTION": "获得!M!点 敏捷 。 NL ${modID}:充能 。 NL 消耗 。"
+    "DESCRIPTION": "获得 M 点 敏捷 。 NL ${modID}:充能 。 NL 消耗 。"
   },
   "${modID}:WingedStrawberry": {
     "NAME": "羽翼草莓",
-    "DESCRIPTION": "获得 [E] [E] 。 NL 你打出 ${modID}:冲刺 时，若这张牌在手牌中，则 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 你打出 ${modID}:冲刺 时，若这张牌在手牌中，则 消耗 。"
+    "DESCRIPTION": "{@@}获得{!M!|repeat= [E] |>3= !M! [E] }。 NL 你打出 ${modID}:冲刺 时，若这张牌在手牌中，则 消耗 。"
   },
   "${modID}:Refill": {
     "NAME": "冲刺水晶",
@@ -88,7 +87,7 @@
   },
   "${modID}:Campfire": {
     "NAME": "营地",
-    "DESCRIPTION": "${modID}:着陆 。 NL 获得!M!层 再生 。 NL 消耗 。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得 M 层 再生 。 NL 消耗 。"
   },
   "${modID}:Telescope": {
     "NAME": "望远镜",
@@ -96,25 +95,24 @@
   },
   "${modID}:DreamJelly": {
     "NAME": "梦果冻",
-    "DESCRIPTION": "造成!D!点伤害，被 ${modID}:冲刺 打出时伤害翻倍。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成 D 点伤害，被 ${modID}:冲刺 打出时伤害翻倍。 NL ${modID}:充能 。"
   },
   "${modID}:StrawberrySeed": {
     "NAME": "草莓种子",
-    "DESCRIPTION": "将一张 *草莓 放入你的抽牌堆。 NL 抽一张牌。",
-    "UPGRADE_DESCRIPTION": "将一张 *草莓+ 放入你的抽牌堆。 NL 抽一张牌。"
+    "DESCRIPTION": "将一张 *草莓 放入 NL 你的抽牌堆。 NL 抽一张牌。",
+    "UPGRADE_DESCRIPTION": "将一张 *草莓+ 放入 NL 你的抽牌堆。 NL 抽一张牌。"
   },
   "${modID}:Strawberry": {
     "NAME": "草莓",
-    "DESCRIPTION": "获得 [E] [E] 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得 [E] [E] [E] 。 NL 消耗 。"
+    "DESCRIPTION": "{@@}获得{!M!|repeat= [E] |>3= !M! [E] }。 NL 消耗 。"
   },
   "${modID}:TouchSwitch": {
     "NAME": "触控开关",
-    "DESCRIPTION": "获得!B!点 格挡 !M!次。 NL 你在这个回合内每打出一张 ${modID}:跳跃 或 ${modID}:冲刺 ，耗能就减少1 [E] 。"
+    "DESCRIPTION": "获得 B 点 格挡  M 次。 NL 你在这个回合内每打出一张 ${modID}:跳跃 或 ${modID}:冲刺 ，耗能就减少1 [E] 。"
   },
   "${modID}:Chaser": {
     "NAME": "紧追不舍",
-    "DESCRIPTION": "你下次打出 ${modID}:跳跃 或 ${modID}:冲刺 时抽!M!张牌。"
+    "DESCRIPTION": "你下次打出 ${modID}:跳跃 或 ${modID}:冲刺 时抽 M 张牌。"
   },
   "${modID}:Resurrections": {
     "NAME": "复活",
@@ -122,67 +120,66 @@
   },
   "${modID}:DustBunny": {
     "NAME": "尘球",
-    "DESCRIPTION": "造成!D!点伤害，对意图是攻击的所有敌人再造成!D!点伤害。"
+    "DESCRIPTION": "造成 D 点伤害，对意图是攻击的所有敌人再造成 D 点伤害。"
   },
   "${modID}:SludgeWall": {
     "NAME": "淤泥墙",
-    "DESCRIPTION": "造成!D!点伤害，你每有1点 ${modID}:动量 ，重复一次。"
+    "DESCRIPTION": "造成 D 点伤害，你每有 1 点 ${modID}:动量 ，重复一次。"
   },
   "${modID}:OshiroBoss": {
     "NAME": "山庄老板",
-    "DESCRIPTION": "造成!D!点伤害。 NL 在你的回合结束时，若你处于 ${modID}:着陆 ，失去!M!点生命。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 在你的回合结束时，若你处于 ${modID}:着陆 ，失去 M 点生命。"
   },
   "${modID}:SinkingPlatform": {
     "NAME": "下沉平台",
-    "DESCRIPTION": "${modID}:着陆 。 NL 获得!B!点 格挡 ， NL 给予!M!层 虚弱 。"
+    "DESCRIPTION": "${modID}:着陆 。 NL 获得 B 点 格挡 ， NL 给予 M 层 虚弱 。"
   },
   "${modID}:DustTower": {
     "NAME": "尘球塔",
-    "DESCRIPTION": "给予!M!层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "给予!M!层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。"
+    "DESCRIPTION": "给予 M 层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "给予 M 层 易伤 。 NL 将这张牌的一张复制品放入你的弃牌堆中。"
   },
   "${modID}:ScatteredAndLost": {
     "NAME": "分散与失落",
-    "DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
-    "UPGRADE_DESCRIPTION": "在你的回合开始时，少抽!M!张牌，从弃牌堆中选择一张牌放入你的手牌中。"
+    "DESCRIPTION": "{@@}在你的回合开始时，少抽{!M!|@=一|>1= !M! }张牌，从弃牌堆中选择一张牌放入你的手牌中。 NL 虚无 。",
+    "UPGRADE_DESCRIPTION": "{@@}在你的回合开始时，少抽{!M!|@=一|>1= !M! }张牌，从弃牌堆中选择一张牌放入你的手牌中。"
   },
   "${modID}:Snowball": {
     "NAME": "雪球",
-    "DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成 D 点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。",
+    "UPGRADE_DESCRIPTION": "造成 D 点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
   },
   "${modID}:Clouds": {
     "NAME": "云朵",
-    "DESCRIPTION": "被 ${modID}:冲刺 打出时， NL 造成!D!点伤害。 NL 被 ${modID}:跳跃 打出时， NL 获得!B!点 格挡 。 NL ${modID}:充能 。"
+    "DESCRIPTION": "被 ${modID}:冲刺 打出时 NL 造成 D 点伤害。 NL 被 ${modID}:跳跃 打出时 NL 获得 B 点 格挡 。 NL ${modID}:充能 。"
   },
   "${modID}:MoveBlock": {
     "NAME": "移动方块",
-    "DESCRIPTION": "${modID}:着陆 。 NL 从你的抽牌堆中选择!M!张牌放到抽牌堆顶部。"
+    "DESCRIPTION": "{@@}${modID}:着陆 。 NL 从你的抽牌堆中 NL 选择{!M!|@=一|>1= !M! }张牌放到 NL 抽牌堆顶部。"
   },
   "${modID}:Wind": {
     "NAME": "山风",
-    "DESCRIPTION": "给予所有敌人3层 易伤 ，获得2层 虚弱 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "给予所有敌人3层 易伤 。 NL 消耗 。"
+    "DESCRIPTION": "给予所有敌人 3 层 易伤 ，获得 M 层 虚弱 。 NL 消耗 。"
   },
   "${modID}:EyeOfTheStorm": {
     "NAME": "风暴之眼",
-    "DESCRIPTION": "你每有一回合未打出 ${modID}:跳跃 ，在你的回合结束时获得!M!点 敏捷 。"
+    "DESCRIPTION": "你每有一回合未打出 ${modID}:跳跃 ，在你的回合结束时获得 M 点 敏捷 。"
   },
   "${modID}:RedBubble": {
     "NAME": "红泡泡",
-    "DESCRIPTION": "造成!D!点伤害。 NL 丢弃一张牌，抽!M!张牌。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 丢弃一张牌，抽 M 张牌。 NL ${modID}:充能 。"
   },
   "${modID}:DashBlock": {
     "NAME": "冲刺方块",
-    "DESCRIPTION": "造成!D!点伤害。 NL 本回合内，你每打出一张 ${modID}:冲刺 ，对随机敌人造成!M!点伤害。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 本回合内，你每打出一张 ${modID}:冲刺 ，对随机敌人造成 M 点伤害。"
   },
   "${modID}:Blade": {
     "NAME": "刀片机关",
-    "DESCRIPTION": "对所有敌人造成!D!点伤害。 NL 这张牌被抽到时，若你处于 ${modID}:凌空 ，失去!M!点生命。"
+    "DESCRIPTION": "对所有敌人造成 D 点伤害。 NL 这张牌被抽到时，若你处于 ${modID}:凌空 ，失去 M 点生命。"
   },
   "${modID}:Seeker": {
     "NAME": "循迹鬼",
-    "DESCRIPTION": "获得4点 力量 和2层 易伤 。 NL 消耗 。"
+    "DESCRIPTION": "获得 4 点 力量 和 NL 2 层 易伤 。 NL 消耗 。"
   },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",
@@ -191,50 +188,50 @@
   },
   "${modID}:Bumper": {
     "NAME": "反弹外壳",
-    "DESCRIPTION": "造成!D!点伤害， NL 获得!B!点 格挡 。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成 D 点伤害， NL 获得 B 点 格挡 。 NL ${modID}:充能 。"
   },
   "${modID}:Feather": {
     "NAME": "金羽毛",
-    "DESCRIPTION": "获得!M!点 力量 、 NL !M!点 敏捷 、1点 ${modID}:动量 NL 和 1层 无实体 。 NL ${modID}:充能 。 NL 消耗 。"
+    "DESCRIPTION": "获得 M 点 力量 、 NL  M 点 敏捷 、 1 点 ${modID}:动量 NL 和 1 层 无实体 。 NL ${modID}:充能 。 NL 消耗 。"
   },
   "${modID}:Checkpoint": {
     "NAME": "检查点",
-    "DESCRIPTION": "造成!D!点伤害。你在本场战斗中每获得过1点 ${modID}:动量 ，这张牌的伤害增加!M!。"
+    "DESCRIPTION": "造成 D 点伤害。你在本场战斗中每获得过1点 ${modID}:动量 ，这张牌的伤害增加 M 。"
   },
   "${modID}:MagmaBall": {
     "NAME": "熔岩球",
-    "DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球 放入 NL 你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 将一张 *寒冰球 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 D 点伤害。 NL 将一张 *寒冰球+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:IceBall": {
     "NAME": "寒冰球",
-    "DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球 放入 NL 你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "获得 B 点 格挡 。 NL 将一张 *熔岩球 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 B 点 格挡 。 NL 将一张 *熔岩球+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:MagmaCube": {
     "NAME": "熔岩块",
-    "DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块 放入 NL 你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "造成 D 点伤害， NL 获得 M 点 ${modID}:动量 。 NL 将一张 *寒冰块 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 D 点伤害， NL 获得 M 点 ${modID}:动量 。 NL 将一张 *寒冰块+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:IceCube": {
     "NAME": "寒冰块",
-    "DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块 放入 NL 你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "获得 B 点 格挡 ， NL 失去 M 点 ${modID}:动量 。 NL 将一张 *熔岩块 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 B 点 格挡 ， NL 失去 M 点 ${modID}:动量 。 NL 将一张 *熔岩块+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:MagmaWall": {
     "NAME": "熔岩墙",
-    "DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 易伤 。 NL 将一张 *寒冰墙 放入 NL 你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 易伤 。 NL 将一张 *寒冰墙+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "造成 D 点伤害， NL 给予 M 层 易伤 。 NL 将一张 *寒冰墙 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成 D 点伤害， NL 给予 M 层 易伤 。 NL 将一张 *寒冰墙+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:IceWall": {
     "NAME": "寒冰墙",
-    "DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 虚弱 。 NL 将一张 *熔岩墙 放入 NL 你的抽牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 虚弱 。 NL 将一张 *熔岩墙+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "获得 B 点 格挡 ， NL 给予 M 层 虚弱 。 NL 将一张 *熔岩墙 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得 B 点 格挡 ， NL 给予 M 层 虚弱 。 NL 将一张 *熔岩墙+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:CoreSwitch": {
     "NAME": "冷热交替",
-    "DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为N，造成2点伤害N次。",
-    "UPGRADE_DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为N，造成2点伤害N+2次。",
+    "DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为 N，造成 !D! 点伤害 N 次。",
+    "UPGRADE_DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为 N，造成 !D! 点伤害 N+2 次。",
     "EXTENDED_DESCRIPTION": [
       "当前N为 ",
       " 。"
@@ -246,12 +243,12 @@
   },
   "${modID}:Pufferfish": {
     "NAME": "河豚炸弹",
-    "DESCRIPTION": "造成!D!点伤害。你每有1点动量，耗能就减少1 [E] 。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 你每有1点动量， NL 耗能就减少 1 [E] 。 NL ${modID}:充能 。"
   },
   "${modID}:DoubleRefill": {
     "NAME": "双重水晶",
-    "DESCRIPTION": "在本场战斗中，将你的 ${modID}:冲刺机会 上限变为2。",
-    "UPGRADE_DESCRIPTION": "固有 。 NL 在本场战斗中，将你的 ${modID}:冲刺机会 上限变为2。"
+    "DESCRIPTION": "在本场战斗中，将你的 ${modID}:冲刺机会 上限变为 2 。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 在本场战斗中，将你的 ${modID}:冲刺机会 上限变为 2 。"
   },
   "${modID}:TutorialBoard": {
     "NAME": "教学板",

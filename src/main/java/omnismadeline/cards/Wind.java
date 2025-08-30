@@ -21,11 +21,13 @@ public class Wind extends BaseEnvironmentCard {
     );
 
     private static final int VULNERABLE = 3;
-    private static final int WEAK = 2;
+    private static final int MAGIC = 2;
+    private static final int UPG_MAGIC = -1;
 
     public Wind() {
         super(ID, info);
-        setExhaust(true);
+        this.setMagic(MAGIC, UPG_MAGIC);
+        this.setExhaust(true);
     }
 
     @Override
@@ -33,9 +35,7 @@ public class Wind extends BaseEnvironmentCard {
         for (AbstractMonster em : AbstractDungeon.getCurrRoom().monsters.monsters) {
             this.addToBot(new ApplyPowerAction(em, p, new VulnerablePower(em, VULNERABLE, false), VULNERABLE));
         }
-        if (!this.upgraded) {
-            this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, WEAK, false), WEAK));
-        }
+        this.addToBot(new ApplyPowerAction(p, p, new WeakPower(p, this.magicNumber, false), this.magicNumber));
     }
 
     @Override
