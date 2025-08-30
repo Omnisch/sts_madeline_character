@@ -151,6 +151,10 @@
     "DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。",
     "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 抽一张牌。 NL 若你处于 ${modID}:着陆 ，将一张 *伤口 放入你的手牌。 NL ${modID}:充能 。"
   },
+  "${modID}:Clouds": {
+    "NAME": "云朵",
+    "DESCRIPTION": "被 ${modID}:冲刺 打出时， NL 造成!D!点伤害。 NL 被 ${modID}:跳跃 打出时， NL 获得!B!点 格挡 。 NL ${modID}:充能 。"
+  },
   "${modID}:MoveBlock": {
     "NAME": "移动方块",
     "DESCRIPTION": "${modID}:着陆 。 NL 从你的抽牌堆中选择!M!张牌放到抽牌堆顶部。"
