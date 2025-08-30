@@ -92,7 +92,11 @@
   },
   "${modID}:Telescope": {
     "NAME": "望远镜",
-    "DESCRIPTION": "跳过一名敌人当前的意图。 NL 消耗 。"
+    "DESCRIPTION": "跳过一名敌人 NL 当前的意图。 NL 消耗 。"
+  },
+  "${modID}:DreamJelly": {
+    "NAME": "梦果冻",
+    "DESCRIPTION": "造成!D!点伤害，被 ${modID}:冲刺 打出时伤害翻倍。 NL ${modID}:充能 。"
   },
   "${modID}:StrawberrySeed": {
     "NAME": "草莓种子",
@@ -195,33 +199,33 @@
   },
   "${modID}:MagmaBall": {
     "NAME": "熔岩球",
-    "DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球 放入你的抽牌堆中。 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球+ 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害。 NL 将一张 *寒冰球+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:IceBall": {
     "NAME": "寒冰球",
-    "DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球 放入你的抽牌堆中。 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球+ 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 。 NL 将一张 *熔岩球+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:MagmaCube": {
     "NAME": "熔岩块",
-    "DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块 放入你的抽牌堆中。 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块+ 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 获得!M!点 ${modID}:动量 。 NL 将一张 *寒冰块+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:IceCube": {
     "NAME": "寒冰块",
-    "DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块 放入你的抽牌堆中。 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块+ 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 失去!M!点 ${modID}:动量 。 NL 将一张 *熔岩块+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:MagmaWall": {
     "NAME": "熔岩墙",
-    "DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 ${modID}:易伤 。 NL 将一张 *寒冰墙 放入你的抽牌堆中。 消耗 。",
-    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 ${modID}:易伤 。 NL 将一张 *寒冰墙+ 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 易伤 。 NL 将一张 *寒冰墙 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "造成!D!点伤害， NL 给予!M!层 易伤 。 NL 将一张 *寒冰墙+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:IceWall": {
     "NAME": "寒冰墙",
-    "DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 ${modID}:虚弱 。 NL 将一张 *熔岩墙 放入你的抽牌堆中。 消耗 。",
-    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 ${modID}:虚弱 。 NL 将一张 *熔岩墙+ 放入你的抽牌堆中。 消耗 。"
+    "DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 虚弱 。 NL 将一张 *熔岩墙 放入 NL 你的抽牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获得!B!点 格挡 ， NL 给予!M!层 虚弱 。 NL 将一张 *熔岩墙+ 放入 NL 你的抽牌堆中。 NL 消耗 。"
   },
   "${modID}:CoreSwitch": {
     "NAME": "冷热交替",

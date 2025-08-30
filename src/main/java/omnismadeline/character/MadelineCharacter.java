@@ -140,7 +140,7 @@ public class MadelineCharacter extends CustomPlayer {
         //If you want multiple of the same card, you have to add it multiple times.
         retVal.add(DashForward.ID);
         retVal.add(DashForward.ID);
-        retVal.add(JumpInPlace.ID);
+        retVal.add(Hop.ID);
         retVal.add(JumpInPlace.ID);
         retVal.add(ZipMover.ID);
         retVal.add(ZipMover.ID);

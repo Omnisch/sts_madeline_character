@@ -12,12 +12,12 @@ public class Hop extends BaseJumpCard {
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
             0
     );
 
-    private static final int BLOCK = 5;
+    private static final int BLOCK = 4;
     private static final int UPG_BLOCK = 3;
 
     public Hop() {
