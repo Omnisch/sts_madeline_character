@@ -9,6 +9,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.cards.BaseEnvironmentCard;
 import omnismadeline.cards.MagmaCube;
+import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.powers.MomentumPower;
 import omnismadeline.util.CardStats;
@@ -18,9 +19,9 @@ import static omnismadeline.MadelineMod.characterPath;
 public class IceCube extends BaseEnvironmentCard {
     public static final String ID = makeID(IceCube.class.getSimpleName());
     private static final CardStats info = new CardStats(
-            CardColor.COLORLESS,
+            MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.SPECIAL, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.SELF,
             -2
     );
