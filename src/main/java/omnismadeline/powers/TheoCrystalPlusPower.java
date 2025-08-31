@@ -10,13 +10,20 @@ import com.megacrit.cardcrawl.rooms.MonsterRoom;
 
 import static omnismadeline.MadelineMod.makeID;
 
-public class TheoCrystalPower extends BasePower {
-    public static final String POWER_ID = makeID("TheoCrystal");
+public class TheoCrystalPlusPower extends BasePower {
+    public static final String POWER_ID = makeID("TheoCrystalPlus");
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 
-    public TheoCrystalPower(AbstractCreature owner, int amount) {
+    private boolean showWarning = false;
+
+    public TheoCrystalPlusPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
+
+        if (AbstractDungeon.player.damagedThisCombat == 1) {
+            this.showWarning = true;
+        }
+        this.updateDescription();
     }
 
     @Override
@@ -26,6 +33,12 @@ public class TheoCrystalPower extends BasePower {
         }
 
         AbstractPlayer p = AbstractDungeon.player;
+        if (p.damagedThisCombat == 0) {
+            this.showWarning = true;
+            this.updateDescription();
+            this.flash();
+            return damageAmount;
+        }
         this.addToBot(new RemoveSpecificPowerAction(p, p, this));
         return damageAmount;
     }
@@ -44,5 +57,8 @@ public class TheoCrystalPower extends BasePower {
 
     public void updateDescription() {
         this.description = DESCRIPTIONS[0];
+        if (this.showWarning) {
+            this.description += DESCRIPTIONS[1];
+        }
     }
 }

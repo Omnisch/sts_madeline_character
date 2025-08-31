@@ -5,7 +5,7 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.DashChancePower;
+import omnismadeline.powers.TheoCrystalPlusPower;
 import omnismadeline.powers.TheoCrystalPower;
 import omnismadeline.util.CardStats;
 
@@ -27,7 +27,11 @@ public class TheoCrystal extends BaseCard {
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         final boolean stillCanGetAward = p.damagedThisCombat <= (this.upgraded ? 1 : 0);
         if (stillCanGetAward) {
-            this.addToBot(new ApplyPowerAction(p, p, new TheoCrystalPower(p, 1, this.upgraded), 1));
+            if (this.upgraded) {
+                this.addToBot(new ApplyPowerAction(p, p, new TheoCrystalPlusPower(p, 1), 1));
+            } else {
+                this.addToBot(new ApplyPowerAction(p, p, new TheoCrystalPower(p, 1), 1));
+            }
         }
     }
 
