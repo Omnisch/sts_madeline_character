@@ -6,7 +6,10 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.powers.DoubleRefillPower;
+import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
+
+import java.util.Objects;
 
 public class DoubleRefill extends BaseCard {
     public static final String ID = makeID(DoubleRefill.class.getSimpleName());
@@ -27,6 +30,11 @@ public class DoubleRefill extends BaseCard {
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         if (!p.hasPower(DoubleRefillPower.POWER_ID)) {
             this.addToBot(new ApplyPowerAction(p, p, new DoubleRefillPower(p)));
+
+            // refill if landed
+            if (Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
+                ((LandStance) p.stance).checkLand();
+            }
         }
     }
 

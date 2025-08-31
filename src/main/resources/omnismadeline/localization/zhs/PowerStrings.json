@@ -2,9 +2,11 @@
   "${modID}:DashChance": {
     "NAME": "冲刺机会",
     "DESCRIPTIONS": [
+      "你还可以打出一次 #y冲刺 。",
       "你还可以打出 #b",
-      " 次 #y冲刺 。上限为 #b",
-      " 点。"
+      " 次 #y冲刺 。",
+      "上限为 #b",
+      " 。"
     ]
   },
   "${modID}:Momentum": {

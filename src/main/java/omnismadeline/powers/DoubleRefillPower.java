@@ -1,6 +1,8 @@
 package omnismadeline.powers;
 
+import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 
 import static omnismadeline.MadelineMod.makeID;
 
@@ -15,12 +17,18 @@ public class DoubleRefillPower extends BasePower {
 
     @Override
     public void onInitialApplication() {
-        ++DashChancePower.maxAmount;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(DashChancePower.POWER_ID)) {
+            ((DashChancePower) p.getPower(DashChancePower.POWER_ID)).maxAmount = DashChancePower.upgradedMaxAmount;
+        }
     }
 
     @Override
     public void onRemove() {
-        --DashChancePower.maxAmount;
+        AbstractPlayer p = AbstractDungeon.player;
+        if (p.hasPower(DashChancePower.POWER_ID)) {
+            ((DashChancePower) p.getPower(DashChancePower.POWER_ID)).maxAmount = DashChancePower.baseMaxAmount;
+        }
     }
 
     public void updateDescription() {

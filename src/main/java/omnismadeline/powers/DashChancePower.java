@@ -9,13 +9,20 @@ public class DashChancePower extends BasePower {
     public static final String POWER_ID = makeID("DashChance");
     private static final AbstractPower.PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
-    public static int maxAmount = 1;
+
+    public static final int baseMaxAmount = 1;
+    public static final int upgradedMaxAmount = 2;
+    public int maxAmount = baseMaxAmount;
 
     public DashChancePower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + amount + DESCRIPTIONS[1] + maxAmount + DESCRIPTIONS[2];
+        if (this.amount == 1) {
+            this.description = DESCRIPTIONS[0] + DESCRIPTIONS[3] + maxAmount + DESCRIPTIONS[4];
+        } else {
+            this.description = DESCRIPTIONS[1] + this.amount + DESCRIPTIONS[2] + DESCRIPTIONS[3] + maxAmount + DESCRIPTIONS[4];
+        }
     }
 }

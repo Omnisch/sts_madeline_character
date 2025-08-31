@@ -17,11 +17,12 @@ public class MadelineRefillAction extends AbstractGameAction {
         AbstractPlayer p = AbstractDungeon.player;
 
         if (!p.hasPower(DashChancePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, DashChancePower.maxAmount), DashChancePower.maxAmount));
+            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, DashChancePower.baseMaxAmount), DashChancePower.baseMaxAmount));
         } else {
-            int currDashChanceAmount = p.getPower(DashChancePower.POWER_ID).amount;
-            if (currDashChanceAmount < DashChancePower.maxAmount) {
-                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, DashChancePower.maxAmount - currDashChanceAmount)));
+            final int dashChanceMaxAmount = ((DashChancePower) p.getPower(DashChancePower.POWER_ID)).maxAmount;
+            final int currDashChanceAmount = p.getPower(DashChancePower.POWER_ID).amount;
+            if (currDashChanceAmount < dashChanceMaxAmount) {
+                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, dashChanceMaxAmount - currDashChanceAmount)));
             }
         }
         this.isDone = true;

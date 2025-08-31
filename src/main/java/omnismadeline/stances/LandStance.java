@@ -29,15 +29,15 @@ public class LandStance extends AbstractStance {
 
     @Override
     public void onEnterStance() {
-        AbstractDungeon.actionManager.addToBottom(new MadelineRefillAction());
-        if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
-        }
-        this.updateDescription();
+        this.checkLand();
     }
 
     @Override
     public void atStartOfTurn() {
+        this.checkLand();
+    }
+
+    public void checkLand() {
         AbstractDungeon.actionManager.addToBottom(new MadelineRefillAction());
         if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
             AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
@@ -47,10 +47,16 @@ public class LandStance extends AbstractStance {
 
     @Override
     public void updateDescription() {
-        if (p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
-            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[2];
+        if (p.hasPower(DashChancePower.POWER_ID)) {
+            final int dashChanceMaxAmount = ((DashChancePower) p.getPower(DashChancePower.POWER_ID)).maxAmount;
+            this.description = stanceString.DESCRIPTION[0] + dashChanceMaxAmount + stanceString.DESCRIPTION[1];
         } else {
-            this.description = stanceString.DESCRIPTION[0] + DashChancePower.maxAmount + stanceString.DESCRIPTION[1];
+            final int dashChanceMaxAmount = 1;
+            this.description = stanceString.DESCRIPTION[0] + dashChanceMaxAmount + stanceString.DESCRIPTION[1];
+        }
+
+        if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
+            this.description = this.description + stanceString.DESCRIPTION[2];
         }
     }
 
