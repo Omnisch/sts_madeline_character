@@ -1,4 +1,4 @@
-package omnismadeline.cards;
+package omnismadeline.cards.jumps;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;

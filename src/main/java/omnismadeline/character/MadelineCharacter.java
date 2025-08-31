@@ -19,6 +19,8 @@ import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import omnismadeline.cards.*;
+import omnismadeline.cards.dashes.*;
+import omnismadeline.cards.jumps.*;
 import omnismadeline.relics.ClimbingBackpackRelic;
 import omnismadeline.stances.LandStance;
 

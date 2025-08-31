@@ -1,4 +1,4 @@
-package omnismadeline.cards;
+package omnismadeline.cards.jumps;
 
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -8,6 +8,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.actions.MadelinePendAndFlushAction;
+import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.PonderingWaterPower;

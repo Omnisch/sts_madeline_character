@@ -1,4 +1,4 @@
-package omnismadeline.cards;
+package omnismadeline.cards.dashes;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -9,20 +9,20 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class DashForward extends BaseDashCard {
-    public static final String ID = makeID(DashForward.class.getSimpleName());
+public class DiagonalDownDash extends BaseDashCard {
+    public static final String ID = makeID(DiagonalDownDash.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.COMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
-            1
+            0
     );
 
-    private static final int DAMAGE = 9;
+    private static final int DAMAGE = 6;
     private static final int UPG_DAMAGE = 3;
 
-    public DashForward() {
+    public DiagonalDownDash() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
     }
@@ -34,6 +34,6 @@ public class DashForward extends BaseDashCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new DashForward();
+        return new DiagonalDownDash();
     }
 }

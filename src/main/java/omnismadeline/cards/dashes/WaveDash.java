@@ -1,4 +1,4 @@
-package omnismadeline.cards;
+package omnismadeline.cards.dashes;
 
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;

@@ -3,7 +3,7 @@ package omnismadeline.powers;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
-import omnismadeline.cards.TransitionDash;
+import omnismadeline.cards.dashes.TransitionDash;
 
 import static omnismadeline.MadelineMod.makeID;
 
