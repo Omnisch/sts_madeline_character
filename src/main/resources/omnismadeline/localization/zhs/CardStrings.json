@@ -203,14 +203,18 @@
     "NAME": "金羽毛",
     "DESCRIPTION": "获得 M 点 力量 、 NL  M 点 敏捷 、 1 点 ${modID}:动量 NL 和 1 层 无实体 。 NL ${modID}:充能 。 NL 消耗 。"
   },
+  "${modID}:PonderingWater": {
+    "NAME": "沉思之水",
+    "DESCRIPTION": "本回合内你保持 ${modID}:着陆 。"
+  },
   "${modID}:Checkpoint": {
     "NAME": "检查点",
     "DESCRIPTION": "造成 D 点伤害。你在本场战斗中每获得过1点 ${modID}:动量 ，这张牌的伤害增加 M 。"
   },
   "${modID}:Key": {
     "NAME": "钥匙",
-    "DESCRIPTION": "将一张 *锁 放入你的弃牌堆中。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "将一张 *锁+ 放入你的弃牌堆中。 NL 消耗 。"
+    "DESCRIPTION": "将一张 *锁 放入 NL 你的弃牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "将一张 *锁+ 放入 NL 你的弃牌堆中。 NL 消耗 。"
   },
   "${modID}:Lock": {
     "NAME": "锁",

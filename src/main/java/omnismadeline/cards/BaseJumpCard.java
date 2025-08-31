@@ -10,6 +10,7 @@ import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
+import omnismadeline.powers.PonderingWaterPower;
 import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
@@ -35,7 +36,9 @@ public abstract class BaseJumpCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ChangeStanceAction(new SoarStance()));
+        if (!p.hasPower(PonderingWaterPower.POWER_ID)) {
+            this.addToBot(new ChangeStanceAction(new SoarStance()));
+        }
         onUse(p, m);
 
         if (!this.autoPlayed) {
