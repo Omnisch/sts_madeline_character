@@ -19,11 +19,11 @@ public class TutorialBoard extends BaseCard {
     );
 
     private static final int MAGIC = 1;
+    private static final int UPG_MAGIC = 1;
 
     public TutorialBoard() {
         super(ID, info);
-        this.setMagic(MAGIC);
-        this.setCostUpgrade(0);
+        this.setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

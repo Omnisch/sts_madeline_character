@@ -256,7 +256,7 @@
   },
   "${modID}:TutorialBoard": {
     "NAME": "教学板",
-    "DESCRIPTION": "你每打出一张 ${modID}:跳跃 ， NL 抽一张牌。"
+    "DESCRIPTION": "{@@}你每打出一张 ${modID}:跳跃 ， NL 抽{!M!|@=一|>1= !M! }张牌。"
   },
   "${modID}:Farewell": {
     "NAME": "再见",
