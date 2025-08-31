@@ -1,45 +1,38 @@
-package omnismadeline.cards;
+package omnismadeline.cards.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import omnismadeline.cards.BaseCard;
+import omnismadeline.cards.dashes.TransitionDash;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.DoubleRefillPower;
-import omnismadeline.stances.LandStance;
+import omnismadeline.powers.ResurrectionsPower;
 import omnismadeline.util.CardStats;
 
-import java.util.Objects;
-
-public class DoubleRefill extends BaseCard {
-    public static final String ID = makeID(DoubleRefill.class.getSimpleName());
+public class Resurrections extends BaseCard {
+    public static final String ID = makeID(Resurrections.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.POWER, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.UNCOMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.NONE,
-            1
+            2
     );
 
-    public DoubleRefill() {
+    public Resurrections() {
         super(ID, info);
-        setInnate(false, true);
+        setCostUpgrade(1);
+        this.cardsToPreview = new TransitionDash();
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(DoubleRefillPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new DoubleRefillPower(p)));
-
-            // refill if landed
-            if (Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
-                ((LandStance) p.stance).checkLand();
-            }
-        }
+        this.addToBot(new ApplyPowerAction(p, p, new ResurrectionsPower(p, 1), 1));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new DoubleRefill();
+        return new Resurrections();
     }
 }

@@ -1,37 +1,39 @@
-package omnismadeline.cards;
+package omnismadeline.cards.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.cards.dashes.TransitionDash;
+import omnismadeline.cards.BaseCard;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.ResurrectionsPower;
+import omnismadeline.powers.HeartOfTheMountainPower;
 import omnismadeline.util.CardStats;
 
-public class Resurrections extends BaseCard {
-    public static final String ID = makeID(Resurrections.class.getSimpleName());
+public class HeartOfTheMountain extends BaseCard {
+    public static final String ID = makeID(HeartOfTheMountain.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.POWER, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.UNCOMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.RARE, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.NONE,
-            2
+            3
     );
 
-    public Resurrections() {
+    public HeartOfTheMountain() {
         super(ID, info);
-        setCostUpgrade(1);
-        this.cardsToPreview = new TransitionDash();
+        setCostUpgrade(2);
+        setEthereal(true);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new ResurrectionsPower(p, 1), 1));
+        if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
+            this.addToBot(new ApplyPowerAction(p, p, new HeartOfTheMountainPower(p)));
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new Resurrections();
+        return new HeartOfTheMountain();
     }
 }

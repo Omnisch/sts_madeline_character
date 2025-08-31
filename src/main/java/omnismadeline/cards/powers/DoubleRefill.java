@@ -1,15 +1,19 @@
-package omnismadeline.cards;
+package omnismadeline.cards.powers;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import omnismadeline.cards.BaseCard;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.MountCelestePower;
+import omnismadeline.powers.DoubleRefillPower;
+import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
-public class MountCeleste extends BaseCard {
-    public static final String ID = makeID(MountCeleste.class.getSimpleName());
+import java.util.Objects;
+
+public class DoubleRefill extends BaseCard {
+    public static final String ID = makeID(DoubleRefill.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.POWER, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -18,21 +22,25 @@ public class MountCeleste extends BaseCard {
             1
     );
 
-    private static final int MAGIC = 1;
-    private static final int UPG_MAGIC = 1;
-
-    public MountCeleste() {
+    public DoubleRefill() {
         super(ID, info);
-        this.setMagic(MAGIC, UPG_MAGIC);
+        setInnate(false, true);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new MountCelestePower(p, this.magicNumber), this.magicNumber));
+        if (!p.hasPower(DoubleRefillPower.POWER_ID)) {
+            this.addToBot(new ApplyPowerAction(p, p, new DoubleRefillPower(p)));
+
+            // refill if landed
+            if (Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
+                ((LandStance) p.stance).checkLand();
+            }
+        }
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new MountCeleste();
+        return new DoubleRefill();
     }
 }
