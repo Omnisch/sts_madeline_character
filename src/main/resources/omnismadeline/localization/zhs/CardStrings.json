@@ -153,6 +153,10 @@
     "NAME": "云朵",
     "DESCRIPTION": "被 ${modID}:冲刺 打出时 NL 造成 D 点伤害。 NL 被 ${modID}:跳跃 打出时 NL 获得 B 点 格挡 。 NL ${modID}:充能 。"
   },
+  "${modID}:GreenBubble": {
+    "NAME": "绿泡泡",
+    "DESCRIPTION": "{@@}获得!B!点 格挡 。 NL 本回合你打出下{!M!|@=一|>1= !M! }张 ${modID}:冲刺 时，抽一张牌。 NL ${modID}:充能 。"
+  },
   "${modID}:MoveBlock": {
     "NAME": "移动方块",
     "DESCRIPTION": "{@@}${modID}:着陆 。 NL 从你的抽牌堆中 NL 选择{!M!|@=一|>1= !M! }张牌放到 NL 抽牌堆顶部。"

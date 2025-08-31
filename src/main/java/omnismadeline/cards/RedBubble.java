@@ -12,7 +12,7 @@ import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class RedBubble extends BaseCard {
+public class RedBubble extends BaseEnvironmentCard {
     public static final String ID = makeID(RedBubble.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
@@ -27,9 +27,9 @@ public class RedBubble extends BaseCard {
 
     public RedBubble() {
         super(ID, info);
-        setDamage(DAMAGE);
-        setMagic(MAGIC);
-        setCostUpgrade(0);
+        this.setDamage(DAMAGE);
+        this.setMagic(MAGIC);
+        this.setCostUpgrade(-2);
     }
 
     @Override
