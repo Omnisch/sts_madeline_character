@@ -25,8 +25,9 @@ public class Campfire extends BaseCard {
 
     public Campfire() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
-        setExhaust(true);
+        this.setMagic(MAGIC, UPG_MAGIC);
+        this.setExhaust(true);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override
