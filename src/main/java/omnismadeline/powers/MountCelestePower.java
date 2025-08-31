@@ -8,12 +8,12 @@ import omnismadeline.enums.CustomTags;
 
 import static omnismadeline.MadelineMod.makeID;
 
-public class TutorialBoardPower extends BasePower {
-    public static final String POWER_ID = makeID("TutorialBoard");
+public class MountCelestePower extends BasePower {
+    public static final String POWER_ID = makeID("MountCeleste");
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
 
-    public TutorialBoardPower(AbstractCreature owner, int amount) {
+    public MountCelestePower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
     }
 

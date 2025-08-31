@@ -21,7 +21,7 @@ public class PointlessMachineRelic extends BaseRelic {
     private static final LandingSound SOUND = LandingSound.CLINK; // The sound played when the relic is clicked.
 
     private static final int BLOCK = 2;
-    private static final int DASHES_BEFORE_UPGRADE = 2;
+    private static final int DASHES_BEFORE_UPGRADE = 24;
 
     public PointlessMachineRelic() {
         super(ID, NAME, MadelineCharacter.Meta.CARD_COLOR, RARITY, SOUND);

@@ -266,10 +266,18 @@
   },
   "${modID}:TutorialBoard": {
     "NAME": "教学板",
-    "DESCRIPTION": "{@@}你每打出一张 ${modID}:跳跃 ， NL 抽{!M!|@=一|>1= !M! }张牌。"
+    "DESCRIPTION": "使一名敌人失去与其攻击意图数值相等的生命。 NL 消耗 。",
+    "EXTENDED_DESCRIPTION": [
+      " NL （当前数值为 ",
+      " 。）"
+    ]
   },
   "${modID}:Farewell": {
     "NAME": "再见",
     "DESCRIPTION": "获得一场非 boss 战斗胜利。 NL 从你的牌组中移除这张牌。 NL 虚无 。"
+  },
+  "${modID}:MountCeleste": {
+    "NAME": "塞莱斯特山",
+    "DESCRIPTION": "{@@}你每打出一张 ${modID}:跳跃 ， NL 抽{!M!|@=一|>1= !M! }张牌。"
   }
 }

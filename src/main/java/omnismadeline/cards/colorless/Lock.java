@@ -8,6 +8,8 @@ import omnismadeline.cards.BaseEnvironmentCard;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
+import static omnismadeline.MadelineMod.characterPath;
+
 public class Lock extends BaseEnvironmentCard {
     public static final String ID = makeID(Lock.class.getSimpleName());
     private static final CardStats info = new CardStats(
@@ -21,6 +23,8 @@ public class Lock extends BaseEnvironmentCard {
     public Lock() {
         super(ID, info);
         setExhaust(true);
+
+        setBackgroundTexture(characterPath("cardback/bg_skill_env_colorless.png"), characterPath("cardback/bg_skill_env_colorless_p.png"));
     }
 
     @Override
