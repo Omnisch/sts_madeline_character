@@ -114,6 +114,11 @@
     "NAME": "紧追不舍",
     "DESCRIPTION": "你下次打出 ${modID}:跳跃 或 ${modID}:冲刺 时抽 M 张牌。"
   },
+  "${modID}:AnotherMe": {
+    "NAME": "另一个我",
+    "DESCRIPTION": "在你的回合结束时，再次打出本回合你打出的除这张牌以及能力牌之外的牌。",
+    "UPGRADE_DESCRIPTION": "在你的回合结束时，再次打出本回合你打出的除这张牌之外的牌。"
+  },
   "${modID}:Resurrections": {
     "NAME": "复活",
     "DESCRIPTION": "在你的回合开始时，将一张 *切版冲刺 放入你的手牌。"

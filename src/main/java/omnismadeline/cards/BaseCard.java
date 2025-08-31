@@ -601,6 +601,7 @@ public abstract class BaseCard extends CustomCard {
 
     // Custom edits
 
+    public boolean autoPlayed = false;
     public AbstractCard.CardTags movedFromCardTag = null;
 
     @Override
@@ -609,6 +610,7 @@ public abstract class BaseCard extends CustomCard {
 
         this.addToBot(new MadelinePendAndFlushAction());
 
+        autoPlayed = false;
         movedFromCardTag = null;
     }
     protected abstract void onUse(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);

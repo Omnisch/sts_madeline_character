@@ -42,14 +42,17 @@ public abstract class BaseEnvironmentCard extends BaseCard {
         GAM_fieldPatch.totalEnvrPlayedThisTurn++;
         GAM_fieldPatch.totalEnvrPlayedThisCombat++;
 
-        movedFromCardTag = null;
+        this.autoPlayed = false;
+        this.movedFromCardTag = null;
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) {
             return false;
-        } else if (!isAboutToMove) {
+        } else if (this.autoPlayed) {
+            return true;
+        } else if (!this.isAboutToMove) {
             this.cantUseMessage = NOT_MOVED_MESSAGE;
             return false;
         } else {

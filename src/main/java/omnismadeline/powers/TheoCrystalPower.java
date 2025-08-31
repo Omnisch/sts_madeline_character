@@ -15,6 +15,7 @@ public class TheoCrystalPower extends BasePower {
     public static final String POWER_ID = makeID("TheoCrystal");
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = false;
+
     private final boolean upgraded;
     private boolean showAlert = false;
 

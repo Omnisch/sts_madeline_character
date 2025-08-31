@@ -37,21 +37,30 @@ public abstract class BaseJumpCard extends BaseCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ChangeStanceAction(new SoarStance()));
         onUse(p, m);
-        this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.JUMP));
+
+        if (!this.autoPlayed) {
+            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.JUMP));
+        }
+
         this.addToBot(new MadelineGainMomentumAction(1));
 
-        this.addToBot(new MadelinePendAndFlushAction());
+        if (!this.autoPlayed) {
+            this.addToBot(new MadelinePendAndFlushAction());
+        }
 
         GAM_fieldPatch.totalJumpPlayedThisTurn++;
         GAM_fieldPatch.totalJumpPlayedThisCombat++;
 
-        movedFromCardTag = null;
+        this.autoPlayed = false;
+        this.movedFromCardTag = null;
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) {
             return false;
+        } else if (this.autoPlayed) {
+            return true;
         } else if (Objects.equals(p.stance.ID, SoarStance.STANCE_ID)) {
             this.cantUseMessage = CANT_JUMP_MESSAGE;
             return false;

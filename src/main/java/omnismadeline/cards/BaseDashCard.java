@@ -37,24 +37,35 @@ public abstract class BaseDashCard extends BaseCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
+            if (p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount > 0) {
+                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
+            }
         }
         onUse(p, m);
-        this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.DASH));
+
+        if (!this.autoPlayed) {
+            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.DASH));
+        }
+
         this.addToBot(new MadelineGainMomentumAction(1));
 
-        this.addToBot(new MadelinePendAndFlushAction());
+        if (!this.autoPlayed) {
+            this.addToBot(new MadelinePendAndFlushAction());
+        }
 
         GAM_fieldPatch.totalDashPlayedThisTurn++;
         GAM_fieldPatch.totalDashPlayedThisCombat++;
 
-        movedFromCardTag = null;
+        this.autoPlayed = false;
+        this.movedFromCardTag = null;
     }
 
     @Override
     public boolean canUse(AbstractPlayer p, AbstractMonster m) {
         if (!super.canUse(p, m)) {
             return false;
+        } else if (this.autoPlayed) {
+            return true;
         } else if (!hasDashChances(p)) {
             this.cantUseMessage = CANT_DASH_MESSAGE;
             return false;
