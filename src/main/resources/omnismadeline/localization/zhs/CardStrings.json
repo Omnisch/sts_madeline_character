@@ -165,7 +165,7 @@
   },
   "${modID}:GreenBubble": {
     "NAME": "绿泡泡",
-    "DESCRIPTION": "{@@}获得!B!点 格挡 。 NL 本回合你打出下{!M!|@=一|>1= !M! }张 ${modID}:冲刺 时，抽一张牌。 NL ${modID}:充能 。"
+    "DESCRIPTION": "{@@}获得 B 点 格挡 。 NL 本回合你打出下{!M!|@=一|>1= !M! }张 ${modID}:冲刺 时，抽一张牌。 NL ${modID}:充能 。"
   },
   "${modID}:MoveBlock": {
     "NAME": "移动方块",
@@ -218,7 +218,7 @@
   },
   "${modID}:BadelineBubble": {
     "NAME": "Badeline泡泡",
-    "DESCRIPTION": "失去所有 ${modID}:动量 ， NL 获得 !M! N 点 格挡 NL （ N 为失去的动量）。 NL ${modID}:充能 。 NL 消耗 。"
+    "DESCRIPTION": "失去所有 ${modID}:动量 ， NL 获得 !M! N 点 格挡 。 NL ( N 为失去的动量) NL ${modID}:充能 。 NL 消耗 。"
   },
   "${modID}:Checkpoint": {
     "NAME": "检查点",
@@ -266,11 +266,18 @@
   },
   "${modID}:CoreSwitch": {
     "NAME": "冷热交替",
-    "DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为 N，造成 !D! 点伤害 N 次。",
-    "UPGRADE_DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为 N，造成 !D! 点伤害 N+2 次。",
+    "DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为 N，造成 D 点伤害 N 次。",
+    "UPGRADE_DESCRIPTION": "你的消耗牌堆中名字带有熔岩或寒冰的牌的数量记为 N，造成 D 点伤害 N+2 次。",
     "EXTENDED_DESCRIPTION": [
-      "当前N为 ",
-      " 。"
+      " NL (当前 N 为 ",
+      " )"
+    ]
+  },
+  "${modID}:HeartGate": {
+    "NAME": "心之门",
+    "DESCRIPTION": "失去 M 点生命。造成等同于你在本场战斗中失去过的生命值的伤害。回复 M 点生命。",
+    "EXTENDED_DESCRIPTION": [
+      " NL (将要造成 D 点伤害)"
     ]
   },
   "${modID}:HeartOfTheMountain": {
@@ -288,11 +295,7 @@
   },
   "${modID}:TutorialBoard": {
     "NAME": "教学板",
-    "DESCRIPTION": "使一名敌人失去与其攻击意图数值相等的生命。 NL 消耗 。",
-    "EXTENDED_DESCRIPTION": [
-      " NL （当前数值为 ",
-      " 。）"
-    ]
+    "DESCRIPTION": "使一名敌人失去与其攻击意图数值相等的生命。 NL 消耗 。"
   },
   "${modID}:Farewell": {
     "NAME": "再见",

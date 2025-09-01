@@ -64,6 +64,7 @@ public class CoreSwitch extends BaseCard {
         this.initializeDescription();
     }
 
+    @Override
     public void onMoveToDiscard() {
         this.rawDescription = this.upgraded ? cardStrings.UPGRADE_DESCRIPTION : cardStrings.DESCRIPTION;
         this.initializeDescription();
