@@ -288,6 +288,10 @@
     "NAME": "河豚炸弹",
     "DESCRIPTION": "造成 D 点伤害。 NL 你每有1点动量， NL 耗能就减少 1 [E] 。 NL ${modID}:充能 。"
   },
+  "${modID}:Generator": {
+    "NAME": "电箱",
+    "DESCRIPTION": "{@@}对所有敌人造成 D 点伤害。抽牌直到{!M!|@=你的手牌有 !M! 张牌|10=将手牌抽满}，丢弃其中所有的非攻击牌。"
+  },
   "${modID}:DoubleRefill": {
     "NAME": "双重水晶",
     "DESCRIPTION": "在本场战斗中，将你的 ${modID}:冲刺机会 上限变为 2 。",
