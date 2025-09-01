@@ -12,6 +12,7 @@ import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
+import omnismadeline.powers.CoyoteTimePower;
 import omnismadeline.powers.GrannysCabinImplicitPower;
 import omnismadeline.powers.PonderingWaterImplicitPower;
 import omnismadeline.stances.SoarStance;
@@ -66,6 +67,8 @@ public abstract class BaseJumpCard extends BaseCard {
         if (!super.canUse(p, m)) {
             return false;
         } else if (this.autoPlayed) {
+            return true;
+        } else if (p.hasPower(CoyoteTimePower.POWER_ID) && GAM_fieldPatch.totalJumpPlayedThisTurn == 0) {
             return true;
         } else if (Objects.equals(p.stance.ID, SoarStance.STANCE_ID)) {
             this.cantUseMessage = CANT_JUMP_MESSAGE;

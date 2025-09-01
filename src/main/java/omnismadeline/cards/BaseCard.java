@@ -610,8 +610,8 @@ public abstract class BaseCard extends CustomCard {
 
         this.addToBot(new MadelinePendAndFlushAction());
 
-        autoPlayed = false;
-        movedFromCardTag = null;
+        this.autoPlayed = false;
+        this.movedFromCardTag = null;
     }
     protected abstract void onUse(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster);
 

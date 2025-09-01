@@ -57,6 +57,10 @@
     "DESCRIPTION": "获得等同于你当前 ${modID}:动量 的 力量 。在每回合结束时失去所有 ${modID}:动量 。",
     "UPGRADE_DESCRIPTION": "获得等同于你当前 ${modID}:动量 + M 的 力量 。在每回合结束时失去所有 ${modID}:动量 。"
   },
+  "${modID}:CoyoteTime": {
+    "NAME": "狼跳",
+    "DESCRIPTION": "你每回合的第一张 ${modID}:跳跃 可以在 ${modID}:凌空 时打出。"
+  },
   "${modID}:ZipMover": {
     "NAME": "交通方块",
     "DESCRIPTION": "${modID}:着陆 。 NL 造成 D 点伤害。 NL ${modID}:打击 。"

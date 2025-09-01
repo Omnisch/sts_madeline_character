@@ -30,6 +30,12 @@
       "在每回合结束时，你失去所有动量。"
     ]
   },
+  "${modID}:CoyoteTime": {
+    "NAME": "狼跳",
+    "DESCRIPTIONS": [
+      "你每回合的第一张 #y跳跃 可以在 #y凌空 时打出。"
+    ]
+  },
   "${modID}:GrannysCabin": {
     "NAME": "奶奶的小屋",
     "DESCRIPTIONS": [
