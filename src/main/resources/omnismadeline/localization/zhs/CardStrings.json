@@ -298,6 +298,10 @@
     "NAME": "电箱",
     "DESCRIPTION": "{@@}对所有敌人造成 D 点伤害。抽牌直到{!M!|@=你的手牌有 !M! 张牌|10=将手牌抽满}，丢弃其中所有的非攻击牌。"
   },
+  "${modID}:GoldenStrawberry": {
+    "NAME": "金草莓",
+    "DESCRIPTION": "将你当前的能量与 ${modID}:动量 交换数值。"
+  },
   "${modID}:TutorialBoard": {
     "NAME": "教学板",
     "DESCRIPTION": "使一名敌人失去与其攻击意图数值相等的生命。 NL 消耗 。"

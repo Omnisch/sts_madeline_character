@@ -40,7 +40,7 @@ public class LandStance extends AbstractStance {
     public void checkLand() {
         AbstractDungeon.actionManager.addToBottom(new MadelineRefillAction());
         if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, p.getPower(MomentumPower.POWER_ID)));
+            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, MomentumPower.POWER_ID));
         }
         this.updateDescription();
     }

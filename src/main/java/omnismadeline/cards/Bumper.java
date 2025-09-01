@@ -3,7 +3,7 @@ package omnismadeline.cards;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.actions.MadelineExchangeMomentumToBlockAction;
+import omnismadeline.actions.MadelineExportMomentumToBlockAction;
 import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
@@ -28,7 +28,7 @@ public class Bumper extends BaseEnvironmentCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new MadelineExchangeMomentumToBlockAction(this.magicNumber));
+        this.addToBot(new MadelineExportMomentumToBlockAction(this.magicNumber));
         this.addToBot(new MadelineRefillAction());
     }
 
