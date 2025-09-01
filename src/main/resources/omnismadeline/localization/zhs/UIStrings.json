@@ -28,6 +28,11 @@
       "需要先 #r着陆 ！"
     ]
   },
+  "${modID}:MadelineBlueTorchAction": {
+    "TEXT": [
+      "消耗"
+    ]
+  },
   "${modID}:MadelineMoveAction": {
     "TEXT": [
       "尝试打出"

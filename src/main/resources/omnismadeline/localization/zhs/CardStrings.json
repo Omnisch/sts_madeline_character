@@ -190,6 +190,10 @@
     "NAME": "循迹鬼",
     "DESCRIPTION": "获得 4 点 力量 和 NL 2 层 易伤 。 NL 消耗 。"
   },
+  "${modID}:BlueTorch": {
+    "NAME": "蓝火把",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 消耗 一张牌，若消耗的牌是 状态牌 或 诅咒 牌，获得 !M! 点多层护甲。"
+  },
   "${modID}:TheoCrystal": {
     "NAME": "提奥水晶",
     "DESCRIPTION": "若你在本场战斗中未受到攻击伤害，战斗结束时额外获得一件遗物。",
