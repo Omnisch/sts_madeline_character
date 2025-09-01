@@ -17,12 +17,12 @@ public class Resurrections extends BaseCard {
             CardType.POWER, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.UNCOMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.NONE,
-            2
+            1
     );
 
     public Resurrections() {
         super(ID, info);
-        setCostUpgrade(1);
+        setCostUpgrade(0);
         this.cardsToPreview = new TransitionDash();
     }
 

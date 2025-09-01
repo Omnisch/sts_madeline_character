@@ -21,11 +21,11 @@
   },
   "${modID}:TransitionDash": {
     "NAME": "切版冲刺",
-    "DESCRIPTION": "造成 D 点伤害，结束你的回合。在你的下回合开始时 ${modID}:充能 。 NL 消耗 。"
+    "DESCRIPTION": "造成 D 点伤害，结束你的回合。在你的下回合开始时 ${modID}:充能 。"
   },
   "${modID}:Kevin": {
     "NAME": "凯文",
-    "DESCRIPTION": "造成 D 点伤害， NL 获得 M 点 ${modID}:动量 。"
+    "DESCRIPTION": "造成 D 点伤害， NL 额外获得 M 点 ${modID}:动量 。"
   },
   "${modID}:WaveDash": {
     "NAME": "凌波微步",
@@ -45,7 +45,7 @@
   },
   "${modID}:Bunnyhop": {
     "NAME": "兔子跳",
-    "DESCRIPTION": "获得 B 点 格挡 ， NL 获得 M 点 ${modID}:动量 。"
+    "DESCRIPTION": "获得 B 点 格挡 ， NL 额外获得 M 点 ${modID}:动量 。"
   },
   "${modID}:NeutralJump": {
     "NAME": "中性跳",
@@ -131,7 +131,7 @@
   },
   "${modID}:Resurrections": {
     "NAME": "复活",
-    "DESCRIPTION": "在你的回合开始时，将一张 *切版冲刺 放入你的手牌。"
+    "DESCRIPTION": "在你的回合开始时，将一张 *切版冲刺 加入你的手牌。"
   },
   "${modID}:DustBunny": {
     "NAME": "尘球",
@@ -211,7 +211,7 @@
   },
   "${modID}:Bumper": {
     "NAME": "反弹外壳",
-    "DESCRIPTION": "造成 D 点伤害， NL 获得 B 点 格挡 。 NL ${modID}:充能 。"
+    "DESCRIPTION": "失去所有 ${modID}:动量 ， NL 获得 !M! N 点 格挡 。 NL ( N 为失去的动量) NL ${modID}:充能 。"
   },
   "${modID}:Feather": {
     "NAME": "金羽毛",
@@ -223,7 +223,8 @@
   },
   "${modID}:BadelineBubble": {
     "NAME": "Badeline泡泡",
-    "DESCRIPTION": "失去所有 ${modID}:动量 ， NL 获得 !M! N 点 格挡 。 NL ( N 为失去的动量) NL ${modID}:充能 。 NL 消耗 。"
+    "DESCRIPTION": "消耗 一张牌，从 3 张随机 ${modID}:环境 牌中选择一张加入你的手牌。 NL ${modID}:充能 。",
+    "UPGRADE_DESCRIPTION": "消耗 一张牌，从 3 张随机 ${modID}:环境 牌中选择一张加入你的手牌，这张牌在本回合的耗能为 0 。 NL ${modID}:充能 。"
   },
   "${modID}:Checkpoint": {
     "NAME": "检查点",

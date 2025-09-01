@@ -22,13 +22,12 @@ public class TransitionDash extends BaseDashCard {
             1
     );
 
-    private static final int DAMAGE = 10;
-    private static final int UPG_DAMAGE = 4;
+    private static final int DAMAGE = 11;
+    private static final int UPG_DAMAGE = 3;
 
     public TransitionDash() {
         super(ID, info);
         setDamage(DAMAGE, UPG_DAMAGE);
-        setExhaust(true);
     }
 
     @Override

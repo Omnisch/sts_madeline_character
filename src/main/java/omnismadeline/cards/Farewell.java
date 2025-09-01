@@ -20,9 +20,10 @@ public class Farewell extends BaseCard {
 
     public Farewell() {
         super(ID, info);
-        setCostUpgrade(3);
-        setExhaust(true);
-        setEthereal(true);
+        this.setCostUpgrade(3);
+        this.setExhaust(true);
+        this.setEthereal(true);
+        this.tags.add(CardTags.HEALING);
     }
 
     @Override

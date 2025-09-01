@@ -65,16 +65,26 @@
   {
     "PROPER_NAME": "跳跃",
     "NAMES": [
-      "跳跃"
+      "跳跃",
+      "跳跃牌"
     ],
     "DESCRIPTION": "每次着陆后你最多打出一张跳跃。获得 #b1 点 #y动量 。"
   },
   {
     "PROPER_NAME": "冲刺",
     "NAMES": [
-      "冲刺"
+      "冲刺",
+      "冲刺牌"
     ],
     "DESCRIPTION": "消耗 #b1 点 #y冲刺机会 。获得 #b1 点 #y动量 。"
+  },
+  {
+    "PROPER_NAME": "环境",
+    "NAMES": [
+      "环境",
+      "环境牌"
+    ],
+    "DESCRIPTION": "环境牌只能被 #y冲刺 或 #y跳跃 连带打出。"
   },
   {
     "PROPER_NAME": "充能",
