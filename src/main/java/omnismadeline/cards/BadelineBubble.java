@@ -8,7 +8,7 @@ import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class BadelineBubble extends BaseCard {
+public class BadelineBubble extends BaseEnvironmentCard {
     public static final String ID = makeID(BadelineBubble.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,

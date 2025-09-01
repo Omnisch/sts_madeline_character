@@ -9,7 +9,7 @@ import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public class CrumbleBlock extends BaseCard {
+public class CrumbleBlock extends BaseEnvironmentCard {
     public static final String ID = makeID(CrumbleBlock.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,

@@ -14,7 +14,7 @@ import omnismadeline.util.CardStats;
 
 import java.util.Objects;
 
-public class Blade extends BaseCard {
+public class Blade extends BaseEnvironmentCard {
     public static final String ID = makeID(Blade.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
@@ -24,7 +24,7 @@ public class Blade extends BaseCard {
             1
     );
 
-    private static final int DAMAGE = 10;
+    private static final int DAMAGE = 11;
     private static final int UPG_DAMAGE = 3;
     private static final int MAGIC = 3;
 
