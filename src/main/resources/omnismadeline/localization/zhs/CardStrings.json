@@ -298,6 +298,10 @@
     "NAME": "电箱",
     "DESCRIPTION": "{@@}对所有敌人造成 D 点伤害。抽牌直到{!M!|@=你的手牌有 !M! 张牌|10=将手牌抽满}，丢弃其中所有的非攻击牌。"
   },
+  "${modID}:Jellyfish": {
+    "NAME": "水母",
+    "DESCRIPTION": "本回合内，你每次获得 ${modID}:动量 时，使一张随机手牌在本场战斗中的耗能减少 1 [E] 。 NL 消耗 。"
+  },
   "${modID}:GoldenStrawberry": {
     "NAME": "金草莓",
     "DESCRIPTION": "将你当前的能量与 ${modID}:动量 交换数值。"
