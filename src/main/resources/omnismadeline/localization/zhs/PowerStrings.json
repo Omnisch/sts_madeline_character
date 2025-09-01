@@ -30,6 +30,12 @@
       "在每回合结束时，你失去所有动量。"
     ]
   },
+  "${modID}:GrannysCabin": {
+    "NAME": "奶奶的小屋",
+    "DESCRIPTIONS": [
+      "本回合内，你的 #y冲刺 和 #y跳跃 造成伤害或获得 #y格挡 翻倍。"
+    ]
+  },
   "${modID}:Chaser": {
     "NAME": "紧追不舍",
     "DESCRIPTIONS": [

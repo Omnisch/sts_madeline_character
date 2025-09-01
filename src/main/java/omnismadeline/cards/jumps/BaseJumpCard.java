@@ -3,6 +3,7 @@ package omnismadeline.cards.jumps;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
@@ -11,7 +12,8 @@ import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
-import omnismadeline.powers.PonderingWaterPower;
+import omnismadeline.powers.GrannysCabinImplicitPower;
+import omnismadeline.powers.PonderingWaterImplicitPower;
 import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
@@ -37,7 +39,7 @@ public abstract class BaseJumpCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(PonderingWaterPower.POWER_ID)) {
+        if (!p.hasPower(PonderingWaterImplicitPower.POWER_ID)) {
             this.addToBot(new ChangeStanceAction(new SoarStance()));
         }
         onUse(p, m);
@@ -71,6 +73,39 @@ public abstract class BaseJumpCard extends BaseCard {
         } else {
             return true;
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (AbstractDungeon.player.hasPower(GrannysCabinImplicitPower.POWER_ID)) {
+            doubleDamageAndBlock();
+        }
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        super.calculateCardDamage(m);
+        if (AbstractDungeon.player.hasPower(GrannysCabinImplicitPower.POWER_ID)) {
+            doubleDamageAndBlock();
+        }
+    }
+
+    private void doubleDamageAndBlock() {
+        if (this.baseDamage > 0) {
+            this.damage *= 2;
+            if (this.isMultiDamage && this.multiDamage != null) {
+                for (int i = 0; i < this.multiDamage.length; ++i) {
+                    this.multiDamage[i] *= 2;
+                }
+            }
+            this.isDamageModified = (this.damage != this.baseDamage);
+        }
+        if (this.baseBlock > 0) {
+            this.block *= 2;
+            this.isBlockModified = (this.block != this.baseBlock);
+        }
+        this.initializeDescription();
     }
 
     static {

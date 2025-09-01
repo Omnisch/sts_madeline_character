@@ -93,6 +93,11 @@
     "NAME": "望远镜",
     "DESCRIPTION": "跳过一名敌人 NL 当前的意图。 NL 消耗 。"
   },
+  "${modID}:GrannysCabin": {
+    "NAME": "奶奶的小屋",
+    "DESCRIPTION": "本回合内，你的 ${modID}:冲刺 和 ${modID}:跳跃 造成伤害或获得 格挡 翻倍。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "本回合内，你的 ${modID}:冲刺 和 ${modID}:跳跃 造成伤害或获得 格挡 翻倍。"
+  },
   "${modID}:DreamJelly": {
     "NAME": "梦果冻",
     "DESCRIPTION": "造成 D 点伤害，被 ${modID}:冲刺 打出时伤害翻倍。 NL ${modID}:充能 。"

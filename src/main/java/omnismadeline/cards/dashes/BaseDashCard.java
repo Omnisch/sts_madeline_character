@@ -3,6 +3,7 @@ package omnismadeline.cards.dashes;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
@@ -12,6 +13,7 @@ import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.DashChancePower;
+import omnismadeline.powers.GrannysCabinImplicitPower;
 import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
@@ -73,6 +75,39 @@ public abstract class BaseDashCard extends BaseCard {
         } else {
             return true;
         }
+    }
+
+    @Override
+    public void applyPowers() {
+        super.applyPowers();
+        if (AbstractDungeon.player.hasPower(GrannysCabinImplicitPower.POWER_ID)) {
+            doubleDamageAndBlock();
+        }
+    }
+
+    @Override
+    public void calculateCardDamage(AbstractMonster m) {
+        super.calculateCardDamage(m);
+        if (AbstractDungeon.player.hasPower(GrannysCabinImplicitPower.POWER_ID)) {
+            doubleDamageAndBlock();
+        }
+    }
+
+    private void doubleDamageAndBlock() {
+        if (this.baseDamage > 0) {
+            this.damage *= 2;
+            if (this.isMultiDamage && this.multiDamage != null) {
+                for (int i = 0; i < this.multiDamage.length; ++i) {
+                    this.multiDamage[i] *= 2;
+                }
+            }
+            this.isDamageModified = (this.damage != this.baseDamage);
+        }
+        if (this.baseBlock > 0) {
+            this.block *= 2;
+            this.isBlockModified = (this.block != this.baseBlock);
+        }
+        this.initializeDescription();
     }
 
     private static boolean hasDashChances(AbstractPlayer p) {

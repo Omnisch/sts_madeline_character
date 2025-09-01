@@ -8,12 +8,12 @@ import omnismadeline.stances.LandStance;
 
 import static omnismadeline.MadelineMod.makeID;
 
-public class PonderingWaterPower extends BasePower {
+public class PonderingWaterImplicitPower extends BasePower {
     public static final String POWER_ID = makeID("PonderingWater");
     private static final PowerType TYPE = PowerType.BUFF;
     private static final boolean TURN_BASED = true;
 
-    public PonderingWaterPower(AbstractCreature owner) {
+    public PonderingWaterImplicitPower(AbstractCreature owner) {
         super(POWER_ID, TYPE, TURN_BASED, owner, -1);
     }
 

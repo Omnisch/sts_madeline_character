@@ -5,11 +5,11 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.PonderingWaterImplicitPower;
+import omnismadeline.powers.GrannysCabinImplicitPower;
 import omnismadeline.util.CardStats;
 
-public class PonderingWater extends BaseCard {
-    public static final String ID = makeID(PonderingWater.class.getSimpleName());
+public class GrannysCabin extends BaseCard {
+    public static final String ID = makeID(GrannysCabin.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -18,20 +18,18 @@ public class PonderingWater extends BaseCard {
             1
     );
 
-    public PonderingWater() {
+    public GrannysCabin() {
         super(ID, info);
-        this.setCostUpgrade(0);
+        this.setExhaust(true, false);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        if (!p.hasPower(PonderingWaterImplicitPower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new PonderingWaterImplicitPower(p)));
-        }
+        this.addToBot(new ApplyPowerAction(p, p, new GrannysCabinImplicitPower(p, 1)));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new PonderingWater();
+        return new GrannysCabin();
     }
 }

@@ -1,5 +1,6 @@
 package omnismadeline.actions;
 
+import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
@@ -33,7 +34,7 @@ public class MadelineExchangeMomentumToBlockAction extends AbstractGameAction {
         }
 
         this.addToBot(new RemoveSpecificPowerAction(p, p, MomentumPower.POWER_ID));
-        this.addToBot(new GainBlockAction(p, (int) (this.scale * momentumAmount)));
+        this.addToBot(new GainBlockAction(p, MathUtils.floor(this.scale * momentumAmount)));
 
         this.isDone = true;
     }
