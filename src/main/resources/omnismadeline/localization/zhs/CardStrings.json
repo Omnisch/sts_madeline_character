@@ -292,14 +292,19 @@
     "NAME": "电箱",
     "DESCRIPTION": "{@@}对所有敌人造成 D 点伤害。抽牌直到{!M!|@=你的手牌有 !M! 张牌|10=将手牌抽满}，丢弃其中所有的非攻击牌。"
   },
+  "${modID}:TutorialBoard": {
+    "NAME": "教学板",
+    "DESCRIPTION": "使一名敌人失去与其攻击意图数值相等的生命。 NL 消耗 。"
+  },
   "${modID}:DoubleRefill": {
     "NAME": "双重水晶",
     "DESCRIPTION": "在本场战斗中，将你的 ${modID}:冲刺机会 上限变为 2 。",
     "UPGRADE_DESCRIPTION": "固有 。 NL 在本场战斗中，将你的 ${modID}:冲刺机会 上限变为 2 。"
   },
-  "${modID}:TutorialBoard": {
-    "NAME": "教学板",
-    "DESCRIPTION": "使一名敌人失去与其攻击意图数值相等的生命。 NL 消耗 。"
+  "${modID}:Cassette": {
+    "NAME": "磁带",
+    "DESCRIPTION": "升级所有手牌，然后将这些牌的一张复制品放入你的弃牌堆中。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "升级任意张手牌，然后将这些牌的一张复制品放入你的弃牌堆中。 NL 消耗 。"
   },
   "${modID}:Farewell": {
     "NAME": "再见",

@@ -42,5 +42,10 @@
     "TEXT": [
       "选择放到抽牌堆顶"
     ]
+  },
+  "${modID}:MadelineUpgradeAndMakeCopiesAction": {
+    "TEXT": [
+      "升级并复制"
+    ]
   }
 }
