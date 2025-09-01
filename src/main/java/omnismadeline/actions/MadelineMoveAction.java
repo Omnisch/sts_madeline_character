@@ -25,9 +25,9 @@ public class MadelineMoveAction extends AbstractGameAction {
     private final boolean canPickZero;
     public static int numMoved;
 
-    private MadelineMoveAction(AbstractMonster m, int amount, AbstractCard.CardTags tag, boolean isRandom, boolean anyNumber, boolean canPickZero) {
+    public MadelineMoveAction(AbstractMonster target, int amount, AbstractCard.CardTags tag, boolean isRandom, boolean anyNumber, boolean canPickZero) {
         this.p = AbstractDungeon.player;
-        this.m = m;
+        this.target = this.m = target;
         this.fromCardTag = tag;
 
         // Amount is affected by Momentum.
@@ -47,18 +47,15 @@ public class MadelineMoveAction extends AbstractGameAction {
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount, AbstractCard.CardTags tag, boolean isRandom, boolean anyNumber) {
-        this(target, amount, tag, isRandom, anyNumber, true);
-        this.target = target;
+        this(target, amount, tag, isRandom, anyNumber, false);
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount, AbstractCard.CardTags tag, boolean isRandom) {
-        this(target, amount, tag, isRandom, true, true);
-        this.target = target;
+        this(target, amount, tag, isRandom, false, false);
     }
 
     public MadelineMoveAction(AbstractMonster target, int amount, AbstractCard.CardTags tag) {
-        this(target, amount, tag, false, true, true);
-        this.target = target;
+        this(target, amount, tag, false, false, false);
     }
 
     @Override
@@ -74,6 +71,7 @@ public class MadelineMoveAction extends AbstractGameAction {
 
             if (!this.anyNumber && this.p.hand.size() <= this.amount) {
                 this.amount = this.p.hand.size();
+                numMoved = this.amount;
             }
 
             if (!this.isRandom) {

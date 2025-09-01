@@ -45,7 +45,7 @@ public abstract class BaseDashCard extends BaseCard {
         onUse(p, m);
 
         if (!this.autoPlayed) {
-            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.DASH));
+            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.DASH, false, true, true));
         }
 
         this.addToBot(new MadelineGainMomentumAction(1));

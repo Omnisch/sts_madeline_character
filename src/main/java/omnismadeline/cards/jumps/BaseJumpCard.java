@@ -43,7 +43,7 @@ public abstract class BaseJumpCard extends BaseCard {
         onUse(p, m);
 
         if (!this.autoPlayed) {
-            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.JUMP));
+            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.JUMP, false, true, true));
         }
 
         this.addToBot(new MadelineGainMomentumAction(1));
