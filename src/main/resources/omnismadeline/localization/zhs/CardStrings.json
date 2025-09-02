@@ -310,6 +310,10 @@
     "NAME": "河豚炸弹",
     "DESCRIPTION": "造成 D 点伤害。 NL 你每有1点动量， NL 耗能就减少 1 [E] 。 NL ${modID}:充能 。"
   },
+  "${modID}:TheBird": {
+    "NAME": "小蓝鸟",
+    "DESCRIPTION": "造成 D 点伤害。 NL 你每次打出 ${modID}:跳跃 时，将这张牌从弃牌堆放回你的手牌。 NL ${modID}:充能 。"
+  },
   "${modID}:Generator": {
     "NAME": "电箱",
     "DESCRIPTION": "{@@}对所有敌人造成 D 点伤害。抽牌直到{!M!|@=你的手牌有 !M! 张牌|10=将手牌抽满}，丢弃其中所有的非攻击牌。"
