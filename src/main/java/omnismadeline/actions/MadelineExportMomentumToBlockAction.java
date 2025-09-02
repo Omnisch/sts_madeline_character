@@ -23,7 +23,7 @@ public class MadelineExportMomentumToBlockAction extends AbstractGameAction {
 
         int momentumAmount = 0;
         if (p.hasPower(MomentumPower.POWER_ID)) {
-            momentumAmount += p.getPower(MomentumPower.POWER_ID).amount;
+            momentumAmount = p.getPower(MomentumPower.POWER_ID).amount;
         }
 
         if (momentumAmount == 0) {
@@ -31,7 +31,7 @@ public class MadelineExportMomentumToBlockAction extends AbstractGameAction {
             return;
         }
 
-        this.addToBot(new RemoveSpecificPowerAction(p, p, MomentumPower.POWER_ID));
+        this.addToBot(new MadelineLoseMomentumAction(momentumAmount));
         this.addToBot(new GainBlockAction(p, MathUtils.floor(this.scale * momentumAmount)));
 
         this.isDone = true;

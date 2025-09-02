@@ -24,7 +24,7 @@ public class EyeOfTheStorm extends BaseCard {
 
     public EyeOfTheStorm() {
         super(ID, info);
-        setMagic(MAGIC, UPG_MAGIC);
+        this.setMagic(MAGIC, UPG_MAGIC);
     }
 
     @Override

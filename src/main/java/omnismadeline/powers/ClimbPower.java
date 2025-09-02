@@ -4,6 +4,7 @@ import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import omnismadeline.actions.MadelineLoseMomentumAction;
 
 import static omnismadeline.MadelineMod.makeID;
 
@@ -20,7 +21,7 @@ public class ClimbPower extends BasePower {
     public void atEndOfTurn(boolean isPlayer) {
         if (isPlayer) {
             AbstractPlayer p = AbstractDungeon.player;
-            this.addToBot(new RemoveSpecificPowerAction(p, p, MomentumPower.POWER_ID));
+            this.addToBot(new MadelineLoseMomentumAction());
             this.flash();
         }
     }

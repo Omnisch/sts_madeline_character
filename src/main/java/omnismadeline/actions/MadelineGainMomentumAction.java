@@ -17,7 +17,6 @@ import java.util.Objects;
 
 public class MadelineGainMomentumAction extends AbstractGameAction {
     private final AbstractPlayer p = AbstractDungeon.player;
-    private final int amount;
 
     public MadelineGainMomentumAction(int amount) {
         this.amount = amount;

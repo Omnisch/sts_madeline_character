@@ -18,7 +18,7 @@ public class EyeOfTheStormPower extends BasePower {
 
     public EyeOfTheStormPower(AbstractCreature owner, int amount) {
         super(POWER_ID, TYPE, TURN_BASED, owner, amount);
-        p = AbstractDungeon.player;
+        this.p = AbstractDungeon.player;
         this.updateDescription();
     }
 

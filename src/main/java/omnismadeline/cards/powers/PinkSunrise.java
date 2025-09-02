@@ -6,34 +6,34 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.cards.BaseCard;
 import omnismadeline.character.MadelineCharacter;
-import omnismadeline.powers.QuietAndFallingPower;
+import omnismadeline.powers.PinkSunrisePower;
 import omnismadeline.util.CardStats;
 
-public class QuietAndFalling extends BaseCard {
-    public static final String ID = makeID(QuietAndFalling.class.getSimpleName());
+public class PinkSunrise extends BaseCard {
+    public static final String ID = makeID(PinkSunrise.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.POWER, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.RARE, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.NONE,
-            2
+            1
     );
 
-    private static final int MAGIC = 2;
-    private static final int UPG_MAGIC = 1;
+    private static final int MAGIC = 6;
 
-    public QuietAndFalling() {
+    public PinkSunrise() {
         super(ID, info);
-        this.setMagic(MAGIC, UPG_MAGIC);
+        this.setMagic(MAGIC);
+        this.setInnate(false, true);
     }
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
-        this.addToBot(new ApplyPowerAction(p, p, new QuietAndFallingPower(p, this.magicNumber), this.magicNumber));
+        this.addToBot(new ApplyPowerAction(p, p, new PinkSunrisePower(p, 1, this.magicNumber), 1));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return new QuietAndFalling();
+        return new PinkSunrise();
     }
 }

@@ -6,6 +6,7 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.StanceStrings;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+import omnismadeline.actions.MadelineLoseMomentumAction;
 import omnismadeline.actions.MadelineRefillAction;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.powers.DashChancePower;
@@ -40,7 +41,7 @@ public class LandStance extends AbstractStance {
     public void checkLand() {
         AbstractDungeon.actionManager.addToBottom(new MadelineRefillAction());
         if (!p.hasPower(HeartOfTheMountainPower.POWER_ID)) {
-            AbstractDungeon.actionManager.addToBottom(new RemoveSpecificPowerAction(p, p, MomentumPower.POWER_ID));
+            AbstractDungeon.actionManager.addToBottom(new MadelineLoseMomentumAction());
         }
         this.updateDescription();
     }

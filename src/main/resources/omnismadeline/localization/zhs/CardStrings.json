@@ -256,6 +256,11 @@
     "DESCRIPTION": "消耗 所有手牌。将同等数量的随机攻击牌放入你的手牌，它们在本场战斗中耗能为 0 。 NL 消耗 。",
     "UPGRADE_DESCRIPTION": "消耗 所有手牌。将同等数量的耗能不为0的随机攻击牌放入你的手牌，它们在本场战斗中耗能为 0 。 NL 消耗 。"
   },
+  "${modID}:PinkSunrise": {
+    "NAME": "粉色朝霞",
+    "DESCRIPTION": "在你的回合开始时，失去 1 点 ${modID}:动量 ，获得 [E] 。每当你如此失去 M 点动量时，额外获得一回合。",
+    "UPGRADE_DESCRIPTION": "固有 。 NL 在你的回合开始时，失去 1 点 ${modID}:动量 ，获得 [E] 。每当你如此失去 M 点动量时，额外获得一回合。"
+  },
   "${modID}:MagmaBall": {
     "NAME": "熔岩球",
     "DESCRIPTION": "造成 D 点伤害。 NL 将一张 *寒冰球 放入 NL 你的抽牌堆中。 NL 消耗 。",
