@@ -29,6 +29,7 @@ public class Generator extends BaseCard {
         super(ID, info);
         this.setDamage(DAMAGE);
         this.setMagic(MAGIC, UPG_MAGIC);
+        this.setExhaust(true);
     }
 
     @Override
