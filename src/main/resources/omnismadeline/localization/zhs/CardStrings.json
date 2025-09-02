@@ -52,6 +52,10 @@
     "DESCRIPTION": "获得 M 点 力量 。 NL 打出后回到你的手牌。 NL 虚无 。",
     "UPGRADE_DESCRIPTION": "获得 M 点 力量 。 NL 打出后回到你的手牌。"
   },
+  "${modID}:Wallbounce": {
+    "NAME": "蹬墙跳",
+    "DESCRIPTION": "造成 D 点伤害。 NL 若这张牌被 ${modID}:冲刺 打出，获得 B 点 格挡 。"
+  },
   "${modID}:Fastfall": {
     "NAME": "速降",
     "DESCRIPTION": "获得 M 点 ${modID}:动量 。 NL 你打出下一张牌后 ${modID}:着陆 。"
