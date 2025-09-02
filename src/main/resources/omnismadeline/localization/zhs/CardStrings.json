@@ -356,5 +356,9 @@
   "${modID}:MountCeleste": {
     "NAME": "塞莱斯特山",
     "DESCRIPTION": "{@@}你每打出一张 ${modID}:跳跃 ， NL 抽{!M!|@=一|>1= !M! }张牌。"
+  },
+  "${modID}:PICO8": {
+    "NAME": "PICO-8",
+    "DESCRIPTION": "在你的回合结束时，获得 M 点格挡。 NL 你无法再看见敌人的意图。"
   }
 }
