@@ -1,12 +1,11 @@
 package omnismadeline.powers;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.powers.DexterityPower;
 import omnismadeline.patches.GAM_fieldPatch;
 
 import static omnismadeline.MadelineMod.makeID;
@@ -30,15 +29,15 @@ public class EyeOfTheStormPower extends BasePower {
 
     @Override
     public void atEndOfTurn(boolean isPlayer) {
-        if (GAM_fieldPatch.totalJumpPlayedThisTurn == 0) {
-            this.addToBot(new ApplyPowerAction(p, p, new DexterityPower(p, this.amount), this.amount));
+        if (GAM_fieldPatch.totalJumpPlayedThisTurn == 0 && GAM_fieldPatch.totalDashPlayedThisTurn == 0) {
+            this.addToBot(new GainBlockAction(p, this.amount));
             this.flash();
         }
     }
 
     public void updateDescription() {
         this.description = DESCRIPTIONS[0] + this.amount + DESCRIPTIONS[1];
-        if (GAM_fieldPatch.totalJumpPlayedThisTurn > 0) {
+        if (GAM_fieldPatch.totalJumpPlayedThisTurn > 0 || GAM_fieldPatch.totalDashPlayedThisTurn > 0) {
             this.description += DESCRIPTIONS[2];
         }
     }

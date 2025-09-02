@@ -194,7 +194,7 @@
   },
   "${modID}:EyeOfTheStorm": {
     "NAME": "风暴之眼",
-    "DESCRIPTION": "你每有一回合未打出 ${modID}:跳跃 ，在你的回合结束时获得 M 点 敏捷 。"
+    "DESCRIPTION": "若你一回合未打出 ${modID}:冲刺 或 ${modID}:跳跃 ，在你的回合结束时获得 M 点 格挡 。"
   },
   "${modID}:RedBubble": {
     "NAME": "红泡泡",
