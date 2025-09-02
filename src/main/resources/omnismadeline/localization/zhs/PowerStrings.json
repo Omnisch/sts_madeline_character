@@ -128,6 +128,13 @@
       "若你在本场战斗中未受到伤害，战斗结束时额外获得一件遗物。"
     ]
   },
+  "${modID}:QuietAndFalling": {
+    "NAME": "平静与坠落",
+    "DESCRIPTIONS": [
+      "在你的回合结束时，若你没有手牌，获得 #b",
+      " 点 #y力量 。"
+    ]
+  },
   "${modID}:PonderingWater": {
     "NAME": "沉思之水",
     "DESCRIPTIONS": [
