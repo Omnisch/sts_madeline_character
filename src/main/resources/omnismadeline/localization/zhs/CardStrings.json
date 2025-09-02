@@ -52,6 +52,10 @@
     "DESCRIPTION": "获得 M 点 力量 。 NL 打出后回到你的手牌。 NL 虚无 。",
     "UPGRADE_DESCRIPTION": "获得 M 点 力量 。 NL 打出后回到你的手牌。"
   },
+  "${modID}:Fastfall": {
+    "NAME": "速降",
+    "DESCRIPTION": "获得 M 点 ${modID}:动量 。 NL 你打出下一张牌后 ${modID}:着陆 。"
+  },
   "${modID}:Climb": {
     "NAME": "攀爬",
     "DESCRIPTION": "获得等同于你当前 ${modID}:动量 的 力量 。在每回合结束时失去所有 ${modID}:动量 。",

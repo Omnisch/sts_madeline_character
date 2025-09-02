@@ -24,6 +24,14 @@
       " 个回合开始时 #y充能 。"
     ]
   },
+  "${modID}:Fastfall": {
+    "NAME": "速降",
+    "DESCRIPTIONS": [
+      "你打出下一张牌后 #y着陆 。",
+      "你打出下 #b",
+      " 张牌时 #y着陆 。"
+    ]
+  },
   "${modID}:Climb": {
     "NAME": "攀爬",
     "DESCRIPTIONS": [
