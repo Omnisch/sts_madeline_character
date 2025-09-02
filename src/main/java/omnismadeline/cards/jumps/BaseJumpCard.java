@@ -1,5 +1,6 @@
 package omnismadeline.cards.jumps;
 
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -8,11 +9,11 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelineMoveAction;
-import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.CoyoteTimePower;
+import omnismadeline.powers.DashChancePower;
 import omnismadeline.powers.GrannysCabinImplicitPower;
 import omnismadeline.powers.PonderingWaterImplicitPower;
 import omnismadeline.stances.SoarStance;
@@ -40,6 +41,11 @@ public abstract class BaseJumpCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // Make sure the character has DashChancePower to activate PendAndFlushAction.
+        if (!p.hasPower(DashChancePower.POWER_ID)) {
+            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 0)));
+        }
+
         if (!p.hasPower(PonderingWaterImplicitPower.POWER_ID)) {
             this.addToBot(new ChangeStanceAction(new SoarStance()));
         }
@@ -50,10 +56,6 @@ public abstract class BaseJumpCard extends BaseCard {
         }
 
         this.addToBot(new MadelineGainMomentumAction(1));
-
-        if (!this.autoPlayed) {
-            this.addToBot(new MadelinePendAndFlushAction());
-        }
 
         GAM_fieldPatch.totalJumpPlayedThisTurn++;
         GAM_fieldPatch.totalJumpPlayedThisCombat++;

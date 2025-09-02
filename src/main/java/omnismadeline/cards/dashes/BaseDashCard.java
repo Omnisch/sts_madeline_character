@@ -8,7 +8,6 @@ import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelineMoveAction;
-import omnismadeline.actions.MadelinePendAndFlushAction;
 import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
@@ -39,6 +38,11 @@ public abstract class BaseDashCard extends BaseCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
+        // Make sure the character has DashChancePower to activate PendAndFlushAction.
+        if (!p.hasPower(DashChancePower.POWER_ID)) {
+            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 0)));
+        }
+
         if (!Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
             if (p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount > 0) {
                 this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
@@ -51,10 +55,6 @@ public abstract class BaseDashCard extends BaseCard {
         }
 
         this.addToBot(new MadelineGainMomentumAction(1));
-
-        if (!this.autoPlayed) {
-            this.addToBot(new MadelinePendAndFlushAction());
-        }
 
         GAM_fieldPatch.totalDashPlayedThisTurn++;
         GAM_fieldPatch.totalDashPlayedThisCombat++;

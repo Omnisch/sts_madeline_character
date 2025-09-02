@@ -43,7 +43,7 @@ public class MadelineMoveOneCardAction extends AbstractGameAction {
 
         if (c.canUse(p, actualTarget)) {
             this.addToBot(new NewQueueCardAction(c, actualTarget, false, false));
-            // the PendAndFlushAction here is performed at BaseCard.use().
+            // the PendAndFlushAction here is performed at DashChancePower.
             GAM_fieldPatch.totalMovedAsUsedThisTurn++;
             GAM_fieldPatch.totalMovedAsUsedThisCombat++;
             logger.info("Move card {} as played.", c.cardID);

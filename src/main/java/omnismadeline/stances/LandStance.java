@@ -63,11 +63,13 @@ public class LandStance extends AbstractStance {
 
     @Override
     public void updateAnimation() {
-        final MadelineCharacter madeline = (MadelineCharacter) AbstractDungeon.player;
-        int dashChanceAmount = 0;
-        if (madeline.hasPower(DashChancePower.POWER_ID)) {
-            dashChanceAmount = madeline.getPower(DashChancePower.POWER_ID).amount;
+        if (AbstractDungeon.player instanceof MadelineCharacter) {
+            final MadelineCharacter madeline = (MadelineCharacter) AbstractDungeon.player;
+            int dashChanceAmount = 0;
+            if (madeline.hasPower(DashChancePower.POWER_ID)) {
+                dashChanceAmount = madeline.getPower(DashChancePower.POWER_ID).amount;
+            }
+            madeline.changeAnimation(dashChanceAmount);
         }
-        madeline.changeAnimation(dashChanceAmount);
     }
 }
