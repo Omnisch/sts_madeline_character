@@ -9,7 +9,7 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.powers.PICO8Power;
 import omnismadeline.util.CardStats;
 
-public abstract class PICO8 extends BaseCard {
+public class PICO8 extends BaseCard {
     public static final String ID = makeID(PICO8.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
@@ -19,7 +19,7 @@ public abstract class PICO8 extends BaseCard {
             0
     );
 
-    private static final int MAGIC = 5;
+    private static final int MAGIC = 7;
     private static final int UPG_MAGIC = 3;
 
     public PICO8() {
@@ -32,8 +32,8 @@ public abstract class PICO8 extends BaseCard {
         this.addToBot(new ApplyPowerAction(p, p, new PICO8Power(p, this.magicNumber), this.magicNumber));
     }
 
-//    @Override
-//    public AbstractCard makeCopy() {
-//        return new PICO8();
-//    }
+    @Override
+    public AbstractCard makeCopy() {
+        return new PICO8();
+    }
 }
