@@ -14,7 +14,7 @@ public class CoyoteTime extends BaseCard {
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.POWER, // ATTACK / SKILL / POWER / CURSE / STATUS
-            CardRarity.RARE, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
+            CardRarity.UNCOMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.NONE,
             1
     );

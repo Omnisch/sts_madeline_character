@@ -1,6 +1,7 @@
 package omnismadeline.cards.jumps;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -18,10 +19,13 @@ public class NeutralJump extends BaseJumpCard {
             1
     );
 
+    private static final int BLOCK = 4;
+    private static final int UPG_BLOCK = 3;
     private static final int MAGIC = 1;
 
     public NeutralJump() {
         super(ID, info);
+        this.setBlock(BLOCK, UPG_BLOCK);
         this.setMagic(MAGIC);
         this.returnToHand = true;
         this.setEthereal(true, false);
@@ -29,6 +33,7 @@ public class NeutralJump extends BaseJumpCard {
 
     @Override
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
+        this.addToBot(new GainBlockAction(p, this.block));
         this.addToBot(new ApplyPowerAction(p, p, new StrengthPower(p, this.magicNumber), this.magicNumber));
     }
 

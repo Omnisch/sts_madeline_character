@@ -10,7 +10,7 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
-public class Campfire extends BaseCard {
+public abstract class Campfire extends BaseCard {
     public static final String ID = makeID(Campfire.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
@@ -36,8 +36,8 @@ public class Campfire extends BaseCard {
         this.addToBot(new ApplyPowerAction(p, p, new RegenPower(p, magicNumber), magicNumber));
     }
 
-    @Override
-    public AbstractCard makeCopy() {
-        return new Campfire();
-    }
+//    @Override
+//    public AbstractCard makeCopy() {
+//        return new Campfire();
+//    }
 }

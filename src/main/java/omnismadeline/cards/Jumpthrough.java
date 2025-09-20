@@ -9,14 +9,14 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
-public class Jumpthrough extends BaseCard {
+public class Jumpthrough extends BaseEnvironmentCard {
     public static final String ID = makeID(Jumpthrough.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.SELF,
-            1
+            -2
     );
 
     private static final int BLOCK = 5;

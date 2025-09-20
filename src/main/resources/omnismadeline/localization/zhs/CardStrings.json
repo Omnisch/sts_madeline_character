@@ -49,8 +49,8 @@
   },
   "${modID}:NeutralJump": {
     "NAME": "中性跳",
-    "DESCRIPTION": "获得 M 点 力量 。 NL 打出后回到你的手牌。 NL 虚无 。",
-    "UPGRADE_DESCRIPTION": "获得 M 点 力量 。 NL 打出后回到你的手牌。"
+    "DESCRIPTION": "获得 B 点 格挡 ， NL 获得 M 点 力量 。 NL 打出后回到你的手牌。 NL 虚无 。",
+    "UPGRADE_DESCRIPTION": "获得 B 点 格挡 ， NL 获得 M 点 力量 。 NL 打出后回到你的手牌。"
   },
   "${modID}:Wallbounce": {
     "NAME": "蹬墙跳",

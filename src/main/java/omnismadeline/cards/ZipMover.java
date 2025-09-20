@@ -11,14 +11,14 @@ import omnismadeline.character.MadelineCharacter;
 import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
-public class ZipMover extends BaseCard {
+public class ZipMover extends BaseEnvironmentCard {
     public static final String ID = makeID(ZipMover.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.ATTACK, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.BASIC, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.ENEMY,
-            1
+            -2
     );
 
     private static final int DAMAGE = 6;
