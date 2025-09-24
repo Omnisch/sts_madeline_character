@@ -7,6 +7,10 @@
     "NAME": "防御",
     "DESCRIPTION": "获得 B 点 格挡 。"
   },
+  "${modID}:Dash": {
+    "NAME": "冲刺",
+    "DESCRIPTION": "消耗 1 点 ${modID}:冲刺机会 。 NL ${modID}:移动 1 张牌。 NL 获得 M 点 ${modID}:动量 。"
+  },
   "${modID}:InfDash": {
     "NAME": "无限冲刺",
     "DESCRIPTION": "${modID}:永恒 。 NL 造成 D 点伤害。"

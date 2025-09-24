@@ -1,7 +1,6 @@
-package omnismadeline.cards.jumps;
+package omnismadeline.cards.dashes;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -12,12 +11,13 @@ import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.DashChancePower;
-import omnismadeline.powers.PonderingWaterImplicitPower;
-import omnismadeline.stances.SoarStance;
+import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
 
-public class Jump extends BaseCard {
-    public static final String ID = makeID(Jump.class.getSimpleName());
+import java.util.Objects;
+
+public class Dash extends BaseCard {
+    public static final String ID = makeID(Dash.class.getSimpleName());
     private static final CardStats info = new CardStats(
             CardColor.COLORLESS,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -31,7 +31,7 @@ public class Jump extends BaseCard {
     private static final int GAP = 1;
     private static final int MAGIC = 1;
 
-    public Jump() {
+    public Dash() {
         super(ID, info);
         this.setMagic(MAGIC);
     }
@@ -50,18 +50,20 @@ public class Jump extends BaseCard {
             this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 0)));
         }
 
-        if (!p.hasPower(PonderingWaterImplicitPower.POWER_ID)) {
-            this.addToBot(new ChangeStanceAction(new SoarStance()));
+        if (!Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
+            if (p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount > 0) {
+                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
+            }
         }
 
         if (!this.autoPlayed) {
-            this.addToBot(new MadelineMoveAction(this.m, GAP, CustomTags.JUMP, false, true, true));
+            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.DASH, false, true, true));
         }
 
         this.addToBot(new MadelineGainMomentumAction(this.magicNumber));
 
-        GAM_fieldPatch.totalJumpPlayedThisTurn++;
-        GAM_fieldPatch.totalJumpPlayedThisCombat++;
+        GAM_fieldPatch.totalDashPlayedThisTurn++;
+        GAM_fieldPatch.totalDashPlayedThisCombat++;
     }
 
     @Override
@@ -74,6 +76,6 @@ public class Jump extends BaseCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return new Jump();
+        return new Dash();
     }
 }

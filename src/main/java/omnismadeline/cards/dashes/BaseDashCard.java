@@ -1,29 +1,25 @@
 package omnismadeline.cards.dashes;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.actions.MadelineGainMomentumAction;
-import omnismadeline.actions.MadelineMoveAction;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import omnismadeline.cards.BaseCard;
+import omnismadeline.cards.jumps.Jump;
 import omnismadeline.enums.CustomTags;
-import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.DashChancePower;
 import omnismadeline.powers.GrannysCabinImplicitPower;
-import omnismadeline.stances.LandStance;
 import omnismadeline.util.CardStats;
-
-import java.util.Objects;
 
 import static omnismadeline.MadelineMod.characterPath;
 
 public abstract class BaseDashCard extends BaseCard {
     private static final UIStrings uiStrings;
     private static final String CANT_DASH_MESSAGE;
-    protected static final int GAP = 1;
 
     public BaseDashCard(String ID, CardStats info) {
         super(ID, info);
@@ -32,32 +28,24 @@ public abstract class BaseDashCard extends BaseCard {
                         info.cardType == CardType.SKILL ? "_skill" :
                                 info.cardType == CardType.POWER ? "_power" : "";
         setBackgroundTexture(characterPath("cardback/bg"+ cardType +"_dash.png"), characterPath("cardback/bg"+ cardType + "_dash_p.png"));
+
+        this.cardsToPreview = new Dash();
+
         this.tags.add(CustomTags.MOVE);
         this.tags.add(CustomTags.DASH);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Make sure the character has DashChancePower to activate PendAndFlushAction.
-        if (!p.hasPower(DashChancePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 0)));
-        }
-
-        if (!Objects.equals(p.stance.ID, LandStance.STANCE_ID)) {
-            if (p.hasPower(DashChancePower.POWER_ID) && p.getPower(DashChancePower.POWER_ID).amount > 0) {
-                this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, -1), -1));
-            }
-        }
         onUse(p, m);
 
-        if (!this.autoPlayed) {
-            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.DASH, false, true, true));
-        }
+        AbstractCard instance = this.cardsToPreview.makeCopy();
+        instance.current_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+        instance.current_y = (float)Settings.HEIGHT / 2.0F;
+        ((Dash) instance).m = m;
 
-        this.addToBot(new MadelineGainMomentumAction(1));
-
-        GAM_fieldPatch.totalDashPlayedThisTurn++;
-        GAM_fieldPatch.totalDashPlayedThisCombat++;
+        instance.onChoseThisOption();
+        AbstractDungeon.effectList.add(new ExhaustCardEffect(instance));
 
         this.autoPlayed = false;
         this.movedFromCardTag = null;

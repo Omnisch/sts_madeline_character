@@ -23,9 +23,9 @@ public abstract class InfDash extends BaseDashCard {
 
     public InfDash() {
         super(ID, info);
-        setInnate(true);
-        setSelfRetain(true);
-        setDamage(DAMAGE, UPG_DAMAGE);
+        this.setInnate(true);
+        this.setSelfRetain(true);
+        this.setDamage(DAMAGE, UPG_DAMAGE);
         this.returnToHand = true;
     }
 

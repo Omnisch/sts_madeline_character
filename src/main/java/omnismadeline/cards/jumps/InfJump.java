@@ -22,9 +22,9 @@ public abstract class InfJump extends BaseJumpCard {
 
     public InfJump() {
         super(ID, info);
-        setInnate(true);
-        setSelfRetain(true);
-        setBlock(BLOCK, UPG_BLOCK);
+        this.setInnate(true);
+        this.setSelfRetain(true);
+        this.setBlock(BLOCK, UPG_BLOCK);
         this.returnToHand = true;
     }
 
