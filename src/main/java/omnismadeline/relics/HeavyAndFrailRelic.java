@@ -13,10 +13,10 @@ import omnismadeline.enums.CustomTags;
 import static omnismadeline.MadelineMod.makeID;
 
 public class HeavyAndFrailRelic extends BaseRelic {
-    private static final String NAME = "HeavyAndFrail"; // The name will be used for determining the image file as well as the ID.
-    public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:MyRelic
-    private static final RelicTier RARITY = RelicTier.SPECIAL; // The relic's rarity
-    private static final LandingSound SOUND = LandingSound.CLINK; // The sound played when the relic is clicked.
+    private static final String NAME = "HeavyAndFrail";
+    public static final String ID = makeID(NAME);
+    private static final RelicTier RARITY = RelicTier.SPECIAL;
+    private static final LandingSound SOUND = LandingSound.CLINK;
 
     private static final int BLOCK = 12;
     private static final int DASHES_PER_ACT = 3;
@@ -29,7 +29,7 @@ public class HeavyAndFrailRelic extends BaseRelic {
     @Override
     public void onEquip() {
         AbstractPlayer p = AbstractDungeon.player;
-        AbstractRelic former = p.getRelic(PointlessMachineRelic.ID);
+        AbstractRelic former = p.getRelic(PointlessMachinesRelic.ID);
         if (former != null) {
             former.onUnequip();
             p.relics.remove(former);

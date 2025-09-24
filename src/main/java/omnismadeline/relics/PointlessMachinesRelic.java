@@ -14,16 +14,16 @@ import omnismadeline.enums.CustomTags;
 
 import static omnismadeline.MadelineMod.makeID;
 
-public class PointlessMachineRelic extends BaseRelic {
-    private static final String NAME = "PointlessMachine"; // The name will be used for determining the image file as well as the ID.
-    public static final String ID = makeID(NAME); // This adds the mod's prefix to the relic ID, resulting in modID:MyRelic
-    private static final RelicTier RARITY = RelicTier.UNCOMMON; // The relic's rarity
-    private static final LandingSound SOUND = LandingSound.CLINK; // The sound played when the relic is clicked.
+public class PointlessMachinesRelic extends BaseRelic {
+    private static final String NAME = "PointlessMachines";
+    public static final String ID = makeID(NAME);
+    private static final RelicTier RARITY = RelicTier.SHOP;
+    private static final LandingSound SOUND = LandingSound.CLINK;
 
     private static final int BLOCK = 2;
     private static final int DASHES_BEFORE_UPGRADE = 24;
 
-    public PointlessMachineRelic() {
+    public PointlessMachinesRelic() {
         super(ID, NAME, MadelineCharacter.Meta.CARD_COLOR, RARITY, SOUND);
         this.counter = 0;
     }
@@ -58,6 +58,6 @@ public class PointlessMachineRelic extends BaseRelic {
 
     @Override
     public AbstractRelic makeCopy() {
-        return new PointlessMachineRelic();
+        return new PointlessMachinesRelic();
     }
 }

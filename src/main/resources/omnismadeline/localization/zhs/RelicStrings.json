@@ -13,7 +13,7 @@
       "在每场战斗开始时，将一张 #y深呼吸 放入你的手牌。"
     ]
   },
-  "${modID}:PointlessMachine": {
+  "${modID}:PointlessMachines": {
     "NAME": "不知所谓的机器",
     "FLAVOR": "第一章 A 面蓝心。",
     "DESCRIPTIONS": [
