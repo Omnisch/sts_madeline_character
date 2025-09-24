@@ -16,7 +16,7 @@ public class HeavyAndFrailRelic extends BaseRelic {
     private static final String NAME = "HeavyAndFrail";
     public static final String ID = makeID(NAME);
     private static final RelicTier RARITY = RelicTier.SPECIAL;
-    private static final LandingSound SOUND = LandingSound.CLINK;
+    private static final LandingSound SOUND = LandingSound.MAGICAL;
 
     private static final int BLOCK = 12;
     private static final int DASHES_PER_ACT = 3;

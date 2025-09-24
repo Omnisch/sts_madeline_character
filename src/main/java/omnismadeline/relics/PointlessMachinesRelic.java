@@ -17,7 +17,7 @@ import static omnismadeline.MadelineMod.makeID;
 public class PointlessMachinesRelic extends BaseRelic {
     private static final String NAME = "PointlessMachines";
     public static final String ID = makeID(NAME);
-    private static final RelicTier RARITY = RelicTier.SHOP;
+    private static final RelicTier RARITY = RelicTier.BOSS;
     private static final LandingSound SOUND = LandingSound.CLINK;
 
     private static final int BLOCK = 2;

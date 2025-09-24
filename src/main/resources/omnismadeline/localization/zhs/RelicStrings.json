@@ -36,6 +36,15 @@
       " 点伤害。"
     ]
   },
+  "${modID}:PointlessMachines": {
+    "NAME": "不知所谓的机器",
+    "FLAVOR": "第一章 A 面蓝心。",
+    "DESCRIPTIONS": [
+      "你每打出一张 #y冲刺 ，获得 #b",
+      " 点 #y格挡 。在打出 #b",
+      " 张 #y冲刺 后这件遗物将被替换。"
+    ]
+  },
   "${modID}:HeavyAndFrail": {
     "NAME": "沉重与脆弱",
     "FLAVOR": "第六章 A 面蓝心。",
@@ -45,13 +54,12 @@
       " 点 #y格挡 。"
     ]
   },
-  "${modID}:PointlessMachines": {
-    "NAME": "不知所谓的机器",
-    "FLAVOR": "第一章 A 面蓝心。",
+  "${modID}:Campfire": {
+    "NAME": "营地",
+    "FLAVOR": "熟悉的帐篷，温暖的篝火。",
     "DESCRIPTIONS": [
-      "你每打出一张 #y冲刺 ，获得 #b",
-      " 点 #y格挡 。在打出 #b",
-      " 张 #y冲刺 后这件遗物将被替换。"
+      "在每场战斗开始时，获得 #b",
+      " 层 #y再生 。"
     ]
   }
 }
