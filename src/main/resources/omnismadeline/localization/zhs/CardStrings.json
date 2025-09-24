@@ -31,7 +31,11 @@
     "NAME": "凌波微步",
     "DESCRIPTION": "造成 D 点伤害。 NL 若这张牌被 ${modID}:跳跃 打出，获得 [E] [E] 。"
   },
-  "${modID}:InfHop": {
+  "${modID}:Jump": {
+    "NAME": "跳跃",
+    "DESCRIPTION": "进入 ${modID}:凌空 。 NL ${modID}:移动 1 张牌 。 NL 获得 M 点 ${modID}:动量 。"
+  },
+  "${modID}:InfJump": {
     "NAME": "无限跳跃",
     "DESCRIPTION": "${modID}:永恒 。 NL 获得 B 点 格挡 。"
   },

@@ -1,9 +1,13 @@
 package omnismadeline.cards.jumps;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import omnismadeline.actions.MadelineGainMomentumAction;
 import omnismadeline.actions.MadelineMoveAction;
 import omnismadeline.character.MadelineCharacter;
@@ -32,11 +36,13 @@ public class Cornerkick extends BaseJumpCard {
     protected void onUse(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new GainBlockAction(p, p, this.block));
 
-        if (!this.autoPlayed) {
-            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.JUMP, false, true, true));
-        }
+        AbstractCard instance = this.cardsToPreview.makeCopy();
+        instance.current_x = (float) Settings.WIDTH / 2.0F + 300.0F * Settings.scale;
+        instance.current_y = (float) Settings.HEIGHT / 2.0F;
+        ((Jump) instance).m = m;
 
-        this.addToBot(new MadelineGainMomentumAction(1));
+        instance.onChoseThisOption();
+        AbstractDungeon.effectList.add(new ExhaustCardEffect(instance));
     }
 
     @Override

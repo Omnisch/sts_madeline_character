@@ -1,15 +1,14 @@
-package omnismadeline.cards.colorless;
+package omnismadeline.cards.jumps;
 
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.utility.DiscardToHandAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.cards.jumps.BaseJumpCard;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.util.CardStats;
 
-public abstract class InfHop extends BaseJumpCard {
-    public static final String ID = makeID(InfHop.class.getSimpleName());
+public abstract class InfJump extends BaseJumpCard {
+    public static final String ID = makeID(InfJump.class.getSimpleName());
     private static final CardStats info = new CardStats(
             MadelineCharacter.Meta.CARD_COLOR,
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
@@ -21,7 +20,7 @@ public abstract class InfHop extends BaseJumpCard {
     private static final int BLOCK = 7;
     private static final int UPG_BLOCK = 3;
 
-    public InfHop() {
+    public InfJump() {
         super(ID, info);
         setInnate(true);
         setSelfRetain(true);

@@ -1,4 +1,4 @@
-package omnismadeline.cards.colorless;
+package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -8,8 +8,6 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.WeakPower;
-import omnismadeline.cards.BaseEnvironmentCard;
-import omnismadeline.cards.MagmaWall;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.util.CardStats;

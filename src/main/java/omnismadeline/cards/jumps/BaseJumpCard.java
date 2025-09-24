@@ -1,21 +1,18 @@
 package omnismadeline.cards.jumps;
 
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
-import com.megacrit.cardcrawl.actions.watcher.ChangeStanceAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.UIStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import omnismadeline.actions.MadelineGainMomentumAction;
-import omnismadeline.actions.MadelineMoveAction;
+import com.megacrit.cardcrawl.vfx.cardManip.ExhaustCardEffect;
 import omnismadeline.cards.BaseCard;
 import omnismadeline.enums.CustomTags;
 import omnismadeline.patches.GAM_fieldPatch;
 import omnismadeline.powers.CoyoteTimePower;
-import omnismadeline.powers.DashChancePower;
 import omnismadeline.powers.GrannysCabinImplicitPower;
-import omnismadeline.powers.PonderingWaterImplicitPower;
 import omnismadeline.stances.SoarStance;
 import omnismadeline.util.CardStats;
 
@@ -26,7 +23,6 @@ import static omnismadeline.MadelineMod.characterPath;
 public abstract class BaseJumpCard extends BaseCard {
     private static final UIStrings uiStrings;
     private static final String CANT_JUMP_MESSAGE;
-    protected static final int GAP = 1;
 
     public BaseJumpCard(String ID, CardStats info) {
         super(ID, info);
@@ -35,30 +31,24 @@ public abstract class BaseJumpCard extends BaseCard {
                         info.cardType == CardType.SKILL ? "_skill" :
                                 info.cardType == CardType.POWER ? "_power" : "";
         setBackgroundTexture(characterPath("cardback/bg"+ cardType +"_jump.png"), characterPath("cardback/bg"+ cardType + "_jump_p.png"));
+
+        this.cardsToPreview = new Jump();
+
         this.tags.add(CustomTags.MOVE);
         this.tags.add(CustomTags.JUMP);
     }
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        // Make sure the character has DashChancePower to activate PendAndFlushAction.
-        if (!p.hasPower(DashChancePower.POWER_ID)) {
-            this.addToBot(new ApplyPowerAction(p, p, new DashChancePower(p, 0)));
-        }
-
-        if (!p.hasPower(PonderingWaterImplicitPower.POWER_ID)) {
-            this.addToBot(new ChangeStanceAction(new SoarStance()));
-        }
         onUse(p, m);
 
-        if (!this.autoPlayed) {
-            this.addToBot(new MadelineMoveAction(m, GAP, CustomTags.JUMP, false, true, true));
-        }
+        AbstractCard instance = this.cardsToPreview.makeCopy();
+        instance.current_x = (float) Settings.WIDTH / 2.0F - 300.0F * Settings.scale;
+        instance.current_y = (float)Settings.HEIGHT / 2.0F;
+        ((Jump) instance).m = m;
 
-        this.addToBot(new MadelineGainMomentumAction(1));
-
-        GAM_fieldPatch.totalJumpPlayedThisTurn++;
-        GAM_fieldPatch.totalJumpPlayedThisCombat++;
+        instance.onChoseThisOption();
+        AbstractDungeon.effectList.add(new ExhaustCardEffect(instance));
 
         this.autoPlayed = false;
         this.movedFromCardTag = null;

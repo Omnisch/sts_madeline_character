@@ -39,7 +39,7 @@ public class MadelineMoveOneCardAction extends AbstractGameAction {
             ((BaseEnvironmentCard)c).isAboutToMove = true;
         }
 
-        AbstractMonster actualTarget = m.isDead ? AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true) : m;
+        AbstractMonster actualTarget = (m == null || m.isDead) ? AbstractDungeon.getCurrRoom().monsters.getRandomMonster(true) : m;
 
         if (c.canUse(p, actualTarget)) {
             this.addToBot(new NewQueueCardAction(c, actualTarget, false, false));

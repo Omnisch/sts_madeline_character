@@ -1,18 +1,14 @@
-package omnismadeline.cards.colorless;
+package omnismadeline.cards;
 
 import com.megacrit.cardcrawl.actions.common.DamageAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
-import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import omnismadeline.actions.MadelineLoseMomentumAction;
-import omnismadeline.cards.BaseEnvironmentCard;
-import omnismadeline.cards.MagmaCube;
 import omnismadeline.character.MadelineCharacter;
 import omnismadeline.enums.CustomTags;
-import omnismadeline.powers.MomentumPower;
 import omnismadeline.util.CardStats;
 
 import static omnismadeline.MadelineMod.characterPath;
