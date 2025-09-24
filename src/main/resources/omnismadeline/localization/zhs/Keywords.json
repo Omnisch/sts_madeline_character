@@ -21,13 +21,6 @@
     "DESCRIPTION": "Make sure the first element in NAMES has no underscores. The rest should use _ in the place of spaces. In card text, you'll use the underscore versions."
   },
   {
-    "PROPER_NAME": "永恒",
-    "NAMES": [
-      "永恒"
-    ],
-    "DESCRIPTION": "这张牌永远在你的手牌中。"
-  },
-  {
     "PROPER_NAME": "着陆",
     "NAMES": [
       "着陆"
@@ -53,7 +46,14 @@
     "NAMES": [
       "动量"
     ],
-    "DESCRIPTION": "你打出的 #y跳跃 和 #y冲刺 可以额外选择与点数相等的牌。"
+    "DESCRIPTION": "你打出的 #y冲刺 和 #y跳跃 可以额外 #y移动 与点数相等的牌。"
+  },
+  {
+    "PROPER_NAME": "永恒",
+    "NAMES": [
+      "永恒"
+    ],
+    "DESCRIPTION": "这张牌永远在你的手牌中。"
   },
   {
     "PROPER_NAME": "移动",
@@ -61,13 +61,6 @@
       "移动"
     ],
     "DESCRIPTION": "选择手牌耗能打出，若无法打出则将其丢弃。"
-  },
-  {
-    "PROPER_NAME": "二次跳跃",
-    "NAMES": [
-      "二次跳跃"
-    ],
-    "DESCRIPTION": "这张牌视为 #y跳跃 两次（无需 #y着陆 ）。"
   },
   {
     "PROPER_NAME": "环境",
@@ -83,6 +76,13 @@
       "充能"
     ],
     "DESCRIPTION": "获得 #b1 点 #y冲刺机会 。"
+  },
+  {
+    "PROPER_NAME": "二次跳跃",
+    "NAMES": [
+      "二次跳跃"
+    ],
+    "DESCRIPTION": "无视姿态连续 #y跳跃 两次。"
   },
   {
     "PROPER_NAME": "初始打击",
