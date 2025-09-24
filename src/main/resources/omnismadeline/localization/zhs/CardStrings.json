@@ -39,6 +39,11 @@
     "NAME": "蹲姿冲刺",
     "DESCRIPTION": "造成 D 点伤害。 NL 你打出的下一张 ${modID}:环境牌 耗能减少 1 [E] 。"
   },
+  "${modID}:Cornerboost": {
+    "NAME": "抓角加速",
+    "DESCRIPTION": "*冲刺 ， ${modID}:着陆 ， *跳跃 。 NL 额外获得 M 点 ${modID}:动量 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "*冲刺 ， ${modID}:着陆 ， *跳跃 。 NL 额外获得 M 点 ${modID}:动量 。"
+  },
   "${modID}:Jump": {
     "NAME": "跳跃",
     "DESCRIPTION": "进入 ${modID}:凌空 。 NL ${modID}:移动 1 张牌 。 NL 获得 M 点 ${modID}:动量 。"
