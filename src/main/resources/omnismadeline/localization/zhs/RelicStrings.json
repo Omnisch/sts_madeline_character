@@ -13,13 +13,13 @@
       "在每场战斗开始时，将一张 #y深呼吸 放入你的手牌。"
     ]
   },
-  "${modID}:PointlessMachines": {
-    "NAME": "不知所谓的机器",
-    "FLAVOR": "第一章 A 面蓝心。",
+  "${modID}:StrawberryPie": {
+    "NAME": "草莓派",
+    "FLAVOR": "草莓越多，派越香。",
     "DESCRIPTIONS": [
-      "你每打出一张 #y冲刺 ，就获得 #b",
-      " 点 #y格挡 。在打出 #b",
-      " 张 #y冲刺 后这件遗物将被替换。"
+      "你每消耗 #b",
+      " 点 #y能量 ，对所有敌人造成 #b",
+      " 点伤害。"
     ]
   },
   "${modID}:HeavyAndFrail": {
@@ -27,8 +27,17 @@
     "FLAVOR": "第六章 A 面蓝心。",
     "DESCRIPTIONS": [
       "你每打出 #b",
-      " 张 #y冲刺 ，就获得 #b",
+      " 张 #y冲刺 ，获得 #b",
       " 点 #y格挡 。"
+    ]
+  },
+  "${modID}:PointlessMachines": {
+    "NAME": "不知所谓的机器",
+    "FLAVOR": "第一章 A 面蓝心。",
+    "DESCRIPTIONS": [
+      "你每打出一张 #y冲刺 ，获得 #b",
+      " 点 #y格挡 。在打出 #b",
+      " 张 #y冲刺 后这件遗物将被替换。"
     ]
   }
 }

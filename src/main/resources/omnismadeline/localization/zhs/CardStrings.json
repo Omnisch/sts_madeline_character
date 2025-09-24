@@ -33,7 +33,7 @@
   },
   "${modID}:WaveDash": {
     "NAME": "凌波微步",
-    "DESCRIPTION": "造成 D 点伤害。 NL 若这张牌被 ${modID}:跳跃 打出，获得 [E] [E] 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 若这张牌被 *跳跃 打出，获得 [E] [E] 。"
   },
   "${modID}:Jump": {
     "NAME": "跳跃",
@@ -57,7 +57,7 @@
   },
   "${modID}:Wallbounce": {
     "NAME": "蹬墙跳",
-    "DESCRIPTION": "造成 D 点伤害。 NL 若这张牌被 ${modID}:冲刺 打出，获得 B 点 格挡 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 若这张牌被 *冲刺 打出，获得 B 点 格挡 。"
   },
   "${modID}:NeutralJump": {
     "NAME": "中性跳",
@@ -79,7 +79,7 @@
   },
   "${modID}:CoyoteTime": {
     "NAME": "狼跳",
-    "DESCRIPTION": "你每回合的第一张 ${modID}:跳跃 可以在 ${modID}:凌空 时打出。"
+    "DESCRIPTION": "你每回合的第一张 *跳跃 可以在 ${modID}:凌空 时打出。"
   },
   "${modID}:ZipMover": {
     "NAME": "交通方块",
@@ -107,7 +107,7 @@
   },
   "${modID}:WingedStrawberry": {
     "NAME": "羽翼草莓",
-    "DESCRIPTION": "{@@}获得{!M!|repeat= [E] |>3= !M! [E] }。 NL 你打出 ${modID}:冲刺 时，若这张牌在手牌中，则 消耗 。"
+    "DESCRIPTION": "{@@}获得{!M!|repeat= [E] |>3= !M! [E] }。 NL 你打出 *冲刺 时，若这张牌在手牌中，则 消耗 。"
   },
   "${modID}:Refill": {
     "NAME": "冲刺水晶",
@@ -124,12 +124,12 @@
   },
   "${modID}:GrannysCabin": {
     "NAME": "奶奶的小屋",
-    "DESCRIPTION": "本回合内，你的 ${modID}:冲刺 和 ${modID}:跳跃 造成伤害或获得 格挡 翻倍。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "本回合内，你的 ${modID}:冲刺 和 ${modID}:跳跃 造成伤害或获得 格挡 翻倍。"
+    "DESCRIPTION": "本回合内，你的 *冲刺 和 *跳跃 造成伤害或获得 格挡 翻倍。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "本回合内，你的 *冲刺 和 *跳跃 造成伤害或获得 格挡 翻倍。"
   },
   "${modID}:DreamJelly": {
     "NAME": "梦果冻",
-    "DESCRIPTION": "造成 D 点伤害，被 ${modID}:冲刺 打出时伤害翻倍。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成 D 点伤害，被 *冲刺 打出时伤害翻倍。 NL ${modID}:充能 。"
   },
   "${modID}:StrawberrySeed": {
     "NAME": "草莓种子",
@@ -142,11 +142,11 @@
   },
   "${modID}:TouchSwitch": {
     "NAME": "触控开关",
-    "DESCRIPTION": "获得 B 点 格挡  M 次。 NL 你在这个回合内每打出一张 ${modID}:跳跃 或 ${modID}:冲刺 ，耗能就减少1 [E] 。"
+    "DESCRIPTION": "获得 B 点 格挡  M 次。 NL 你在这个回合内每打出一张 *跳跃 或 *冲刺 ，耗能就减少1 [E] 。"
   },
   "${modID}:Chaser": {
     "NAME": "紧追不舍",
-    "DESCRIPTION": "你下次打出 ${modID}:跳跃 或 ${modID}:冲刺 时抽 M 张牌。"
+    "DESCRIPTION": "你下次打出 *跳跃 或 *冲刺 时抽 M 张牌。"
   },
   "${modID}:AnotherMe": {
     "NAME": "另一个我",
@@ -190,11 +190,11 @@
   },
   "${modID}:Clouds": {
     "NAME": "云朵",
-    "DESCRIPTION": "被 ${modID}:冲刺 打出时 NL 造成 D 点伤害。 NL 被 ${modID}:跳跃 打出时 NL 获得 B 点 格挡 。 NL ${modID}:充能 。"
+    "DESCRIPTION": "被 *冲刺 打出时 NL 造成 D 点伤害。 NL 被 *跳跃 打出时 NL 获得 B 点 格挡 。 NL ${modID}:充能 。"
   },
   "${modID}:GreenBubble": {
     "NAME": "绿泡泡",
-    "DESCRIPTION": "{@@}获得 B 点 格挡 。 NL 本回合你打出下{!M!|@=一|>1= !M! }张 ${modID}:冲刺 时，抽一张牌。 NL ${modID}:充能 。"
+    "DESCRIPTION": "{@@}获得 B 点 格挡 。 NL 本回合你打出下{!M!|@=一|>1= !M! }张 *冲刺 时，抽一张牌。 NL ${modID}:充能 。"
   },
   "${modID}:MoveBlock": {
     "NAME": "移动方块",
@@ -206,7 +206,7 @@
   },
   "${modID}:EyeOfTheStorm": {
     "NAME": "风暴之眼",
-    "DESCRIPTION": "若你一回合未打出 ${modID}:冲刺 或 ${modID}:跳跃 ，在你的回合结束时获得 M 点 格挡 。"
+    "DESCRIPTION": "若你一回合未打出 *冲刺 或 *跳跃 ，在你的回合结束时获得 M 点 格挡 。"
   },
   "${modID}:RedBubble": {
     "NAME": "红泡泡",
@@ -214,7 +214,7 @@
   },
   "${modID}:DashBlock": {
     "NAME": "冲刺方块",
-    "DESCRIPTION": "造成 D 点伤害。 NL 本回合内，你每打出一张 ${modID}:冲刺 ，对随机敌人造成 M 点伤害。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 本回合内，你每打出一张 *冲刺 ，对随机敌人造成 M 点伤害。"
   },
   "${modID}:Blade": {
     "NAME": "刀片机关",
@@ -329,7 +329,7 @@
   },
   "${modID}:TheBird": {
     "NAME": "小蓝鸟",
-    "DESCRIPTION": "造成 D 点伤害。 NL 你每次打出 ${modID}:跳跃 时，将这张牌从弃牌堆放回你的手牌。 NL ${modID}:充能 。"
+    "DESCRIPTION": "造成 D 点伤害。 NL 你每次打出 *跳跃 时，将这张牌从弃牌堆放回你的手牌。 NL ${modID}:充能 。"
   },
   "${modID}:Generator": {
     "NAME": "电箱",
@@ -367,7 +367,7 @@
   },
   "${modID}:MountCeleste": {
     "NAME": "塞莱斯特山",
-    "DESCRIPTION": "{@@}你每打出一张 ${modID}:跳跃 ， NL 抽{!M!|@=一|>1= !M! }张牌。"
+    "DESCRIPTION": "{@@}你每打出一张 *跳跃 ， NL 抽{!M!|@=一|>1= !M! }张牌。"
   },
   "${modID}:PICO8": {
     "NAME": "PICO-8",
