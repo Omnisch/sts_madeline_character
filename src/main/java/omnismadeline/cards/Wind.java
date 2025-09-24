@@ -17,7 +17,7 @@ public class Wind extends BaseEnvironmentCard {
             CardType.SKILL, // ATTACK / SKILL / POWER / CURSE / STATUS
             CardRarity.UNCOMMON, // BASIC / COMMON / UNCOMMON / RARE / SPECIAL / CURSE
             CardTarget.NONE,
-            0
+            -2
     );
 
     private static final int VULNERABLE = 3;

@@ -24,6 +24,14 @@
       " 个回合开始时 #y充能 。"
     ]
   },
+  "${modID}:DemoDash": {
+    "NAME": "蹲姿冲刺",
+    "DESCRIPTIONS": [
+      "你打出的下一张 #y环境牌 耗能减少 #b1 [E] 。",
+      "你打出的下 #b",
+      " 张 #y环境牌 耗能减少 #b1 [E] 。"
+    ]
+  },
   "${modID}:Fastfall": {
     "NAME": "速降",
     "DESCRIPTIONS": [

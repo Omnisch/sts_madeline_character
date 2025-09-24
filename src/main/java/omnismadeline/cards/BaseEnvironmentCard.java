@@ -57,6 +57,46 @@ public abstract class BaseEnvironmentCard extends BaseCard {
         }
     }
 
+    // used in DemoDashImplicitPower
+
+    private boolean hasCostModifiedForTurn = false;
+    private int lastCostForTurn = 0;
+
+    public boolean ReduceTmpCost(int byNumber) {
+        if (this.costForTurn <= 0) {
+            return false;
+        } else {
+            this.hasCostModifiedForTurn = this.isCostModifiedForTurn;
+            this.isCostModifiedForTurn = true;
+
+            this.lastCostForTurn = this.costForTurn;
+            if (this.costForTurn <= byNumber) {
+                this.costForTurn = 0;
+            } else {
+                this.costForTurn -= byNumber;
+            }
+
+            return true;
+        }
+    }
+
+    public void RevertTmpCost() {
+        if (this.lastCostForTurn != 0) {
+            this.isCostModifiedForTurn = this.hasCostModifiedForTurn;
+            this.costForTurn = this.lastCostForTurn;
+
+            this.lastCostForTurn = 0;
+        }
+    }
+
+    @Override
+    public void triggerOnEndOfPlayerTurn() {
+        super.triggerOnEndOfPlayerTurn();
+        this.RevertTmpCost();
+    }
+
+    // !used in DemoDashImplicitPower
+
     static {
         uiStrings = CardCrawlGame.languagePack.getUIString(makeID(BaseEnvironmentCard.class.getSimpleName()));
         NOT_MOVED_MESSAGE = uiStrings.TEXT[0];
