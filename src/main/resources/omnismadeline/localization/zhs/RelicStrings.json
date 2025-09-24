@@ -27,6 +27,14 @@
       "每当你获得 #y环境牌 时，将其 #y升级 。"
     ]
   },
+  "${modID}:EyeOfTheStorm": {
+    "NAME": "风暴之眼",
+    "FLAVOR": "第四章 A 面蓝心。",
+    "DESCRIPTIONS": [
+      "若你一回合未打出 #y冲刺 或 #y跳跃 ，在你的回合结束时获得 #b",
+      " 点 #y格挡 。"
+    ]
+  },
   "${modID}:StrawberryPie": {
     "NAME": "草莓派",
     "FLAVOR": "草莓越多，派越香。",
